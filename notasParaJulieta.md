@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Notas para Julieta, con los cambios que hice vas a poder ver una barra en la parte superior que dice Rolling Gym. La pagina principal esta en proceso, para que funcione el template voy a tener que hacer todo a mano, una vez hecho eso podemos seguir con el resto.
 
 ## Available Scripts
 
@@ -15,9 +15,6 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
