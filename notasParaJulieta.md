@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-Notas para Julieta, con los cambios que hice vas a poder ver una barra en la parte superior que dice Rolling Gym. La pagina principal esta en proceso, para que funcione el template voy a tener que hacer todo a mano, una vez hecho eso podemos seguir con el resto.
+### `npm start`
+
+Notas para Julieta, con los cambios que hice vas a poder ver una barra en la parte superior que dice Rolling Gym. La pagina principal esta en proceso, para que funcione el template voy a tener que hacer todo a mano, una vez hecho eso podemos seguir con el resto. 24/11/2023
 
 ## Available Scripts
 
