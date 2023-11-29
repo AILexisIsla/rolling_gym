@@ -19,6 +19,8 @@ const Hero = () => {
           <span>El mejor Gym en la ciudad</span>
         </div>
 
+        
+
         {/*Hero Heading-Nabvar para editar */}
 
         <div className="hero-text">
