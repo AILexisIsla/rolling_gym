@@ -1,15 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Form = () => {
+const RegisterForm = () => {
   return (
     <div className="form-container">
       <form className="form-login">
         <input
+          type="text"
+          name="nameUser"
+          className="input-login"
+          placeholder="NameUser"
+        ></input>
+        <input
+          type="number"
+          name="telefono"
+          className="input-login"
+          placeholder="Telefono"
+        ></input>
+        <input
           type="email"
           name="emailUser"
           className="input-login"
-          placeholder="UserName"
+          placeholder="EmailUser"
         ></input>
         <input
           type="password"
@@ -20,12 +32,11 @@ const Form = () => {
 
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-            SIGN IN
+            REGISTER
           </button>
           <p>
-            <Link className="forget-password">Forget Password |</Link>
             <span>
-              <Link className="sign-up">Sign UP |</Link>
+              <Link className="sign-up">| Sign IN |</Link>
             </span>
           </p>
         </div>
@@ -34,4 +45,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default RegisterForm;

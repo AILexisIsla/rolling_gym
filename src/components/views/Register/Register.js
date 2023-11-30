@@ -1,9 +1,7 @@
 import React from "react";
-import "../Login/Login.css";
 import logo from "/Proyectos HTML/React/rolling_gym/src/assets/logo.png";
-import Form from "./Form";
-
-const Login = () => {
+import RegisterForm from "./RegisterForm";
+const Register = () => {
   return (
     <>
       <div className="background-image">
@@ -11,9 +9,9 @@ const Login = () => {
           <img src={logo} alt="" />
         </div>
       </div>
-      <Form />
+      <RegisterForm />
     </>
   );
 };
 
-export default Login;
+export default Register;
