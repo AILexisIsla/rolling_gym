@@ -28,9 +28,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 80%; 
-  max-width: 400px; 
-  margin: 0 auto; 
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .form-login {
@@ -84,13 +84,15 @@
   letter-spacing: 0.2rem;
 }
 
-.sign-in-button p {
+.forget-password {
   margin-top: 2rem;
   font-weight: 300;
   color: white;
+  text-decoration: none;
 }
 
-.sign-in-button span {
+.sign-up {
   color: #f48915;
   font-size: 1rem;
+  text-decoration: none;
 }
