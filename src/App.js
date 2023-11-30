@@ -1,12 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import Hero from "./components/Hero/Hero";
-import Programs from "./components/Programs/Programs";
+import Login from "./components/views/Login/Login";
+import Header from "./components/Header/Header";
+
 function App() {
   return (
     <div className="App">
-      <Hero />
-      <Programs />
-
+      <BrowserRouter>
+        <Header />
+        <Login />
+      </BrowserRouter>
     </div>
   );
 }
