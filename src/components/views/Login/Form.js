@@ -25,7 +25,9 @@ const Form = () => {
           <p>
             <Link className="forget-password">Forget Password |</Link>
             <span>
-              <Link className="sign-up">Sign UP |</Link>
+              <Link to="/Register" className="sign-up">
+                Sign UP |
+              </Link>
             </span>
           </p>
         </div>
