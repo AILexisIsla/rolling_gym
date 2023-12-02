@@ -23,7 +23,9 @@ const Form = () => {
             SIGN IN
           </button>
           <p>
-            <Link className="forget-password">Forget Password |</Link>
+            <Link to="*" className="forget-password">
+              Forget Password |
+            </Link>
             <span>
               <Link to="/Register" className="sign-up">
                 Sign UP |
