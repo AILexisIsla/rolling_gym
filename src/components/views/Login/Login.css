@@ -1,0 +1,98 @@
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background-image: url("/src/assets/classOne.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 300;
+  margin-top: 2%;
+}
+
+.logo-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.form-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-login {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-login {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+}
+
+.input-login::placeholder {
+  color: white;
+}
+
+.input-login:focus {
+  color: #f87c00;
+}
+
+.sign-in-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.sign-in {
+  background-color: #f48915;
+  text-align: center;
+  width: 220px;
+  padding: 0.3rem;
+  border: none;
+  color: rgba(255, 255, 255, 0.836);
+  border-radius: 5px;
+  opacity: 90%;
+}
+
+.sign-in:hover {
+  letter-spacing: 0.2rem;
+}
+
+.forget-password {
+  margin-top: 2rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+}
+
+.sign-up {
+  color: #f48915;
+  font-size: 1rem;
+  text-decoration: none;
+}

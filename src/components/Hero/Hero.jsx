@@ -6,6 +6,7 @@ import hero_image from "../../assets/hero_image.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
 import Calories from "../../assets/calories.png";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="hero">
@@ -18,8 +19,6 @@ const Hero = () => {
           <div></div>
           <span>El mejor Gym en la ciudad</span>
         </div>
-
-        
 
         {/*Hero Heading-Nabvar para editar */}
 
@@ -62,7 +61,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="right-h">
-        <button className="btn">Unete ahora</button>
+        <Link to='/Login' className="btn">Unete ahora</Link>
 
         <div className="heart-rate">
           <img src={Heart} alt="" />
@@ -79,10 +78,9 @@ const Hero = () => {
         <div className="calories">
           <img src={Calories} alt="" />
           <div>
-          <span>Calorias Quemadas</span>
-          <span>kcal 220</span>
+            <span>Calorias Quemadas</span>
+            <span>kcal 220</span>
           </div>
-          
         </div>
       </div>
     </div>
