@@ -28,7 +28,7 @@ export const Plans = () => {
             </div>
 
             <div>
-              <span>Ver más beneficios -></span>
+              <span>Ver más beneficios -{">"}</span>
             </div>
             <button className="btn">Únete ahora</button>
           </div>
