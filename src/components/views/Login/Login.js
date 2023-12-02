@@ -6,7 +6,7 @@ import Form from "./Form";
 const Login = () => {
   return (
     <>
-      <div className="background-image">
+      <div className="background-images">
         <div className="logo-holder">
           <img src={logo} alt="" />
         </div>
