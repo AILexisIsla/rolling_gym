@@ -53,9 +53,9 @@ const Reasons = () => {
         </span>
 
         <div className="partners">
-          <img src={nb} alt="" />
-          <img src={adidas} alt="" />
-          <img src={nike} alt="" />
+          <img src={nb} alt="logo new balance" />
+          <img src={adidas} alt="Logo adidas" />
+          <img src={nike} alt="logo nike" />
         </div>
       </div>
     </div>
@@ -63,4 +63,3 @@ const Reasons = () => {
 };
 
 export default Reasons;
-
