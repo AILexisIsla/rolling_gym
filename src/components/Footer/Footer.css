@@ -1,73 +1,71 @@
-.Footer-container{
-    position: relative;
+.Footer-container {
+  position: relative;
 }
 
-.Footer-container>hr{
-    border: 1px solid var(--lightgray)
+.Footer-container > hr {
+  border: 1px solid var(--lightgray);
 }
 
-.footer{
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: space-between;
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
+.footer {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: space-between;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
 }
 
-.social-links{
-    display: flex;
-    gap: 4rem;
+.social-links {
+  display: flex;
+  gap: 4rem;
 }
 
-.social-links>a>img{
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
+.social-links > a > img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 
-.logo-f>img{
-    width: 10rem;
+.logo-f > img {
+  width: 10rem;
 }
 
 .column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-.column>ul{
-    list-style: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-  .f-centro{
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: white;
-    padding-bottom: 5rem;
-    text-align: center;
-  }
+.column > ul {
+  list-style: none;
+}
 
-  .f-izq{
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: white;
-    padding-bottom: 1.5rem;
-    text-align: center;
-    
-  }
+.f-centro {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  padding-bottom: 5rem;
+  text-align: center;
+}
 
-  .f-qf>li{
-    padding-top: 0.5rem;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: white;
-    
-    text-align: center;
-  }
+.f-izq {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
 
-  .f-qf>li>a{
-    text-decoration: none;
-    color: white;
-  }
+.f-qf > li {
+  padding-top: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+}
+
+.f-qf > li > a {
+  text-decoration: none;
+  color: white;
+}
