@@ -6,18 +6,23 @@ import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/eror404/Error404";
 import { useEffect, useState } from "react";
 import Admin from "./components/views/Admin/Admin";
+import axios from "./config/axios";
 
 function App() {
   const [classes, SetClasses] = useState([]);
+  const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
     getClassApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const getClassApi = async () => {
-    const res = await fetch("http://localhost:4002/v1/class");
-    const classAPI = await res.json();
-    SetClasses(classAPI);
+    try {
+      const res = await axios.get(URL);
+      SetClasses(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

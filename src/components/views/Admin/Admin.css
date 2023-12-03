@@ -8,3 +8,7 @@
   justify-content: center;
   text-decoration: none;
 }
+
+.table-container {
+  margin-top: 40px; /* Ajusta según sea necesario */
+}
