@@ -21,13 +21,16 @@ const Footer = () => {
         
       <div className="column">
         <ul>
-            <li>NUESTRAS REDES</li>
+            <li className="f-centro">NUESTRAS REDES</li>
             <li>
 
           <div className="social-links">
-            <img src={Github} alt="link para Github" />
-            <img src={Instagram} alt="link para Instagram" />
-            <img src={Linkedin} alt="link para Linkedin" />
+            <a href="https://github.com/AILexisIsla/rolling_gym/"><img src={Github} alt="link para Github" /></a>
+
+            <a href="https://www.instagram.com/"><img src={Instagram} alt="link para Instagram" /></a>
+            
+            <a href="https://www.linkedin.com/"><img src={Linkedin} alt="link para Linkedin" /></a>
+            
           </div>
 
             </li>
@@ -36,10 +39,12 @@ const Footer = () => {
 
         <div className="column">
          <ul>
-            <li>¿NECESITAS AYUDA?</li>
-            <li>Preguntas frecuentes</li>
-            <li>Terminos y condiciones</li>
-            <li>Trabaja con nosotros</li>
+            <li className="f-izq">¿NECESITAS AYUDA?</li>
+            <div className="f-qf">
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Terminos y condiciones</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+            </div>
 
          </ul>
         </div>
