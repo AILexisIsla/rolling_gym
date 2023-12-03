@@ -6,22 +6,22 @@ export const testimonialsData = [
   {
     image: image1,
     review:
-      "I made the right choice by choosing the Fitclub and by choosing the right plan and program I already achieved my ideal body!",
-    name: "MATHEW HENDRICKSON",
-    status: "ENTREPRENEUR",
+      "Tomé la decisión correcta al elegir el Rolling Gym, eligiendo el plan y el programa correctos ¡Ya logré mi cuerpo ideal!",
+    name: "ALESSIO GARCÍA",
+    status: "Explorador Subacuático de Ecosistemas Marinos",
   },
   {
     image: image2,
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ipsam, ab itaque nam perferendis impedit sint ",
-    name: "JOHN KEVIN",
-    status: "COACH",
+      "En Rolling Gym, he descubierto un lugar donde la motivación y el bienestar se unen. ¡Mis entrenamientos son ahora una parte esencial de mi día!",
+    name: "Zephyr Stone",
+    status: "Ingeniero de Sistemas de Energía Renovable",
   },
   {
     image: image3,
     review:
-      " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur quod voluptatem",
-    name: "FRANKLIN",
-    status: "CUSTOMER",
+      "Como entusiasta del fitness, encontré en Rolling Gym un espacio que superó mis expectativas. Equipos de alta calidad y un ambiente que impulsa mi rendimiento. ¡Increíble!",
+    name: "Thorne Everhart",
+    status: "Cirujano de Reconstrucción Facial",
   },
 ];

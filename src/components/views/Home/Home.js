@@ -1,4 +1,5 @@
 import React from "react";
+import Testimonials from "../../../assets/Testimonials/Testimonials";
 import Programs from "../../Programs/Programs";
 import Hero from "../../Hero/Hero";
 import Reasons from "../../Reasons/Reasons";
@@ -11,6 +12,7 @@ const Home = () => {
       <Programs />
       <Reasons />
       <Plans />
+      <Testimonials />
     </div>
   );
 };
