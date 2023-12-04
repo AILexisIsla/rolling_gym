@@ -7,6 +7,8 @@ import Error404 from "./components/views/eror404/Error404";
 import { useEffect, useState } from "react";
 import Admin from "./components/views/Admin/Admin";
 import axios from "./config/axios";
+import CreateClass from "./components/views/CreateClass/CreateClass";
+import EditClass from "./components/views/EditClass/EditClass";
 
 function App() {
   const [classes, SetClasses] = useState([]);
@@ -33,6 +35,8 @@ function App() {
           <Route exact path="/Login" element={<Login />} />
           <Route exact path="/Register" element={<Register />} />
           <Route exact path="/Admin" element={<Admin classes={classes} />} />
+          <Route exact path="/class/create" element={<CreateClass/>} />
+          <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

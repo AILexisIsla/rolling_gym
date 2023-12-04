@@ -1,3 +1,11 @@
+.container-admin{
+  padding: 1rem
+}
+
+.table-admin{
+  margin: 1rem;
+}
+
 .btn {
   color: white;
   background-color: #3c3f45;
@@ -9,6 +17,9 @@
   text-decoration: none;
 }
 
-.table-container {
-  margin-top: 40px; /* Ajusta según sea necesario */
+.btn-edit-delete{
+  display: flex;
+  justify-content:center;
+  text-decoration: none;
+  margin: 2px;
 }
