@@ -7,6 +7,8 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
 import Calories from "../../assets/calories.png";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -74,12 +76,15 @@ const Hero = () => {
         <img src={hero_image_back} alt="" className="hero-image-back" />
 
         {/* calorias*/}
+        {/* FUNCION API */}
+        
+        
 
         <div className="calories">
           <img src={Calories} alt="" />
           <div>
-            <span>Calorias Quemadas</span>
-            <span>kcal 220</span>
+            <span>Cargando...</span>
+            <span>API</span>
           </div>
         </div>
       </div>
