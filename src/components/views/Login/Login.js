@@ -1,6 +1,6 @@
 import React from "react";
 import "../Login/Login.css";
-import logo from "/Proyectos HTML/React/rolling_gym/src/assets/logo.png";
+import logo from "../../../assets/logo.png";
 import Form from "./Form";
 
 const Login = () => {

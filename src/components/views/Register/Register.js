@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/Proyectos HTML/React/rolling_gym/src/assets/logo.png";
+import logo from "../../../assets/logo.png";
 import RegisterForm from "./RegisterForm";
 import "../Register/Register.css";
 
