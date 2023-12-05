@@ -10,14 +10,6 @@ import axios from "./config/axios";
 
 function App() {
 
-  const [weather, SetWeather] = useState(null);
-
-  useEffect(() => {
-    fetch("http://api.weatherapi.com/")
-    .then((response) => response.json())
-    .then((weather) => SetWeather(weather))
-  },[]);
-
   const [classes, SetClasses] = useState([]);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 

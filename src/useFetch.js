@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export function useFetch() {
+
+export function useFetch(url) {
     const [weather, SetWeather] = useState(null);
 
     useEffect(() => {
-        fetch(" http://api.weatherapi.com/")
+        fetch("url")
         .then((response) => Response.json())
         .then((weather) => SetWeather(weather));
     },[]);
+
+    return { weather};
 }
