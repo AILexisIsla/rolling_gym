@@ -2,6 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import {
+  validateEmailuser,
+  validateNameuser,
+  validatePassworduser,
+  validateTelefono,
+} from "../../helpers/ValidateFormRegister";
 
 const RegisterForm = () => {
   const [user, SetUser] = useState({
@@ -23,7 +29,15 @@ const RegisterForm = () => {
     e.preventDefault();
 
     // validar los campos
-
+    if (
+      !validateNameuser(user.nameUser) ||
+      !validateTelefono(user.telefono) ||
+      !validateEmailuser(user.emailUser) ||
+      !validatePassworduser(user.passwordUser)
+    ) {
+      Swal.fire("Oop!!", "Some data is invalid", "Error");
+      return;
+    }
     // envío de datos a guardar
     const newUser = {
       nameUser: user.nameUser,
@@ -62,6 +76,7 @@ const RegisterForm = () => {
           placeholder="NameUser"
           value={user.nameUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="number"
@@ -70,6 +85,7 @@ const RegisterForm = () => {
           placeholder="Telefono"
           value={user.telefono || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="email"
@@ -78,6 +94,7 @@ const RegisterForm = () => {
           placeholder="EmailUser"
           value={user.emailUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="password"
@@ -86,6 +103,7 @@ const RegisterForm = () => {
           placeholder="Password"
           value={user.passwordUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         {error && <p className="error-message">{error}</p>}
         <div className="sign-in-button">
