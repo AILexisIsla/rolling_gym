@@ -1,4 +1,3 @@
-/* global loading */
 import React from "react";
 import "./Hero.css";
 import Header from "../Header/Header";
@@ -8,9 +7,7 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
 import Calories from "../../assets/calories.png";
 import { Link } from "react-router-dom";
-import { useFetch } from "../../useFetch";
-
-
+import Weatherapi from "../Weather/Weather";
 const Hero = () => {
   return (
     <div className="hero">
@@ -78,29 +75,15 @@ const Hero = () => {
         <img src={hero_image_back} alt="" className="hero-image-back" />
 
         {/* calorias*/}
-        {/* FUNCION API */}
 
-        
-       
-<div className="calories">
-          <ul>
-            {loading && <li>Loading...</li>}
-          </ul>
-          </div>
-          </div>
-         
-{/*<img src={Calories} alt="" />
+        <div className="calories">
+          <img src={Calories} alt="" />
           <div>
-            <span>loading...</span>
-            <span>API</span>*/}
-         
-
-        
-
-          
-        
+          <Weatherapi />
+          </div>
+        </div>
       </div>
-    
+    </div>
   );
 };
 
