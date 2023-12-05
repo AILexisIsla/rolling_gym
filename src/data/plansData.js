@@ -52,7 +52,7 @@ export const plansData = [
     price: "6.500",
     features: [
       "5 horas de ejercicios",
-      "Acceso a área exclusiva de musculación",,
+      "Acceso a área exclusiva de musculación",
       "Acceso al minibar",
     ],
   },

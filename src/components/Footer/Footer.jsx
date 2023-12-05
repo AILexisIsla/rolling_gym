@@ -4,6 +4,7 @@ import Github from "../../assets/github.png";
 import Instagram from "../../assets/instagram.png";
 import Linkedin from "../../assets/linkedin.png";
 import Logo from "../../assets/logo.png";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -42,13 +43,16 @@ const Footer = () => {
             <li className="f-izq">¿NECESITAS AYUDA?</li>
             <div className="f-qf">
               <li>
-                <a href="#">Preguntas frecuentes</a>
+                <Link to="/*">Preguntas frecuentes</Link>
               </li>
               <li>
-                <a href="#">Terminos y condiciones</a>
+                <Link to="/*">Terminos y condiciones</Link>
               </li>
               <li>
-                <a href="#">Trabaja con nosotros</a>
+                <Link to="/*">Trabaja con nosotros</Link>
+              </li>
+              <li>
+                <Link to="/AboutUs">Acerca de nosotros</Link>
               </li>
             </div>
           </ul>

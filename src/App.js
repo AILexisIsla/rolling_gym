@@ -6,6 +6,7 @@ import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/eror404/Error404";
 import { useEffect, useState } from "react";
 import Admin from "./components/views/Admin/Admin";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const [classes, SetClasses] = useState([]);
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/Register" element={<Register />} />
           <Route exact path="/Admin" element={<Admin classes={classes} />} />
           <Route exact path="*" element={<Error404 />} />
+          <Route exact path="/AboutUs" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     </div>
