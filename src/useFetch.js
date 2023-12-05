@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 
-
 export function useFetch(url) {
-    const [weather, SetWeather] = useState(null);
+  const [weather, SetWeather] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch("url")
-        .then((response) => Response.json())
-        .then((weather) => SetWeather(weather));
-    },[]);
+  useEffect(() => {
+    setLoading(true);
+    fetch("url")
+      .then((response) => Response.json())
+      .then((weather) => SetWeather(weather))
+      .finally(() => setLoading(false));
+  }, []);
 
-    return { weather};
+  return { weather, loading };
 }
