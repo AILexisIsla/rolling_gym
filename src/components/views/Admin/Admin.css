@@ -1,8 +1,8 @@
-.container-admin{
-  padding: 1rem
+.container-admin {
+  padding: 1rem;
 }
 
-.table-admin{
+.table-admin {
   margin: 1rem;
 }
 
@@ -17,9 +17,19 @@
   text-decoration: none;
 }
 
-.btn-edit-delete{
+.btn-edit-delete {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   text-decoration: none;
   margin: 2px;
+}
+
+.modal-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-dialog {
+  margin: 0;
 }

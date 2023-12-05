@@ -35,7 +35,11 @@ function App() {
           <Route exact path="/Login" element={<Login />} />
           <Route exact path="/Register" element={<Register />} />
           <Route exact path="/Admin" element={<Admin classes={classes} />} />
-          <Route exact path="/class/create" element={<CreateClass/>} />
+          <Route
+            exact
+            path="/class/create"
+            element={<CreateClass URL={URL} getClassApi={getClassApi} />}
+          />
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="*" element={<Error404 />} />
         </Routes>

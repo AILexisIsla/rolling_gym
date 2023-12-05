@@ -9,10 +9,11 @@ const Admin = ({ classes }) => {
         <div>
           <h1>Clases</h1>
           <hr />
-          <Link className="btn" to="/CreateClass">
+          <Link to="/class/create" className="btn">
             Crear Clase
           </Link>
         </div>
+
         {classes?.length !== 0 ? (
           <Table bordered hover responsive className="table-admin">
             <thead>
