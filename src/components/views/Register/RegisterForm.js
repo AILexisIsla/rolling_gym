@@ -51,7 +51,22 @@ const RegisterForm = () => {
 
       if (res && res.data) {
         if (res.status === 201) {
-          Swal.fire("Created!", "Your user has been created.", "success");
+          Swal.fire("Created!", "Your user has been created.", "success", {
+            showClass: {
+              popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `,
+            },
+            hideClass: {
+              popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `,
+            },
+          });
           const data = res.data;
           console.log(data);
           localStorage.setItem("user-token", JSON.stringify(data));

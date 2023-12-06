@@ -26,7 +26,13 @@ const Form = () => {
         passwordUser: user.passwordUser,
       });
       if (res.status === 200) {
-        Swal.fire("Logged!", "Your user has been logged.", "success");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Logueado! Su usuario ha sido logueado.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         const data = res.data;
         localStorage.setItem("user-token", JSON.stringify(data));
         navigate("/");
