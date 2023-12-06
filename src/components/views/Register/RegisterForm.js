@@ -1,26 +1,43 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import {
+  validateEmailuser,
+  validateNameuser,
+  validatePassworduser,
+  validateTelefono,
+} from "../../helpers/ValidateFormRegister";
 
 const RegisterForm = () => {
-  const [user, SetUser] = useState({});
+  const [user, SetUser] = useState({
+    nameUser: "",
+    telefono: "",
+    emailUser: "",
+    passwordUser: "",
+  });
   const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const URL = process.env.REACT_APP_API_USER;
+  const URL = process.env.REACT_APP_GYMNASIO_ROLLING_USER;
 
   const handleChange = (event) => {
-    const name = event.target.name; // Utiliza el atributo 'name' del campo de entrada
+    const name = event.target.name;
     const value = event.target.value;
     SetUser((values) => ({ ...values, [name]: value }));
   };
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // validar los campos
-
+    if (
+      !validateNameuser(user.nameUser) ||
+      !validateTelefono(user.telefono) ||
+      !validateEmailuser(user.emailUser) ||
+      !validatePassworduser(user.passwordUser)
+    ) {
+      Swal.fire("Oop!!", "Some data is invalid", "Error");
+      return;
+    }
     // envío de datos a guardar
     const newUser = {
       nameUser: user.nameUser,
@@ -30,26 +47,37 @@ const RegisterForm = () => {
     };
 
     try {
-      const res = await axios.post(`${URL}`, newUser);
-      console.log(res);
+      const res = await axios.post(`${URL}/Register`, newUser);
 
       if (res && res.data) {
         if (res.status === 201) {
-          Swal.fire("Created!", "Your user has been created.", "success");
+          Swal.fire("Created!", "Your user has been created.", "success", {
+            showClass: {
+              popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `,
+            },
+            hideClass: {
+              popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `,
+            },
+          });
           const data = res.data;
           console.log(data);
-          // Realizar las acciones necesarias después de un registro exitoso
-          // Por ejemplo, almacenar datos en el local storage, establecer el usuario autenticado, etc.
-          // ...
+          localStorage.setItem("user-token", JSON.stringify(data));
+          navigate("/Login");
         }
       } else {
         console.error("Error: Response or response data is undefined");
       }
     } catch (error) {
-      console.log(error);
-      setError(true);
-      error.response?.data?.message &&
-        setErrorMessage(error.response.data.message);
+      console.error("Error al registrar el usuario", error.response.data);
+      setError(error.response.data.message);
     }
   };
 
@@ -63,6 +91,7 @@ const RegisterForm = () => {
           placeholder="NameUser"
           value={user.nameUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="number"
@@ -71,6 +100,7 @@ const RegisterForm = () => {
           placeholder="Telefono"
           value={user.telefono || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="email"
@@ -79,6 +109,7 @@ const RegisterForm = () => {
           placeholder="EmailUser"
           value={user.emailUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
         <input
           type="password"
@@ -87,24 +118,22 @@ const RegisterForm = () => {
           placeholder="Password"
           value={user.passwordUser || ""}
           onChange={(e) => handleChange(e)}
+          required
         ></input>
-
+        {error && <p className="error-message">{error}</p>}
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
             REGISTER
           </button>
           <p>
             <span>
-              <Link to='/Login' className="sign-up">| Sign IN |</Link>
+              <Link to="/Login" className="sign-up">
+                | Sign IN |
+              </Link>
             </span>
           </p>
         </div>
       </form>
-      {error ? (
-        <Alert variant="danger" onClick={() => setError(false)} dismissible>
-          {errorMessage}
-        </Alert>
-      ) : null}
     </div>
   );
 };
