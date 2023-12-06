@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Login" element={<Login />} />
           <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/Admin" element={<Admin classes={classes} />} />
+          <Route exact path="/Admin" element={<Admin classes={classes} getClassApi={getClassApi} />} />
           <Route
             exact
             path="/class/create"
