@@ -114,14 +114,14 @@ const CreateClass = ({ URL, getClassApi }) => {
             onChange={handleChange}
           ></input>
           <input
-            type="text"
+            type="date"
             name="dateClass"
             className="input-login"
             placeholder="Date Class"
             onChange={handleChange}
           ></input>
           <input
-            type="text"
+            type="time"
             name="timeClass"
             className="input-login"
             placeholder="Time Class"
