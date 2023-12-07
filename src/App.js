@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./components/views/Login/Login";
 import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
-import Error404 from "./components/views/eror404/Error404";
+import Error404 from "./components/views/Error404/Error404";
 import { useEffect, useState } from "react";
 import Admin from "./components/views/Admin/Admin";
 import axios from "./config/axios";
