@@ -9,12 +9,14 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    padding: 15vh 1rem;
   }
 
   .AboutUs > section >span{
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
+    padding-top: 25vh;
   }
 
   .boxAbout {
@@ -88,7 +90,75 @@ th, td {
 
 @media screen and (max-width: 768px) {
   .AboutUs {
-    padding: 50rem 1rem;
+    padding: 20rem 1rem;
+    
+  }
+
+  .AboutUs > section{
+    text-align: center;
+  }
+
+  .boxAbout {
+    width: 80%; 
+  } 
+
+  .tableA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    th, td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    th {
+      text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+  .AboutUs {
+    padding: 30rem 1rem;
+    
+  }
+
+  .AboutUs > section{
+    text-align: center;
+  }
+
+  .boxAbout {
+    width: 80%; 
+  } 
+
+  .tableA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    th, td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    th {
+      text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+  .AboutUs {
+    padding: 40rem 1rem;
     
   }
 
