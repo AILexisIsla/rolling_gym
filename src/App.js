@@ -12,6 +12,7 @@ import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
+
   const [classes, SetClasses] = useState([]);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import NumberCounter from 'number-counter';
 
+import Weatherapi from "../Weather/Weather";
 const Hero = () => {
 
   const transition = {type: 'spring', duration: 3}
@@ -110,8 +111,7 @@ const Hero = () => {
         className="calories">
           <img src={Calories} alt="" />
           <div>
-            <span>Calorias Quemadas</span>
-            <span>kcal 220</span>
+          <Weatherapi />
           </div>
         </motion.div>
       </div>
