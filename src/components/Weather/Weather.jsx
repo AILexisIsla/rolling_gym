@@ -5,7 +5,7 @@ function Weatherapi() {
   const [datos, setDatos] = useState(null);
 
   useEffect(() => {
-    axios.get('http://api.weatherapi.com/')
+    axios.get('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={ace125f38104ae53c708c6b3a55561f2}')
       .then(response => {
         setDatos(response.data);
       });
