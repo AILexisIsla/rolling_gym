@@ -21,7 +21,7 @@ const AboutUs = () => {
             <span id="stAbout">B</span>ienvenido a Rolling Gym, tu destino
             definitivo para alcanzar tus metas fitness y transformar tu estilo
             de vida. Fundado por un apasionado trío de entusiastas del fitness:
-            Alexis Isla, Lucas Corbalan y Julieta Ferreyra.
+            Alexis Isla, Lucas Corbalan, Laín Robles y Julieta Ferreyra.
           </p>
         </div>
 
