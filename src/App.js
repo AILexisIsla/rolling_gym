@@ -45,6 +45,15 @@ function App() {
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="*" element={<Error404 />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
+
+          {/*<Route path="/" element={<Layout/>}>
+
+          <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="calendar" element={<Calendar/>}/>
+          <Route path="board" element={<BoardPage/>}/>
+          <Route path="users" element={<DataGrid/>}/>
+          
+  </Route>*/}
         </Routes>
       </BrowserRouter>
     </div>
