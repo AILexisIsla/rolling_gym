@@ -12,7 +12,6 @@ import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
-
   const [classes, SetClasses] = useState([]);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
@@ -36,7 +35,11 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Login" element={<Login />} />
           <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/Admin" element={<Admin classes={classes} getClassApi={getClassApi} />} />
+          <Route
+            exact
+            path="/Admin"
+            element={<Admin classes={classes} getClassApi={getClassApi} />}
+          />
           <Route
             exact
             path="/class/create"
@@ -53,7 +56,7 @@ function App() {
           <Route path="board" element={<BoardPage/>}/>
           <Route path="users" element={<DataGrid/>}/>
           
-  </Route>*/}
+          </Route>*/}
         </Routes>
       </BrowserRouter>
     </div>
