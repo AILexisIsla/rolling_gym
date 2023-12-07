@@ -72,3 +72,11 @@
   background-position: center;
   opacity: 0.5;
 }
+
+.blur{
+  background: rgba(253,128,43,0.69);
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -9;
+}

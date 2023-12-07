@@ -9,6 +9,7 @@ import Admin from "./components/views/Admin/Admin";
 import axios from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const [classes, SetClasses] = useState([]);
@@ -42,6 +43,7 @@ function App() {
           />
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="*" element={<Error404 />} />
+          <Route exact path="/AboutUs" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     </div>
