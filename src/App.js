@@ -10,7 +10,7 @@ import axios from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
-
+import Details from "./pages/Details/Details";
 function App() {
   const [classes, SetClasses] = useState([]);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
@@ -48,7 +48,7 @@ function App() {
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="*" element={<Error404 />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
-
+          <Route exact path="/pages/Details" element={<Details />} />
           {/*<Route path="/" element={<Layout/>}>
 
           <Route path="dashboard" element={<Dashboard/>}/>
