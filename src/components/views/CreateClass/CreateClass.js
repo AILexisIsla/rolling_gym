@@ -29,7 +29,14 @@ const CreateClass = ({ URL, getClassApi }) => {
     console.log("Inputs:", inputs);
     if (Object.values(inputs).some((value) => value.trim() === "")) {
       console.log("Datos inválidos: Campos vacíos");
-      Swal.fire("Oop!!", "Some data is invalid", "error");
+      Swal.fire({
+        title: "Oop!!",
+        text: "Algunos datos no son válidos",
+        icon: "error",
+        customClass: {
+          popup: "swal-custom-style",
+        },
+      });
       return;
     }
 
@@ -52,13 +59,16 @@ const CreateClass = ({ URL, getClassApi }) => {
       timeClass: inputs.timeClass,
     };
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Estás seguro?",
+      text: "No podrás revertir esto.!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#f87c00",
       cancelButtonColor: "#d33",
       confirmButtonText: "Save",
+      customClass: {
+        popup: "swal-custom-style",
+      },
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -69,11 +79,14 @@ const CreateClass = ({ URL, getClassApi }) => {
             },
           });
           if (res.status === STATUS_CREATECLASS) {
-            Swal.fire(
-              "Created",
-              "Your product has been created successfully",
-              "success"
-            );
+            Swal.fire({
+              title: "Creado",
+              text: "Su producto se ha creado correctamente",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
             e.target.reset();
             getClassApi();
             navigate("/Admin");

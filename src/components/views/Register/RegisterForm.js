@@ -35,7 +35,14 @@ const RegisterForm = () => {
       !validateEmailuser(user.emailUser) ||
       !validatePassworduser(user.passwordUser)
     ) {
-      Swal.fire("Oop!!", "Some data is invalid", "Error");
+      Swal.fire({
+        title: "Oops...",
+        text: "Algunos datos no son válidos!",
+        icon: "error",
+        customClass: {
+          popup: "swal-custom-style",
+        },
+      });
       return;
     }
     // envío de datos a guardar
@@ -51,7 +58,10 @@ const RegisterForm = () => {
 
       if (res && res.data) {
         if (res.status === 201) {
-          Swal.fire("Created!", "Your user has been created.", "success", {
+          Swal.fire({
+            title: "Creado!",
+            text: "Tu usuario ha sido creado.",
+            icon: "success",
             showClass: {
               popup: `
               animate__animated
@@ -65,6 +75,9 @@ const RegisterForm = () => {
               animate__fadeOutDown
               animate__faster
             `,
+            },
+            customClass: {
+              popup: "swal-custom-style",
             },
           });
           const data = res.data;

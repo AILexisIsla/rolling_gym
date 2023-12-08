@@ -32,6 +32,9 @@ const Form = () => {
           title: "Logueado! Su usuario ha sido logueado.",
           showConfirmButton: false,
           timer: 1500,
+          customClass: {
+            popup: "swal-custom-style",
+          },
         });
         const data = res.data;
         localStorage.setItem("user-token", JSON.stringify(data));
