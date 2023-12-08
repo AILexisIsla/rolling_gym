@@ -85,3 +85,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: #f48915;
 }
+
+.datos-temp{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
