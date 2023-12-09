@@ -9,7 +9,7 @@ import {
   validateTelefono,
 } from "../../helpers/ValidateFormRegister";
 
-const RegisterForm = () => {
+const RegisterForm = ({ SetLoading }) => {
   const [user, SetUser] = useState({
     nameUser: "",
     telefono: "",
@@ -82,6 +82,7 @@ const RegisterForm = () => {
           });
           const data = res.data;
           console.log(data);
+          SetLoading(data);
           localStorage.setItem("user-token", JSON.stringify(data));
           navigate("/Login");
         }

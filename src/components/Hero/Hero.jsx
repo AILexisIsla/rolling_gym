@@ -6,14 +6,48 @@ import hero_image from "../../assets/hero_image.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
 import Calories from "../../assets/calories.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
 
 import Weatherapi from "../Weather/Weather";
-const Hero = () => {
+import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+const Hero = ({ loading, SetLoading }) => {
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
+  const navigate = useNavigate();
+  const logOut = () => {
+    Swal.fire({
+      title: "¿Estás seguro de",
+      text: "que quieres cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+      customClass: {
+        popup: "swal-custom-style",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Su sesion se cerro correctamente.",
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            popup: "swal-custom-style",
+          },
+        });
+        localStorage.removeItem("user-token");
+        SetLoading({});
+        navigate("/");
+      }
+    });
+  };
   return (
     <div className="hero" id="home">
       <div className="blur hero-blur"></div>
@@ -82,9 +116,20 @@ const Hero = () => {
         </div>
       </div>
       <div className="right-h">
-        <Link to="/Login" className="btn">
-          Unete ahora
-        </Link>
+        {loading?.token ? (
+          <>
+            <Button className="btn" onClick={logOut}>
+              Cerrar Sesion
+            </Button>
+            <Link to="/Admin" className="btn">
+              Admin
+            </Link>
+          </>
+        ) : (
+          <Link to="/Login" className="btn">
+            Unete ahora
+          </Link>
+        )}
 
         <motion.div
           initial={{ right: "-1rem" }}

@@ -28,7 +28,7 @@ function Weatherapi() {
     } else {
       return (
         <BsBrightnessHighFill
-          style={{ color: "rgb(255, 68, 0)", fontSize: "2.5rem" }}
+          style={{ color: "#FFD700", fontSize: "2.5rem" }}
         />
       );
     }
@@ -45,7 +45,7 @@ function Weatherapi() {
             {" "}
             {
               <BsCloudHaze2
-                style={{ color: "white", fontSize: "1.8rem", padding: "3px" }}
+                style={{ color: "#87CEEB", fontSize: "1.8rem", padding: "3px" }}
               />
             }
             {datos.humedad}{" "}

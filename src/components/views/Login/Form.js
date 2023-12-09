@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Form = () => {
+const Form = ({ SetLoading }) => {
   const [user, SetUser] = useState({
     emailUser: "",
     passwordUser: "",
@@ -37,6 +37,7 @@ const Form = () => {
           },
         });
         const data = res.data;
+        SetLoading(data);
         localStorage.setItem("user-token", JSON.stringify(data));
         navigate("/");
       }

@@ -14,6 +14,7 @@ import Contacto from "./components/views/Contacto/Contacto";
 
 function App() {
   const [classes, SetClasses] = useState([]);
+  const [loading, SetLoading] = useState({});
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
@@ -33,9 +34,21 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
+          <Route
+            exact
+            path="/"
+            element={<Home loading={loading} SetLoading={SetLoading} />}
+          />
+          <Route
+            exact
+            path="/Login"
+            element={<Login SetLoading={SetLoading} />}
+          />
+          <Route
+            exact
+            path="/Register"
+            element={<Register SetLoading={SetLoading} />}
+          />
           <Route
             exact
             path="/Admin"
