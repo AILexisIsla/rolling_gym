@@ -13,7 +13,7 @@ import NumberCounter from "number-counter";
 import Weatherapi from "../Weather/Weather";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
-const Hero = ({ loading, SetLoading }) => {
+const Hero = ({ isLoggedIn, SetIsLoggedIn }) => {
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Hero = ({ loading, SetLoading }) => {
           },
         });
         localStorage.removeItem("user-token");
-        SetLoading({});
+        SetIsLoggedIn({});
         navigate("/");
       }
     });
@@ -116,7 +116,7 @@ const Hero = ({ loading, SetLoading }) => {
         </div>
       </div>
       <div className="right-h">
-        {loading?.token ? (
+        {isLoggedIn?.token ? (
           <>
             <Button className="btn" onClick={logOut}>
               Cerrar Sesion

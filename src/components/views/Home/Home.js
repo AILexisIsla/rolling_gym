@@ -7,10 +7,10 @@ import Plans from "../../Plans/Plans";
 import ContactUs from "../../contactUs/contactUs";
 import Footer from "../../Footer/Footer";
 
-const Home = ({ loading, SetLoading }) => {
+const Home = ({ isLoggedIn, SetIsLoggedIn }) => {
   return (
     <div>
-      <Hero loading={loading} SetLoading={SetLoading} />
+      <Hero isLoggedIn={isLoggedIn} SetIsLoggedIn={SetIsLoggedIn} />
       <Programs />
       <Reasons />
       <Plans />

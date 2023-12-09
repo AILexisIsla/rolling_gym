@@ -16,7 +16,7 @@ const userInfoLS = JSON.parse(localStorage.getItem("user-token"));
 
 function App() {
   const [classes, SetClasses] = useState([]);
-  const [loading, SetLoading] = useState(userInfoLS);
+  const [isLoggedIn, SetIsLoggedIn] = useState(userInfoLS);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
@@ -39,17 +39,17 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Home loading={loading} SetLoading={SetLoading} />}
+            element={<Home isLoggedIn={isLoggedIn} SetIsLoggedIn={SetIsLoggedIn} />}
           />
           <Route
             exact
             path="/Login"
-            element={<Login SetLoading={SetLoading} />}
+            element={<Login SetIsLoggedIn={SetIsLoggedIn} />}
           />
           <Route
             exact
             path="/Register"
-            element={<Register SetLoading={SetLoading} />}
+            element={<Register SetIsLoggedIn={SetIsLoggedIn} />}
           />
           <Route
             exact

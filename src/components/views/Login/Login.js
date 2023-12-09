@@ -3,7 +3,7 @@ import "../Login/Login.css";
 import logo from "../../../assets/logo.png";
 import Form from "./Form";
 
-const Login = ({ SetLoading }) => {
+const Login = ({ SetIsLoggedIn }) => {
   return (
     <>
       <div className="background-images">
@@ -11,7 +11,7 @@ const Login = ({ SetLoading }) => {
           <img src={logo} alt="" />
         </div>
       </div>
-      <Form SetLoading={SetLoading} />
+      <Form SetIsLoggedIn={SetIsLoggedIn} />
     </>
   );
 };
