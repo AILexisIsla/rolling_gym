@@ -12,9 +12,11 @@ import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacto from "./components/views/Contacto/Contacto";
 
+const userInfoLS = JSON.parse(localStorage.getItem("user-token"));
+
 function App() {
   const [classes, SetClasses] = useState([]);
-  const [loading, SetLoading] = useState({});
+  const [loading, SetLoading] = useState(userInfoLS);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
