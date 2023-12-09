@@ -3,7 +3,7 @@ import logo from "../../../assets/logo.png";
 import RegisterForm from "./RegisterForm";
 import "../Register/Register.css";
 
-const Register = ({ SetIsLoggedIn }) => {
+const Register = ({ SetLoading }) => {
   return (
     <>
       <div className="background-image">
@@ -11,7 +11,7 @@ const Register = ({ SetIsLoggedIn }) => {
           <img src={logo} alt="" />
         </div>
       </div>
-      <RegisterForm SetIsLoggedIn={SetIsLoggedIn} />
+      <RegisterForm SetLoading={SetLoading} />
     </>
   );
 };

@@ -113,8 +113,9 @@
 }
 .right-h > .btn:nth-child(2) {
   position: absolute;
+  width: 15rem;
   right: 3rem;
-  top: 2.5rem;
+  top: 2rem;
   color: white;
   text-decoration: none;
 }
@@ -122,7 +123,7 @@
 .right-h .btn[href="/Login"] {
   position: absolute;
   right: 3rem;
-  top: 2.5rem;
+  top: 2rem;
   color: white;
   text-decoration: none;
 }

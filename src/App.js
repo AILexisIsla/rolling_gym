@@ -12,11 +12,11 @@ import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacto from "./components/views/Contacto/Contacto";
 
-const userInfoLS = JSON.parse(localStorage.getItem("user-token"));
+const userInfoLs = JSON.parse(localStorage.getItem("user-token"));
 
 function App() {
   const [classes, SetClasses] = useState([]);
-  const [isLoggedIn, SetIsLoggedIn] = useState(userInfoLS);
+  const [loading, SetLoading] = useState(userInfoLs);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
@@ -39,17 +39,17 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Home isLoggedIn={isLoggedIn} SetIsLoggedIn={SetIsLoggedIn} />}
+            element={<Home loading={loading} SetLoading={SetLoading} />}
           />
           <Route
             exact
             path="/Login"
-            element={<Login SetIsLoggedIn={SetIsLoggedIn} />}
+            element={<Login SetLoading={SetLoading} />}
           />
           <Route
             exact
             path="/Register"
-            element={<Register SetIsLoggedIn={SetIsLoggedIn} />}
+            element={<Register SetLoading={SetLoading} />}
           />
           <Route
             exact
