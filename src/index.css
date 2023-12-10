@@ -27,15 +27,6 @@ code {
   );
 }
 
-#dashboard {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--black);
-  color: white;
-  font-family: "Public Sans", sans-serif;
-  overflow: hidden;
-}
-
 .theme-container {
   background: rgba(0, 0, 0, 0.59);
   border-radius: 20px;

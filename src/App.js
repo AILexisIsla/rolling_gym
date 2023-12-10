@@ -53,8 +53,8 @@ function App() {
           <Route exact path="/Admin" element={<Layout classes={classes} getClassApi={getClassApi} id="dashboard"/>} >
 
           <Route path="Dashboard" element={<Dashboard/>}/>
-          </Route>
 
+          </Route>
 
           </Routes>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import moment from "moment/moment";
 import css from "./Layout.module.css";
 import { BiSearch } from "react-icons/bi";
-//import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
 import "../../../src/index.css"
@@ -13,7 +13,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
 
   return (
     <div className={`${css.container} ${css.dashboardApp} ${classes}`}>
-      {/* <Sidebar /> */}
+      <Sidebar/>
 
       {pathname === "/" && <Navigate to="/dashboard" />}
 
