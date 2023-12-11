@@ -6,13 +6,13 @@ import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/eror404/Error404";
 import { useEffect, useState } from "react";
-//import Admin from "./components/views/Admin/Admin";
 import axios from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
+import Calendar from "./components/Pages/Calendar/Calendar";
 
 function App() {
 
@@ -53,6 +53,7 @@ function App() {
           <Route exact path="/Admin" element={<Layout classes={classes} getClassApi={getClassApi} id="dashboard"/>} >
 
           <Route path="Dashboard" element={<Dashboard/>}/>
+          <Route path="Calendar" element={<Calendar/>}/>
 
           </Route>
 
