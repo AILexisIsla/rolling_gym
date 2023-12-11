@@ -19,10 +19,6 @@ const Sidebar = () => {
           <AiFillCalendar size={30} />
         </NavLink>
 
-        <NavLink to="board" className={css.item} title="Tablero Trello">
-          <FaTasks size={30} />
-        </NavLink>
-
         <NavLink to="users" className={css.item} title="Usuario">
           <AiOutlineTable size={30} />
         </NavLink>

@@ -1,10 +1,7 @@
 import {
   BrowserRouter,
   Route,
-  Routes,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+  Routes} from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import Login from "./components/views/Login/Login";
