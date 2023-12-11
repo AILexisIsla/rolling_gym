@@ -1,59 +1,46 @@
 import moment from "moment/moment";
 
+// Datos de tablero
 export const cardsData = [
   {
-    title: "Revenue",
-    change: 24,
+    title: "Ingresos",
+    qantity: 24,
     amount: 42056,
   },
   {
-    title: "Orders",
-    change: -14,
+    title: "Clases",
+    qantity: 14,
     amount: 52125.03,
   },
   {
-    title: "Expenses",
-    change: 18,
+    title: "Miembros",
+    qantity: 18,
     amount: 1216.5,
-  },
-  {
-    title: "Profit",
-    change: 12,
-    amount: 10125.0,
   },
 ];
 
+//Ordenes del día - detalles
 export const ordersData = [
   {
-    name: "Skatebnoard",
-    type: "Illustration",
+    name: "PLAN SOLO CLASES",
     items: 58,
     change: 290,
   },
   {
-    name: "Language courses",
-    type: "Illustration",
+    name: "PLAN MUSCULACION",
     items: 12,
     change: 72
   },
   {
-    name: "Office Collaboration",
-    type: "Illustration",
+    name: "PLAN FULL",
     items: 7,
     change: 70
   },
-  {
-    name: "Robot",
-    type: "Illustration",
-    items: 21,
-    change: 15
-  }
 ]
-
 
 //Obtener el valor en formato de número de grupo
 export const groupNumber = (number) => {
-  return parseFloat(number.toFixed(2)).toLocaleString("en", {
+  return parseFloat(number.toFixed(2)).toLocaleString("es", {
     useGrouping: true,
   });
 };

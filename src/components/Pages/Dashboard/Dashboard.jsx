@@ -1,7 +1,7 @@
-//import Orders from '../../components/Orders/Orders';
-//import Statistics from '../../components/Statistics/Statistics';
 import { cardsData, groupNumber } from '../../../data';
 import css from './Dashboard.module.css';
+import Statistics from '../../Statistics/Statistics';
+import Orders from '../../Orders/Orders';
 
 const Dashboard = () => {
   return <div className={css.container}>
@@ -11,7 +11,7 @@ const Dashboard = () => {
       
       <div className={`${css.dashboardHead} theme-container`}>
         <div className={css.head}>
-          <span>Dashboard</span>
+          <span>Tablero</span>
 
           <div className={css.durationButton}>
             <select>
@@ -40,11 +40,11 @@ const Dashboard = () => {
           </div>
       </div>
 
-      {/* <Statistics/> */}
+      <Statistics/>
 
     </div>
 
-      {/* <Orders/> */}
+      <Orders/>
   </div>
 }
 

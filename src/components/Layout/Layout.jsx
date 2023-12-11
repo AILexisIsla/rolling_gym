@@ -10,12 +10,11 @@ const Layout = ({ classes, getClassApi, children, id }) => {
 
   const { pathname } = useLocation()
 
-
   return (
     <div className={`${css.container} ${css.dashboardApp} ${classes}`}>
       <Sidebar/>
 
-      {pathname === "/" && <Navigate to="/dashboard" />}
+      {pathname === "/" && <Navigate to="/Dashboard" />}
 
 
       <div className={css.dashboard}>
@@ -31,7 +30,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
 
           <div className={css.searchBar}>
             <BiSearch size={20} />
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Buscar" />
           </div>
 
           <div className={css.profile}>
@@ -45,7 +44,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         </div>
 
         <div className={css.content}>
-          {/* <Outlet /> */}
+          <Outlet />
         </div>
       </div>
     </div>
