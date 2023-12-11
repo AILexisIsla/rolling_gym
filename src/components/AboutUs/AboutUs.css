@@ -72,8 +72,8 @@
    padding: 1rem 0;
 }
 
-th, td {
-    border: 0.2rem solid rgba(0, 0, 0, 0.514);
+.thAbout, .tdAbout {
+    border: 0.2rem solid rgba(0, 0, 0, 0.514)!important;
     border-radius: 10px;
     box-shadow: 0 0 1rem rgba(253,128,43,0.69)
   }
