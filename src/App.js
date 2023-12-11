@@ -1,4 +1,10 @@
-import { BrowserRouter, Route, Routes, useNavigate, useLocation  } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import Login from "./components/views/Login/Login";
@@ -15,7 +21,6 @@ import Layout from "./components/Layout/Layout";
 import Calendar from "./components/Pages/Calendar/Calendar";
 
 function App() {
-
   const [classes, SetClasses] = useState([]);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
@@ -50,14 +55,21 @@ function App() {
           <Route exact path="/AboutUs" element={<AboutUs />} />
 
           {/* Pagina de administacion */}
-          <Route exact path="/Admin" element={<Layout classes={classes} getClassApi={getClassApi} id="dashboard"/>} >
-
-          <Route path="Dashboard" element={<Dashboard/>}/>
-          <Route path="Calendar" element={<Calendar/>}/>
-
+          <Route
+            exact
+            path="/Admin"
+            element={
+              <Layout
+                classes={classes}
+                getClassApi={getClassApi}
+                id="dashboard"
+              />
+            }
+          >
+            <Route path="Dashboard" element={<Dashboard />} />
+            <Route path="Calendar" element={<Calendar />} />
           </Route>
-
-          </Routes>
+        </Routes>
       </BrowserRouter>
     </div>
   );

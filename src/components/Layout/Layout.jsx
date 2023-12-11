@@ -4,18 +4,16 @@ import { BiSearch } from "react-icons/bi";
 import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
-import "../../../src/index.css"
+import "../../../src/index.css";
 
 const Layout = ({ classes, getClassApi, children, id }) => {
-
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   return (
     <div className={`${css.container} ${css.dashboardApp} ${classes}`}>
-      <Sidebar/>
+      <Sidebar />
 
       {pathname === "/" && <Navigate to="/Dashboard" />}
-
 
       <div className={css.dashboard}>
         <div className={css.topBaseGradients}>
@@ -25,7 +23,6 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         </div>
 
         <div className={css.header}>
-
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
 
           <div className={css.searchBar}>
@@ -34,13 +31,16 @@ const Layout = ({ classes, getClassApi, children, id }) => {
           </div>
 
           <div className={css.profile}>
-            <img src={imageProfile} alt="foto de perfil" className="imgProfile" />
+            <img
+              src={imageProfile}
+              alt="foto de perfil"
+              className="imgProfile"
+            />
             <div className={css.details}>
               <span>Lucas Corbalan</span>
               <span>oscar.corbala@gmail.com</span>
             </div>
           </div>
-
         </div>
 
         <div className={css.content}>
