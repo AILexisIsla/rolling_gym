@@ -11,9 +11,10 @@ import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacto from "./components/views/Contacto/Contacto";
+import Details from "./pages/Details/Details";
 
 const userInfoLs = JSON.parse(localStorage.getItem("user-token"));
-import Details from "./pages/Details/Details";
+
 function App() {
   const [classes, SetClasses] = useState([]);
   const [loading, SetLoading] = useState(userInfoLs);
