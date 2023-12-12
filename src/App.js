@@ -10,9 +10,13 @@ import axios from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Contacto from "./components/views/Contacto/Contacto";
+
+const userInfoLs = JSON.parse(localStorage.getItem("user-token"));
 import Details from "./pages/Details/Details";
 function App() {
   const [classes, SetClasses] = useState([]);
+  const [loading, SetLoading] = useState(userInfoLs);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
 
   useEffect(() => {
@@ -32,9 +36,21 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
+          <Route
+            exact
+            path="/"
+            element={<Home loading={loading} SetLoading={SetLoading} />}
+          />
+          <Route
+            exact
+            path="/Login"
+            element={<Login SetLoading={SetLoading} />}
+          />
+          <Route
+            exact
+            path="/Register"
+            element={<Register SetLoading={SetLoading} />}
+          />
           <Route
             exact
             path="/Admin"
@@ -46,8 +62,9 @@ function App() {
             element={<CreateClass URL={URL} getClassApi={getClassApi} />}
           />
           <Route exact path="/class/edit/:id" element={<EditClass />} />
-          <Route exact path="*" element={<Error404 />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
+          <Route exact path="/contacto" element={<Contacto />} />
+          <Route exact path="*" element={<Error404 />} />
           <Route exact path="/pages/Details" element={<Details />} />
           {/*<Route path="/" element={<Layout/>}>
 

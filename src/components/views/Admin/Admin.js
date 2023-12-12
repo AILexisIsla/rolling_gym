@@ -17,6 +17,9 @@ const Admin = ({ classes, getClassApi }) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Eliminar",
+      customClass: {
+        popup: "swal-custom-style",
+      },
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -29,7 +32,14 @@ const Admin = ({ classes, getClassApi }) => {
 
           console.log(res);
           if (res.status === STATUS_OK) {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
             getClassApi();
           }
         } catch (error) {

@@ -1,5 +1,6 @@
 import React from 'react'
 import './contactUs.css';
+import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   return (
@@ -16,7 +17,7 @@ const ContactUs = () => {
             </div>
         </div>
         <div className="right-j">
-            <button className="btn btn-j">Contáctenos</button>
+            <Link to='/contacto' className="btn btn-j">Contáctenos</Link>
         </div>
     </div>
   )

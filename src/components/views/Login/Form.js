@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Form = () => {
+const Form = ({ SetLoading }) => {
   const [user, SetUser] = useState({
     emailUser: "",
     passwordUser: "",
@@ -32,8 +32,12 @@ const Form = () => {
           title: "Logueado! Su usuario ha sido logueado.",
           showConfirmButton: false,
           timer: 1500,
+          customClass: {
+            popup: "swal-custom-style",
+          },
         });
         const data = res.data;
+        SetLoading(data);
         localStorage.setItem("user-token", JSON.stringify(data));
         navigate("/");
       }

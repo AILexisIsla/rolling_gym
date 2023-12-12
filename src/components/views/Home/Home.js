@@ -7,10 +7,10 @@ import Plans from "../../Plans/Plans";
 import ContactUs from "../../contactUs/contactUs";
 import Footer from "../../Footer/Footer";
 
-const Home = () => {
+const Home = ({ loading, SetLoading }) => {
   return (
     <div>
-      <Hero />
+      <Hero loading={loading} SetLoading={SetLoading} />
       <Programs />
       <Reasons />
       <Plans />

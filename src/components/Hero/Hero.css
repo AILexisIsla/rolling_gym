@@ -104,7 +104,23 @@
   border: 2px solid var(--orange);
 }
 
-.right-h > .btn {
+.right-h > .btn:nth-child(1) {
+  position: absolute;
+  right: 3rem;
+  top: 4.5rem;
+  color: white;
+  text-decoration: none;
+}
+.right-h > .btn:nth-child(2) {
+  position: absolute;
+  width: 15rem;
+  right: 3rem;
+  top: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.right-h .btn[href="/Login"] {
   position: absolute;
   right: 3rem;
   top: 2rem;
@@ -123,7 +139,7 @@
   border-radius: 5px;
   position: absolute;
   right: 4rem;
-  top: 7rem;
+  top: 8.5rem;
 }
 
 .heart-rate > img {
@@ -185,74 +201,73 @@
   font-size: 1.5rem;
 }
 
-.hero-blur{
+.hero-blur {
   width: 22rem;
   height: 30rem;
   left: 0;
 }
 
-@media screen and (max-width: 768px){
-  .hero{
+@media screen and (max-width: 768px) {
+  .hero {
     flex-direction: column;
   }
-  .hero-blur{
+  .hero-blur {
     width: 14rem;
   }
-  .thebestadd{
+  .thebestadd {
     margin-top: 0;
     font-size: small;
     align-self: center;
     transform: scale(0.8);
   }
-  .hero-text{
+  .hero-text {
     font-size: xx-large;
     align-items: center;
     justify-content: center;
   }
-  .hero-text>div:nth-child(3){
+  .hero-text > div:nth-child(3) {
     font-size: small;
     font-weight: 200;
     letter-spacing: 1px;
     text-align: center;
   }
-  .hero-buttons{
+  .hero-buttons {
     justify-content: center;
   }
-  .figures>div>span:nth-child(1){
-   font-size: large; 
+  .figures > div > span:nth-child(1) {
+    font-size: large;
   }
-  .figures>div>span:nth-child(2){
-   font-size: small; 
+  .figures > div > span:nth-child(2) {
+    font-size: small;
   }
-  .right-h{
+  .right-h {
     position: relative;
     background: none;
-    
   }
-  .heart-rate{
+  .heart-rate {
     left: 1rem;
     top: 2rem;
   }
-  .calories{
+  .calories {
     position: relative;
     top: 5rem;
     left: 2rem;
   }
-  .calories>img{
+  .calories > img {
     width: 2rem;
   }
-  .calories>div>:nth-child(2){
+  .calories > div > :nth-child(2) {
     color: white;
     font-size: 1rem;
   }
-  .hero-image{
+  .hero-image {
     position: relative;
     width: 15rem;
     left: 7rem;
     top: 4rem;
     align-self: center;
   }
-  .hero-image-back{
+  .hero-image-back {
     width: 15rem;
     left: 2rem;
     top: 0rem;
@@ -260,5 +275,4 @@
   .right-h > .btn {
     right: 1rem;
   }
-
 }
