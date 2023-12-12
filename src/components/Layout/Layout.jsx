@@ -46,25 +46,6 @@ const Layout = ({ classes, getClassApi, children, id }) => {
             </div>
           </div>
         </div>
-        <div className={css.layoutOps}>
-          <span>
-            <img src={flechaI} alt="flecha izquierda" className={css.imgOps}/>
-            Seleccione unas de las opciones:
-          </span>
-          <span>
-            {" "}
-            Tablero de administración <MdSpaceDashboard size={30} />
-          </span>
-          <span>
-            {" "}
-            Administrar clases <AiFillCalendar size={30} />
-          </span>
-          <span>
-            {" "}
-            Administrar usuarios <AiOutlineTable size={30} />
-          </span>
-        </div>
-
         <div className={css.content}>
           <Outlet />
         </div>
