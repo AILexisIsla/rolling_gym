@@ -31,7 +31,7 @@ const StatisticsChart = () => {
             {
                 type: "category",
                 boundaryGap: false,
-                data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                data: ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"]
             }
         ],
         yAxis: [

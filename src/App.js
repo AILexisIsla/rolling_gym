@@ -1,15 +1,22 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes} from "react-router-dom";
 import "./App.css";
+import "./index.css";
 import Login from "./components/views/Login/Login";
 import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
 import { useEffect, useState } from "react";
-import Admin from "./components/views/Admin/Admin";
 import axios from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Dashboard from "./components/Pages/Dashboard/Dashboard";
+import Layout from "./components/Layout/Layout";
+import Calendar from "./components/Pages/Calendar/Calendar";
+import DataGrid from "./components/Pages/DataGrid/DataGrid";
 import Contacto from "./components/views/Contacto/Contacto";
 import Details from "./pages/Details/Details";
 
@@ -64,6 +71,24 @@ function App() {
           />
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
+
+          {/* Pagina de administacion */}
+          <Route
+            exact
+            path="/Admin"
+            element={
+              <Layout
+                classes={classes}
+                getClassApi={getClassApi}
+                id="dashboard"
+              />
+            }
+          >
+            <Route path="Dashboard" element={<Dashboard />} />
+            <Route path="Calendar" element={<Calendar />} />
+            <Route path="Users" element={<DataGrid />} />
+
+          </Route>
           <Route exact path="/contacto" element={<Contacto />} />
           <Route exact path="*" element={<Error404 />} />
           <Route exact path="/pages/Details" element={<Details />} />

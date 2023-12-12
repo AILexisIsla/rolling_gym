@@ -7,6 +7,15 @@
     width: 100%;
     z-index: 0;
   }
+
+  .dashboardApp {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+    color: white;
+    font-family: "Public Sans", sans-serif;
+    overflow: hidden;
+  }
   
   .topBaseGradients {
     position: absolute;
@@ -55,8 +64,10 @@
       color: white;
       outline: none;
       border: none;
-      padding: 0;width: 100%;
+      padding: 0;
+      width: 100%;
   }
+
   .profile{
       display: flex;
       gap: 1rem;
@@ -67,7 +78,9 @@
   .profile>img{
       height: 50px;
       width: 50px;
+      border-radius: 50%;
   }
+
   .details{
       display: flex;
       flex-direction: column;
@@ -90,4 +103,18 @@
   .content>div{
       width: 100%;
       min-width: 75vh
+  }
+
+  .layoutOps{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+
+  .imgOps{
+    width: 1.5rem; 
+    padding-right: 0.5rem;
   }

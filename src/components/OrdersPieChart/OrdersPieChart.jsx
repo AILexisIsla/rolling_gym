@@ -70,10 +70,9 @@ const OrdersPieChart = () => {
                     }
                 },
                 data: [
-                    { value: 2190, name: "Search Engine" },
-                    { value: 735, name: "Direct" },
-                    { value: 580, name: "Email" },
-                    { value: 484, name: "Union Ads" },
+                    { value: 2190, name: "PLAN MUSCULACION" },
+                    { value: 580, name: "PLAN SOLO CLASES" },
+                    { value: 484, name: "PLAN FULL" },
                 ]
             }
         ]

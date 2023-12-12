@@ -7,7 +7,7 @@ import StatisticsChart from '../StatisticsChart/StatisticsChart'
 const Statistics = () => {
     return (
         <div className={`${css.container} theme-container`}>
-            <span className={css.title}>Overview Statistics</span>
+            <span className={css.title}>Estadísticas generales</span>
 
             <div className={`${css.cards} grey-container`}>
 
@@ -17,27 +17,27 @@ const Statistics = () => {
                     </div>
 
                     <div className={css.card}>
-                        <span>Top item this month</span><span>Office comps</span>
+                        <span>Plan más seleccionado del mes</span>
+                        <span>-*Plan mas seleccionado*-</span>
                     </div>
                 </div>
 
                 <div className={css.card}>
-                    <span>Items</span><span>$ {groupNumber(455)}</span>
+                    <span>Valor</span><span>$ {groupNumber(455)}</span>
                 </div>
 
                 <div className={css.card}>
-                    <span>Profit</span><span>$ {groupNumber(370000)}</span>
+                    <span>Ganancia</span><span>$ {groupNumber(370000)}</span>
                 </div>
 
                 <div className={css.card}>
-                    <span>Daily Average</span><span>$ {groupNumber(2000)}</span>
+                    <span>Promedio diario</span><span>$ {groupNumber(2000)}</span>
                 </div>
             </div>
-
 
             <StatisticsChart/>
         </div>
     )
 }
 
-export default Statistics
+export default Statistics;
