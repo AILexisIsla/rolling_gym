@@ -19,16 +19,6 @@ const OrdersPieChart = () => {
             new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                     offset: 0,
-                    color: "#BC1FD7",
-                },
-                {
-                    offset: 1,
-                    color: "#7F1DD1",
-                }
-            ]),
-            new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                    offset: 0,
                     color: "#E8A618",
                 },
                 {
@@ -70,10 +60,9 @@ const OrdersPieChart = () => {
                     }
                 },
                 data: [
-                    { value: 2190, name: "Search Engine" },
-                    { value: 735, name: "Direct" },
-                    { value: 580, name: "Email" },
-                    { value: 484, name: "Union Ads" },
+                    { value: 2190, name: "PLAN MUSCULACION" },
+                    { value: 580, name: "PLAN SOLO CLASES" },
+                    { value: 484, name: "PLAN FULL" },
                 ]
             }
         ]

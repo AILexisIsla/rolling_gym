@@ -13,6 +13,7 @@ code {
 }
 
 /* desde aca es lo nuevo de estilos para administracion*/
+
 :root {
   --transparent-black: rgba(0, 0, 0, 0.294);
   --black: #111111;
@@ -24,23 +25,6 @@ code {
     rgba(255, 70, 70, 0.99) 3.47%,
     rgba(255, 114, 70, 0.99) 60.18%
   );
-}
-
-/*body {
-  margin: 0;
-  padding: 0;
-}*/
-
-* {
-  box-sizing: border-box;
-}
-#dashboard {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--black);
-  color: white;
-  font-family: "Public Sans", sans-serif;
-  overflow: hidden;
 }
 
 .theme-container {

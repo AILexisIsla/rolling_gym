@@ -28,40 +28,40 @@ const AboutUs = () => {
         <table className="tableA">
           <thead>
             <tr>
-              <th className="encabezadoA">Nuestra Pasión</th>
-              <th className="encabezadoA">Experiencia del Usuario</th>
-              <th className="encabezadoA">Compromiso con la Excelencia</th>
+              <th className="encabezadoA thAbout">Nuestra Pasión</th>
+              <th className="encabezadoA thAbout">Experiencia del Usuario</th>
+              <th className="encabezadoA thAbout">Compromiso con la Excelencia</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td className="tdAbout">
                 <img
                   className="imgAbout"
                   src={image1}
                   alt="persona levantando pesas"
                 />
               </td>
-              <td>
+              <td className="tdAbout">
                 <img className="imgAbout" src={image2} alt="apreton de mano" />
               </td>
-              <td>
+              <td className="tdAbout">
                 <img className="imgAbout" src={image3} alt="5 estrellas" />
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="tdAbout">
                 Nosotros, en Rolling Gym, estamos dedicados a inspirar y motivar
                 a cada individuo que cruza nuestras puertas. Creemos que el
                 fitness va más allá del ejercicio; es un viaje hacia el
                 bienestar físico y mental.
               </td>
-              <td>
+              <td className="tdAbout">
                 Queremos que cada visita a Rolling Gym sea una experiencia
                 memorable. Desde el momento en que entras por nuestras puertas,
                 te sumerges en una comunidad acogedora y positiva.
               </td>
-              <td>
+              <td className="tdAbout">
                 Nos enorgullece ofrecer no solo resultados tangibles, sino
                 también una experiencia excepcional. Nuestro compromiso con la
                 excelencia se refleja en cada detalle, desde la limpieza de

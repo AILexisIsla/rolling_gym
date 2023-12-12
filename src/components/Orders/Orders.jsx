@@ -1,18 +1,19 @@
 import React from 'react'
 import { groupNumber, ordersData } from '../../data'
-import OrdersPieChart from '../OrdersPieChart/OrdersPieChart'
 import css from './Orders.module.css'
+import logo from '../../assets/logoD.png'
+import OrdersPieChart from '../OrdersPieChart/OrdersPieChart'
 
 const Orders = () => {
     return (
         <div className={`${css.container} theme-container`}>
             <div className={css.head}>
-                <img src="./logo.png" alt="logo" />
-                <span>Orders today</span>
+                <img src={logo} alt="logo" />
+                <span>Clases de hoy</span>
             </div>
 
             <div className={`grey-container ${css.stat}`}>
-                <span>Amount</span>
+                <span>Ganancias</span>
                 <span>$ {groupNumber(4560)}</span>
             </div>
 
@@ -35,7 +36,7 @@ const Orders = () => {
 
 
             <div className={css.orderChart}>
-                <span>Split by orders</span>
+                <span>Divididos por clases</span>
                 <OrdersPieChart/>
             </div>
         </div>

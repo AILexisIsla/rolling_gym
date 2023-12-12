@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-   gap: 1.5rem;
+    gap: 1.5rem;
   }
   .order>div{
       display: flex;
