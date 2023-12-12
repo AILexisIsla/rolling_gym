@@ -6,6 +6,10 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
 import "../../../src/index.css";
 
+import { MdSpaceDashboard } from "react-icons/md";
+import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
+import flechaI from "../../assets/flecha-izquierda.png";
+
 const Layout = ({ classes, getClassApi, children, id }) => {
   const { pathname } = useLocation();
 
@@ -41,6 +45,24 @@ const Layout = ({ classes, getClassApi, children, id }) => {
               <span>oscar.corbala@gmail.com</span>
             </div>
           </div>
+        </div>
+        <div className={css.layoutOps}>
+          <span>
+            <img src={flechaI} alt="flecha izquierda" className={css.imgOps}/>
+            Seleccione unas de las opciones:
+          </span>
+          <span>
+            {" "}
+            Tablero de administración <MdSpaceDashboard size={30} />
+          </span>
+          <span>
+            {" "}
+            Administrar clases <AiFillCalendar size={30} />
+          </span>
+          <span>
+            {" "}
+            Administrar usuarios <AiOutlineTable size={30} />
+          </span>
         </div>
 
         <div className={css.content}>

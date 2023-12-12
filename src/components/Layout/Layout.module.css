@@ -104,3 +104,17 @@
       width: 100%;
       min-width: 75vh
   }
+
+  .layoutOps{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+
+  .imgOps{
+    width: 1.5rem; 
+    padding-right: 0.5rem;
+  }

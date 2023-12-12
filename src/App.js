@@ -16,6 +16,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
 import Calendar from "./components/Pages/Calendar/Calendar";
+import DataGrid from "./components/Pages/DataGrid/DataGrid";
 
 function App() {
   const [classes, SetClasses] = useState([]);
@@ -65,6 +66,8 @@ function App() {
           >
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Calendar" element={<Calendar />} />
+            <Route path="Users" element={<DataGrid />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
