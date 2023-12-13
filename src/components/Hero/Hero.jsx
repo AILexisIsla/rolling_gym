@@ -9,14 +9,18 @@ import Calories from "../../assets/calories.png";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
-
 import Weatherapi from "../Weather/Weather";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
+
+
 const Hero = ({ loading, SetLoading }) => {
+  console.log("loading:", loading);
+
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
   const navigate = useNavigate();
+
   const logOut = () => {
     Swal.fire({
       title: "¿Estás seguro de",
@@ -122,7 +126,9 @@ const Hero = ({ loading, SetLoading }) => {
               Cerrar Sesion
             </Button>
             <Link to="/Admin" className="btn">
-              Bienvenido Admin
+              <span>
+                Bienvenido {loading?.NameUser}
+              </span>{" "}
             </Link>
           </>
         ) : (
@@ -165,7 +171,7 @@ const Hero = ({ loading, SetLoading }) => {
           <div>
             <Weatherapi />
           </div>
-        </motion.div>
+        </motion.div> 
       </div>
     </div>
   );
