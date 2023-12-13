@@ -34,27 +34,18 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .table-datagrid {
-    width: 100%;
-    display: block;
+    .table-datagrid {
+      width: 100%;
+    }
+  
+    .table-datagrid th,
+    .table-datagrid td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .table-datagrid th {
+      text-align: left;
+    }
   }
-
-  .table-datagrid th,
-  .table-datagrid td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .table-datagrid thead {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .table-datagrid th {
-    width: 150%; /* Ajusta según sea necesario */
-    margin-bottom: 10px;
-  }
-}
