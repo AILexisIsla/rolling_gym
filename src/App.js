@@ -61,11 +61,6 @@ function App() {
           />
           <Route
             exact
-            path="/Admin"
-            element={<Admin classes={classes} getClassApi={getClassApi} />}
-          />
-          <Route
-            exact
             path="/class/create"
             element={<CreateClass URL={URL} getClassApi={getClassApi} />}
           />
