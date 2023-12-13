@@ -50,7 +50,6 @@ const Admin = ({ classes, getClassApi }) => {
   };
 
   return (
-    
     <div>
       <Container className="container-admin">
         <div>
