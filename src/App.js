@@ -29,8 +29,8 @@ function App() {
   useEffect(() => {
     getClassApi();
     getUserApi();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes, user]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const getClassApi = async () => {
     try {
       const res = await classInstance.get(URL);
@@ -41,7 +41,6 @@ function App() {
   };
   const getUserApi = async () => {
     try {
-      console.log(URLUSER);
       const response = await userInstance.get(URLUSER);
       SetUser(response.data);
     } catch (error) {
