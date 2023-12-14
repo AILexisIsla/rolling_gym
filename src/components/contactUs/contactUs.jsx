@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   return (
-    <div className="ContactUs">
+    <div className="ContactUs" id="contact">
         <div className="left-j">
             <hr />
             <div>
@@ -17,7 +17,7 @@ const ContactUs = () => {
             </div>
         </div>
         <div className="right-j">
-            <Link to='/contacto' className="btn btn-j">Contáctenos</Link>
+            <Link to='/contacto' className="btn" id="btn-j">Contáctenos</Link>
         </div>
     </div>
   )

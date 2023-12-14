@@ -33,7 +33,7 @@ export const Plans = () => {
             <div>
               <span>Ver más beneficios -{">"}</span>
             </div>
-            <Link to="/pages/Details"><button className="btn">Únete ahora</button></Link>
+            <Link to="/pages/Details" id="btnP"><button className="btn">Únete ahora</button></Link>
           </div>
         ))}
       </div>

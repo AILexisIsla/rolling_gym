@@ -84,8 +84,16 @@
 }
 
 .plans > :nth-child(2) > button {
-  color: orange;
+  color: orange;  
 }
+
+#btnP {
+  text-decoration: none;
+  box-shadow: 1px 1px 13px white;
+  width: 8rem;
+}
+
+
 
 @media screen and (max-width: 768px){
   .plans {

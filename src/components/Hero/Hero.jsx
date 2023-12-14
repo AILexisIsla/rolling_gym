@@ -153,13 +153,13 @@ const Hero = ({ loading, SetLoading }) => {
           className="hero-image-back"
         />
 
-        {/* calorias*/}
+        {/* Clima*/}
 
         <motion.div
           initial={{ right: "37rem" }}
-          whileInView={{ right: "28rem" }}
+          whileInView={{ right: "28.4rem" }}
           transition={transition}
-          className="calories"
+          className="clima"
         >
           <img src={Calories} alt="" />
           <div>

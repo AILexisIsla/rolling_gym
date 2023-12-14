@@ -101,3 +101,12 @@
     height: 15rem;
   }
 }
+
+@media screen and (max-width: 375px) and (min-width: 321px){
+  
+  .footer {
+    padding-top: 8rem;
+    margin-right: 2.5rem;
+  }
+
+}
