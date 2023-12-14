@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -8,8 +7,9 @@ import {
   validatePassworduser,
   validateTelefono,
 } from "../../helpers/ValidateFormRegister";
+import { userInstance } from "../../../config/axios";
 
-const RegisterForm = ({ SetIsLoggedIn }) => {
+const RegisterForm = ({ SetLoading }) => {
   const [user, SetUser] = useState({
     nameUser: "",
     telefono: "",
@@ -54,7 +54,7 @@ const RegisterForm = ({ SetIsLoggedIn }) => {
     };
 
     try {
-      const res = await axios.post(`${URL}/Register`, newUser);
+      const res = await userInstance.post(`${URL}/Register`, newUser);
 
       if (res && res.data) {
         if (res.status === 201) {
@@ -82,7 +82,7 @@ const RegisterForm = ({ SetIsLoggedIn }) => {
           });
           const data = res.data;
           console.log(data);
-          SetIsLoggedIn(data);
+          SetLoading(data);
           localStorage.setItem("user-token", JSON.stringify(data));
           navigate("/Login");
         }
