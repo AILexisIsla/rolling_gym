@@ -13,10 +13,8 @@ import Weatherapi from "../Weather/Weather";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 
-
 const Hero = ({ loading, SetLoading }) => {
   console.log("loading:", loading);
-
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
   const navigate = useNavigate();
@@ -126,12 +124,10 @@ const Hero = ({ loading, SetLoading }) => {
               Cerrar Sesion
             </Button>
             <Link to="/Admin" className="btn">
-              <span>
-                Bienvenido {loading?.NameUser}
-              </span>{" "}
+              <span>Bienvenido {loading?.NameUser}</span>{" "}
             </Link>
           </>
-        ) : (
+        ) : ( 
           <Link to="/Login" className="btn">
             Unete ahora
           </Link>
@@ -171,7 +167,7 @@ const Hero = ({ loading, SetLoading }) => {
           <div>
             <Weatherapi />
           </div>
-        </motion.div> 
+        </motion.div>
       </div>
     </div>
   );

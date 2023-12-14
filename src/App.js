@@ -6,7 +6,7 @@ import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
 import { useEffect, useState } from "react";
-import {classInstance, userInstance} from "./config/axios";
+import { classInstance, userInstance } from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     getClassApi();
     getUserApi();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getClassApi = async () => {
     try {
