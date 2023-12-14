@@ -52,9 +52,19 @@ const DataGrid = ({ user, getUserApi }) => {
       console.log("hola");
       if (result.isConfirmed) {
         try {
-          const response = await userInstance.put(
-            `${URLUSER}User/${id}`,
-            { rol: "admin" },
+          const response = await userInstance.get(`${URLUSER}/User/${id}`, {
+            headers: {
+              "Content-Type": "application/json",
+              "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+            },
+          });
+
+          const datosUserData = response.data;
+          const editUserData = { ...datosUserData, rol: "admin" };
+
+          const responseUser = await userInstance.put(
+            `${URLUSER}/User/${id}`,
+            editUserData,
             {
               headers: {
                 "Content-Type": "application/json",
@@ -63,13 +73,14 @@ const DataGrid = ({ user, getUserApi }) => {
             }
           );
           console.log(response.data); // Agrega esta línea para verificar la respuesta del servidor
-          if (response.status === 200) {
+          if (responseUser.status === 200) {
             console.log("aqui toy ");
             Swal.fire(
               "Editado!",
               "El usuario ahora es Administrador.",
               "success"
             );
+            getUserApi();
           }
         } catch (error) {
           console.log(error);
