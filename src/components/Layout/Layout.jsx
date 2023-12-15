@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
 import "../../../src/index.css";
+import { Link } from "react-router-dom";
 
 import { MdSpaceDashboard } from "react-icons/md";
 import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
@@ -29,13 +30,10 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         <div className={css.header}>
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
 
-          <div className={css.searchBar}>
-            <BiSearch size={20} />
-            <input type="text" placeholder="Buscar" />
-          </div>
+          
 
-          <div className={css.profile}>
-            <img
+          <Link to='/'><div className={css.profile}>
+          <img
               src={imageProfile}
               alt="foto de perfil"
               className="imgProfile"
@@ -44,7 +42,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
               <span>Lucas Corbalan</span>
               <span>oscar.corbala@gmail.com</span>
             </div>
-          </div>
+          </div></Link>
         </div>
         <div className={css.content}>
           <Outlet />
