@@ -56,7 +56,6 @@ const MyCalendar = ({ getClassApi }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.values(formData).some((value) => value.trim() === "")) {
-      console.log("Datos inválidos: Campos vacíos");
       Swal.fire({
         title: "Oop!!",
         text: "Algunos datos no son válidos",
@@ -68,7 +67,6 @@ const MyCalendar = ({ getClassApi }) => {
       return;
     }
 
-    // Verificar las validaciones individuales
     if (
       !validarNombreClase(formData.nameClass) ||
       !validarNombreTeacher(formData.Teacher) ||
@@ -76,7 +74,6 @@ const MyCalendar = ({ getClassApi }) => {
       !validarDia(formData.dateClass) ||
       !validarHorario(formData.timeClass)
     ) {
-      console.log("Datos inválidos: Nombre de clase");
     }
     try {
       const resp = await classInstance.post(URLCLASS, formData, {
@@ -101,7 +98,13 @@ const MyCalendar = ({ getClassApi }) => {
       console.log("Clase de gimnasio creada:", resp.data);
       // Puedes realizar acciones adicionales después de guardar, como mostrar una notificación de éxito.
     } catch (error) {
-      console.error("Error al crear la clase:", error);
+      if (error.response) {
+        // Si la respuesta contiene datos, puedes acceder a ellos
+        console.error("Error al crear la clase:", error.response.data);
+      } else {
+        // Si la respuesta no contiene datos, muestra un mensaje genérico
+        console.error("Error al crear la clase:", error.message);
+      }
       setErrorMessage("Error en la creación de la clase");
     }
   };

@@ -12,6 +12,9 @@ const DataGrid = ({ user, getUserApi }) => {
       title: "Estas seguro de eliminar el usuario?",
       text: "No podras arrepentirte de esta accion!",
       icon: "warning",
+      customClass: {
+        popup: "swal-custom-style",
+      },
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -47,12 +50,14 @@ const DataGrid = ({ user, getUserApi }) => {
     Swal.fire({
       title: "Estas seguro de dar los permisos de Administrador?",
       icon: "warning",
+      customClass: {
+        popup: "swal-custom-style",
+      },
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Editar",
     }).then(async (result) => {
-      console.log("hola");
       if (result.isConfirmed) {
         try {
           const response = await userInstance.get(`${URLUSER}/User/${id}`, {
@@ -75,14 +80,15 @@ const DataGrid = ({ user, getUserApi }) => {
               },
             }
           );
-          console.log(response.data); // Agrega esta línea para verificar la respuesta del servidor
           if (responseUser.status === 200) {
-            console.log("aqui toy ");
-            Swal.fire(
-              "Editado!",
-              "El usuario ahora es Administrador.",
-              "success"
-            );
+            Swal.fire({
+              title: "Editado!",
+              text: "El usuario ahora es Administrador.",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
             getUserApi();
           }
         } catch (error) {
