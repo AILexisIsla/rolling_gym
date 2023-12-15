@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Calendar from "react-calendar";
 import styled from "styled-components";
 import { classInstance } from "../../config/axios";
@@ -41,6 +41,7 @@ const MyCalendar = ({ getClassApi }) => {
     dateClass: "",
     timeClass: "",
   });
+  const formRef = useRef(null);
   const URLCLASS = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
   const STATUS_CREATECLASS = 201;
   const handleChange = (event) => {
@@ -91,7 +92,14 @@ const MyCalendar = ({ getClassApi }) => {
             popup: "swal-custom-style",
           },
         });
-        e.target.reset();
+        formRef.current.reset();
+        SetFormData({
+          nameClass: "",
+          Teacher: "",
+          detailsClass: "",
+          dateClass: "",
+          timeClass: "",
+        });
         getClassApi();
       }
 
@@ -114,7 +122,7 @@ const MyCalendar = ({ getClassApi }) => {
       <Container>
         <div className="class-container">
           <h1>Crear Clase</h1>
-          <form className="form-class">
+          <form ref={formRef} className="form-class">
             <input
               type="text"
               name="nameClass"

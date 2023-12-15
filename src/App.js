@@ -88,7 +88,10 @@ function App() {
             }
           >
             <Route path="Dashboard" element={<Dashboard />} />
-            <Route path="Calendar" element={<Calendar />} />
+            <Route
+              path="Calendar"
+              element={<Calendar getClassApi={getClassApi} />}
+            />
             <Route
               path="Users"
               element={<DataGrid getUserApi={getUserApi} user={user} />}
