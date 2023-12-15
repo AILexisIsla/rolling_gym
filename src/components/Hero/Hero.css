@@ -118,15 +118,21 @@
   width: 15rem;
   right: 3rem;
   top: 2rem;
-  color: white;
+  color: rgb(251, 247, 247);
   text-decoration: none;
+  background-color: #585e62;
+}
+
+.x1 {
+  padding-right: 0.5rem;
+  color: var(--orange)
 }
 
 .right-h .btn[href="/Login"] {
   position: absolute;
   right: 3rem;
   top: 2rem;
-  color: white;
+  color: black;
   text-decoration: none;
   background: var(--darkGrey);
   border: 2px solid var(--lightgray);

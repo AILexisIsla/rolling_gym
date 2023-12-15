@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const instance = axios.create({
+export const classInstance = axios.create({
   baseURL: process.env.REACT_APP_GYMNASIO_ROLLING_CLASS,
 });
-
-export default instance;
+export const userInstance = axios.create({
+  baseURL: process.env.REACT_APP_GYMNASIO_ROLLING_USER,
+});

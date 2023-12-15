@@ -1,14 +1,14 @@
 import moment from "moment/moment";
 import css from "./Layout.module.css";
-import { BiSearch } from "react-icons/bi";
 import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
 import "../../../src/index.css";
+import { Link } from "react-router-dom";
 
-import { MdSpaceDashboard } from "react-icons/md";
-import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
-import flechaI from "../../assets/flecha-izquierda.png";
+// import { MdSpaceDashboard } from "react-icons/md";
+// import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
+// import flechaI from "../../assets/flecha-izquierda.png";
 
 const Layout = ({ classes, getClassApi, children, id }) => {
   const { pathname } = useLocation();
@@ -29,22 +29,19 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         <div className={css.header}>
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
 
-          <div className={css.searchBar}>
-            <BiSearch size={20} />
-            <input type="text" placeholder="Buscar" />
-          </div>
+          
 
-          <div className={css.profile}>
-            <img
+          <Link to='/'className="x2"><div className={css.profile}>
+          <img
               src={imageProfile}
               alt="foto de perfil"
               className="imgProfile"
             />
             <div className={css.details}>
-              <span>Lucas Corbalan</span>
-              <span>oscar.corbala@gmail.com</span>
+              <span >Lucas Corbalan</span>
+              <span >oscar.corbala@gmail.com</span>
             </div>
-          </div>
+          </div></Link>
         </div>
         <div className={css.content}>
           <Outlet />

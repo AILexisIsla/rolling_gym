@@ -1,7 +1,7 @@
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Admin.css";
-import axios from "../../../config/axios";
+import { classInstance } from "../../../config/axios";
 import Swal from "sweetalert2";
 
 const Admin = ({ classes, getClassApi }) => {
@@ -23,7 +23,7 @@ const Admin = ({ classes, getClassApi }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axios.delete(`${URL}/${id}`, {
+          const res = await classInstance.delete(`${URL}/${id}`, {
             headers: {
               "Content-Type": "application/json",
               "x-token": JSON.parse(localStorage.getItem("user-token")).token,
@@ -50,7 +50,6 @@ const Admin = ({ classes, getClassApi }) => {
   };
 
   return (
-    
     <div>
       <Container className="container-admin">
         <div>

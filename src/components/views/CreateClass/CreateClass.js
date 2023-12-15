@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
+import { classInstance } from "../../../config/axios";
+import { useNavigate } from "react-router";
+import { Alert } from "react-bootstrap";
 import {
   validarDetalleClase,
   validarDia,
@@ -6,10 +10,6 @@ import {
   validarNombreClase,
   validarNombreTeacher,
 } from "../../../helpers/ValidateForm";
-import Swal from "sweetalert2";
-import axios from "../../../config/axios";
-import { useNavigate } from "react-router";
-import { Alert } from "react-bootstrap";
 
 const CreateClass = ({ URL, getClassApi }) => {
   const [inputs, SetInputs] = useState({});
@@ -72,7 +72,7 @@ const CreateClass = ({ URL, getClassApi }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axios.post(URL, newClass, {
+          const res = await classInstance.post(URL, newClass, {
             headers: {
               "Content-Type": "application/json",
               "x-token": JSON.parse(localStorage.getItem("user-token")).token,
