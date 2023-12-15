@@ -77,6 +77,8 @@ function App() {
               <Layout
                 classes={classes}
                 getClassApi={getClassApi}
+                loading={loading}
+                SetLoading={SetLoading}
                 id="dashboard"
               />
             }

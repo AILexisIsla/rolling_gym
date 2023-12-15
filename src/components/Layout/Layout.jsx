@@ -7,12 +7,19 @@ import "../../../src/index.css";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
-
 // import { MdSpaceDashboard } from "react-icons/md";
 // import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
 // import flechaI from "../../assets/flecha-izquierda.png";
 
-const Layout = ({ classes, getClassApi, children, id }) => {
+const Layout = ({
+  classes,
+  getClassApi,
+  children,
+  id,
+  loading,
+  SetLoading,
+}) => {
+  console.log("loading", loading);
   const { pathname } = useLocation();
 
   return (
@@ -40,8 +47,8 @@ const Layout = ({ classes, getClassApi, children, id }) => {
                   className="imgProfile"
                 />
                 <div className={css.details}>
-                  <span>Lucas Corbalan</span>
-                  <span>oscar.corbala@gmail.com</span>
+                  <span>{loading?.NameUser}</span>
+                  <span>{loading?.emailUser} </span>
                 </div>
               </div>
             </div>
