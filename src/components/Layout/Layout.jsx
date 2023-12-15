@@ -7,19 +7,13 @@ import "../../../src/index.css";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
-// import { MdSpaceDashboard } from "react-icons/md";
-// import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
-// import flechaI from "../../assets/flecha-izquierda.png";
-
 const Layout = ({
   classes,
   getClassApi,
   children,
   id,
   loading,
-  SetLoading,
 }) => {
-  console.log("loading", loading);
   const { pathname } = useLocation();
 
   return (

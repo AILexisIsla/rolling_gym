@@ -7,7 +7,6 @@ import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
 import { useEffect, useState } from "react";
 import { classInstance, userInstance } from "./config/axios";
-import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
@@ -66,7 +65,6 @@ function App() {
             path="/Register"
             element={<Register SetLoading={SetLoading} />}
           />
-          <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
 
           {/* Pagina de administacion */}
@@ -96,14 +94,6 @@ function App() {
           <Route exact path="/contacto" element={<Contacto />} />
           <Route exact path="*" element={<Error404 />} />
           <Route exact path="/pages/Details" element={<Details />} />
-          {/*<Route path="/" element={<Layout/>}>
-
-          <Route path="dashboard" element={<Dashboard/>}/>
-          <Route path="calendar" element={<Calendar/>}/>
-          <Route path="board" element={<BoardPage/>}/>
-          <Route path="users" element={<DataGrid/>}/>
-          
-          </Route>*/}
         </Routes>
       </BrowserRouter>
     </div>

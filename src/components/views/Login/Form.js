@@ -53,7 +53,7 @@ const Form = ({ SetLoading }) => {
           type="email"
           name="emailUser"
           className="input-login"
-          placeholder="UserName"
+          placeholder="Email"
           value={user.emailUser || ""}
           onChange={(e) => handleChange(e)}
         ></input>
@@ -61,7 +61,7 @@ const Form = ({ SetLoading }) => {
           type="password"
           name="passwordUser"
           className="input-login"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={user.passwordUser || ""}
           onChange={(e) => handleChange(e)}
         ></input>
@@ -69,15 +69,15 @@ const Form = ({ SetLoading }) => {
 
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-            SIGN IN
+          Ingresar
           </button>
           <p>
             <Link to="*" className="forget-password">
-              Forget Password |
+              Olvidaste tu contraseña ? |
             </Link>
             <span>
               <Link to="/Register" className="sign-up">
-                Sign UP |
+                Registrate |
               </Link>
             </span>
           </p>

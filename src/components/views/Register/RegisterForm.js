@@ -81,7 +81,6 @@ const RegisterForm = ({ SetLoading }) => {
             },
           });
           const data = res.data;
-          console.log(data);
           SetLoading(data);
           localStorage.setItem("user-token", JSON.stringify(data));
           navigate("/Login");
@@ -102,7 +101,7 @@ const RegisterForm = ({ SetLoading }) => {
           type="text"
           name="nameUser"
           className="input-login"
-          placeholder="NameUser"
+          placeholder="Nombre"
           value={user.nameUser || ""}
           onChange={(e) => handleChange(e)}
           required
@@ -120,7 +119,7 @@ const RegisterForm = ({ SetLoading }) => {
           type="email"
           name="emailUser"
           className="input-login"
-          placeholder="EmailUser"
+          placeholder="Email"
           value={user.emailUser || ""}
           onChange={(e) => handleChange(e)}
           required
@@ -129,7 +128,7 @@ const RegisterForm = ({ SetLoading }) => {
           type="password"
           name="passwordUser"
           className="input-login"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={user.passwordUser || ""}
           onChange={(e) => handleChange(e)}
           required
@@ -137,12 +136,12 @@ const RegisterForm = ({ SetLoading }) => {
         {error && <p className="error-message">{error}</p>}
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-            REGISTER
+            REGISTRATE
           </button>
           <p>
             <span>
               <Link to="/Login" className="sign-up">
-                | Sign IN |
+                | Inicia Sesion |
               </Link>
             </span>
           </p>
