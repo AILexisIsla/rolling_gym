@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="Footer-container">
-      <hr />
+      <hr className="footer-hr" />
       <div className="footer">
         <div className="column">
           <div className="logo-f">

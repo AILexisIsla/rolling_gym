@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.footer-hr {
+  margin: 2.5rem;
+}
+
 .Footer-container > hr {
   border: 1px solid var(--lightgray);
 }
@@ -102,11 +106,9 @@
   }
 }
 
-@media screen and (max-width: 375px) and (min-width: 321px){
-  
+@media screen and (max-width: 375px) and (min-width: 321px) {
   .footer {
     padding-top: 8rem;
     margin-right: 2.5rem;
   }
-
 }

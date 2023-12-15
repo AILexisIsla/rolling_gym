@@ -5,6 +5,8 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
 import "../../../src/index.css";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
+
 
 // import { MdSpaceDashboard } from "react-icons/md";
 // import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";
@@ -29,23 +31,26 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         <div className={css.header}>
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
 
-          
-
-          <Link to='/'><div className="x2"><div className={css.profile}>
-          <img
-              src={imageProfile}
-              alt="foto de perfil"
-              className="imgProfile"
-            />
-            <div className={css.details}>
-              <span >Lucas Corbalan</span>
-              <span >oscar.corbala@gmail.com</span>
+          <Link to="/">
+            <div className="x2">
+              <div className={css.profile}>
+                <img
+                  src={imageProfile}
+                  alt="foto de perfil"
+                  className="imgProfile"
+                />
+                <div className={css.details}>
+                  <span>Lucas Corbalan</span>
+                  <span>oscar.corbala@gmail.com</span>
+                </div>
+              </div>
             </div>
-          </div></div></Link>
+          </Link>
         </div>
         <div className={css.content}>
           <Outlet />
         </div>
+        <Footer />
       </div>
     </div>
   );

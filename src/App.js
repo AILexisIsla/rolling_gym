@@ -7,7 +7,6 @@ import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
 import { useEffect, useState } from "react";
 import { classInstance, userInstance } from "./config/axios";
-import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -66,11 +65,6 @@ function App() {
             exact
             path="/Register"
             element={<Register SetLoading={SetLoading} />}
-          />
-          <Route
-            exact
-            path="/class/create"
-            element={<CreateClass URL={URL} getClassApi={getClassApi} />}
           />
           <Route exact path="/class/edit/:id" element={<EditClass />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
