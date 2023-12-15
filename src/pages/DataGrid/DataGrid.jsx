@@ -26,11 +26,14 @@ const DataGrid = ({ user, getUserApi }) => {
             },
           });
           if (response.status === 200) {
-            Swal.fire(
-              "Eliminado!",
-              "El usuario fue eliminado con exito.",
-              "success"
-            );
+            Swal.fire({
+              title: "Eliminado!",
+              text: "El usuario fue eliminado con exito.",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
             getUserApi();
           }
         } catch (error) {

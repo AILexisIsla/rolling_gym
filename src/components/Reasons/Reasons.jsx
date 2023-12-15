@@ -54,7 +54,7 @@ const Reasons = () => {
         </span>
 
         <div className="partners">
-          <a href="https://www.newbalance.com.ar" target="_blank">
+          <a href="https://www.newbalance.com.ar" target="blank">
             <img src={nb} alt="logo new balance" />
           </a>
           <a href="https://www.adidas.com.ar">
