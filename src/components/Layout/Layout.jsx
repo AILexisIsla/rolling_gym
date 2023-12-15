@@ -1,6 +1,5 @@
 import moment from "moment/moment";
 import css from "./Layout.module.css";
-import { BiSearch } from "react-icons/bi";
 import Sidebar from "../Sidebar/Sidebar";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import imageProfile from "../../assets/profile.png";
@@ -32,15 +31,15 @@ const Layout = ({ classes, getClassApi, children, id }) => {
 
           
 
-          <Link to='/'><div className={css.profile}>
+          <Link to='/'className="x2"><div className={css.profile}>
           <img
               src={imageProfile}
               alt="foto de perfil"
               className="imgProfile"
             />
             <div className={css.details}>
-              <span>Lucas Corbalan</span>
-              <span>oscar.corbala@gmail.com</span>
+              <span >Lucas Corbalan</span>
+              <span >oscar.corbala@gmail.com</span>
             </div>
           </div></Link>
         </div>

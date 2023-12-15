@@ -20,9 +20,8 @@ const Programs = () => {
             <div className="category">
               {program.image}
               <span>{program.heading}</span><span>{program.details}</span>
-              <div className="join-now"> <Link to="*"><span>Unete ahora</span></Link><img src={rightArrow} alt="" /></div>
+              <div className="join-now"> <Link to="*" id="redirection"><span>Unete ahora</span></Link><img src={rightArrow} alt="" /></div>
             </div>
-          
           )
         }
       </div>

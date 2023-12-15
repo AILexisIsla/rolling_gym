@@ -124,7 +124,7 @@ const Hero = ({ loading, SetLoading }) => {
               Cerrar Sesion
             </Button>
             <Link to="/Admin" className="btn">
-              <span>Bienvenido {loading?.NameUser}</span>{" "}
+              <span className="x1">Bienvenido </span>{loading?.NameUser}{" "}
             </Link>
           </>
         ) : ( 
@@ -155,13 +155,13 @@ const Hero = ({ loading, SetLoading }) => {
           className="hero-image-back"
         />
 
-        {/* calorias*/}
+        {/* Clima*/}
 
         <motion.div
           initial={{ right: "37rem" }}
-          whileInView={{ right: "28rem" }}
+          whileInView={{ right: "28.4rem" }}
           transition={transition}
-          className="calories"
+          className="clima"
         >
           <img src={Calories} alt="" />
           <div>

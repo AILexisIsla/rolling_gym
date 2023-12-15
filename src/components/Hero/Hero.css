@@ -95,6 +95,7 @@
   color: white;
   background-color: var(--orange);
   width: 8rem;
+  text-decoration: none;
 }
 
 .hero-buttons > :nth-child(2) {
@@ -102,6 +103,7 @@
   background-color: transparent;
   width: 8rem;
   border: 2px solid var(--orange);
+  text-decoration: none;
 }
 
 .right-h > .btn:nth-child(1) {
@@ -116,8 +118,14 @@
   width: 15rem;
   right: 3rem;
   top: 2rem;
-  color: black;
+  color: rgb(251, 247, 247);
   text-decoration: none;
+  background-color: #585e62;
+}
+
+.x1 {
+  padding-right: 0.5rem;
+  color: var(--orange)
 }
 
 .right-h .btn[href="/Login"] {
@@ -126,6 +134,8 @@
   top: 2rem;
   color: black;
   text-decoration: none;
+  background: var(--darkGrey);
+  border: 2px solid var(--lightgray);
 }
 
 .heart-rate {
@@ -170,7 +180,7 @@
   width: 15rem;
 }
 
-.calories {
+.clima {
   display: flex;
   gap: 2rem;
   background-color: var(--caloryCard);
@@ -182,21 +192,21 @@
   right: 28rem;
 }
 
-.calories > img {
+.clima > img {
   width: 3rem;
 }
 
-.calories > div {
+.clima > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.calories > div > :nth-child(1) {
+.clima > div > :nth-child(1) {
   color: var(--gray);
 }
 
-.calories > div > :nth-child(2) {
+.clima > div > :nth-child(2) {
   color: white;
   font-size: 1.5rem;
 }
@@ -207,7 +217,7 @@
   left: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 320px) {
   .hero {
     flex-direction: column;
   }
@@ -248,15 +258,15 @@
     left: 1rem;
     top: 2rem;
   }
-  .calories {
+  .clima {
     position: relative;
     top: 5rem;
-    left: 2rem;
+    left: 4rem;
   }
-  .calories > img {
+  .clima > img {
     width: 2rem;
   }
-  .calories > div > :nth-child(2) {
+  .clima > div > :nth-child(2) {
     color: white;
     font-size: 1rem;
   }
@@ -275,4 +285,268 @@
   .right-h > .btn {
     right: 1rem;
   }
+}
+
+@media screen and (max-width: 375px) and (min-width: 321px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-blur {
+    width: 14rem;
+  }
+  .thebestadd {
+    margin-top: 0;
+    font-size: small;
+    align-self: center;
+    transform: scale(0.8);
+  }
+  .hero-text {
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-text > div:nth-child(3) {
+    font-size: small;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .figures > div > span:nth-child(1) {
+    font-size: large;
+  }
+  .figures > div > span:nth-child(2) {
+    font-size: small;
+  }
+  .right-h {
+    position: relative;
+    background: none;
+  }
+  .heart-rate {
+    left: 1rem;
+    top: 2rem;
+  }
+  .clima {
+    position: relative;
+    top: 6rem;
+    left: 6rem;
+  }
+  .clima > img {
+    width: 2rem;
+  }
+  .clima > div > :nth-child(2) {
+    color: white;
+    font-size: 1rem;
+  }
+  .hero-image {
+    position: relative;
+    width: 15rem;
+    left: 7rem;
+    top: 4rem;
+    align-self: center;
+  }
+  .hero-image-back {
+    width: 15rem;
+    left: 2rem;
+    top: 0rem;
+  }
+  .right-h > .btn {
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) and (min-width: 376px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-blur {
+    width: 14rem;
+  }
+  .thebestadd {
+    margin-top: 0;
+    font-size: small;
+    align-self: center;
+    transform: scale(0.8);
+  }
+  .hero-text {
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-text > div:nth-child(3) {
+    font-size: small;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .figures > div > span:nth-child(1) {
+    font-size: large;
+  }
+  .figures > div > span:nth-child(2) {
+    font-size: small;
+  }
+  .right-h {
+    position: relative;
+    background: none;
+  }
+  .heart-rate {
+    left: 1rem;
+    top: 2rem;
+  }
+  .clima {
+    position: relative;
+    top: 6rem;
+    left: 8rem;
+  }
+  .clima > img {
+    width: 2rem;
+  }
+  .clima > div > :nth-child(2) {
+    color: white;
+    font-size: 1rem;
+  }
+  .hero-image {
+    position: relative;
+    width: 15rem;
+    left: 7rem;
+    top: 4rem;
+    align-self: center;
+  }
+  .hero-image-back {
+    width: 15rem;
+    left: 2rem;
+    top: 0rem;
+  }
+  .right-h > .btn {
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  
+  .hero {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .hero-blur {
+    width: 14rem;
+  }
+
+  .thebestadd {
+    margin-top: 0;
+    font-size: small;
+    align-self: center;
+    transform: scale(0.8);
+  }
+
+  .hero-text {
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text > div:nth-child(3) {
+    font-size: small;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .figures > div > span:nth-child(1) {
+    font-size: large;
+  }
+
+  .figures > div > span:nth-child(2) {
+    font-size: small;
+  }
+
+  .right-h {
+    position: relative;
+    background: none;
+  }
+
+  .heart-rate {
+    left: 5rem;
+    top: 2rem;
+  }
+
+  .clima {
+    position: relative;
+    top: 6rem;
+    left: 40%;
+  }
+  .clima > img {
+    width: 2rem;
+  }
+  .clima > div > :nth-child(2) {
+    color: white;
+    font-size: 1rem;
+  }
+  .hero-image {
+    position: relative;
+    width: 15rem;
+    left: 22rem;
+    top: 4rem;
+    align-self: center;
+  }
+  .hero-image-back {
+    width: 15rem;
+    left: 17rem;
+    top: 0rem;
+  }
+  .right-h > .btn {
+    right: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  
+  .right-h .btn[href="/Login"] {
+    right: 1.5rem;
+  }
+
+  .heart-rate {
+    left: 2rem;
+    padding: 1.5rem;
+  }
+
+  .heart-rate > img {
+    width: 2rem;
+    padding-left: 0.5rem;
+  }
+  
+  .hero-image{
+    right: 5rem;
+  }
+
+  .hero-image-back{
+    left: -21.5rem;
+  }
+
+  .clima{
+    left: 0.5rem;
+    width: 7rem;
+    gap: 0.5rem;
+  }
+
+  .clima > img {
+    width: 2rem;
+  }
+
+  .clima > div{
+    width: 5rem;
+    
+  }
+
 }

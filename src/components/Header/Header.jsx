@@ -11,7 +11,7 @@ const Header = () => {
     <div className="header" id="home">
       <img src={Logo} alt="" className="logo" />
 
-      {menuOpened === false && mobile === true ? (
+      {(menuOpened === false && mobile === true) ? (
         <div
           style={{
             backgroundColor: "var(--appColor)",
@@ -77,6 +77,16 @@ const Header = () => {
               smooth={true}
             >
               Testimonios
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setMenuOpened(false)}
+              to="contact"
+              span={true}
+              smooth={true}
+            >
+              Contáctenos
             </Link>
           </li>
         </ul>
