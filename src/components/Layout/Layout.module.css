@@ -8,10 +8,6 @@
     z-index: 0;
   }
 
-  .x2 {
-    text-decoration: none;
-}
-
   .dashboardApp {
     height: 100vh;
     width: 100vw;
@@ -122,3 +118,6 @@
     width: 1.5rem; 
     padding-right: 0.5rem;
   }
+
+  .x2 {
+    text-decoration: none;}

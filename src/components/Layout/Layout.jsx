@@ -31,7 +31,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
 
           
 
-          <Link to='/'className="x2"><div className={css.profile}>
+          <Link to='/'><div className="x2"><div className={css.profile}>
           <img
               src={imageProfile}
               alt="foto de perfil"
@@ -41,7 +41,7 @@ const Layout = ({ classes, getClassApi, children, id }) => {
               <span >Lucas Corbalan</span>
               <span >oscar.corbala@gmail.com</span>
             </div>
-          </div></Link>
+          </div></div></Link>
         </div>
         <div className={css.content}>
           <Outlet />

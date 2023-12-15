@@ -16,7 +16,7 @@ const Dashboard = () => {
             <select>
               <option value="">1 week</option>
               <option value="">1 month</option>
-              <option value="">1 year</option>
+              <option value="">1 año</option>
             </select>
           </div>
         </div>
