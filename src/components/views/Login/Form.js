@@ -69,7 +69,7 @@ const Form = ({ SetLoading }) => {
 
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-          Ingresar
+          INGRESAR
           </button>
           <p>
             <Link to="*" className="forget-password">
