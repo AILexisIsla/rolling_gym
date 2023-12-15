@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { userInstance } from "../../../config/axios";
 
 const Form = ({ SetLoading }) => {
   const [user, SetUser] = useState({
@@ -21,7 +21,7 @@ const Form = ({ SetLoading }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${URL}/Login`, {
+      const res = await userInstance.post(`${URL}/Login`, {
         emailUser: user.emailUser,
         passwordUser: user.passwordUser,
       });
