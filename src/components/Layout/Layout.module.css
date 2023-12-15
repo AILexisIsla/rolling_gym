@@ -118,3 +118,33 @@
     width: 1.5rem; 
     padding-right: 0.5rem;
   }
+
+  @media screen and (max-width: 320px){
+    
+    .header{
+        display: flex;
+        padding: 5rem 4rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* .container{
+        
+    } 
+    
+    .header{
+      display: flex;
+      padding: 2rem 4rem;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .header>:nth-child(1)
+  {
+      font-size: 1.2rem;
+  }
+    
+    
+    
+    */
+
+  }
