@@ -1,5 +1,6 @@
 import ReactECharts from 'echarts-for-react'
 import * as echarts from 'echarts'
+
 const StatisticsChart = () => {
 
     const option = {

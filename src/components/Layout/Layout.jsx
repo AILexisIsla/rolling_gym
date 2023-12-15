@@ -29,8 +29,6 @@ const Layout = ({ classes, getClassApi, children, id }) => {
         <div className={css.header}>
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
 
-          
-
           <Link to='/'className="x2"><div className={css.profile}>
           <img
               src={imageProfile}

@@ -24,10 +24,12 @@
     align-items: center;
     justify-content: space-between;
   }
+
   .head > :nth-child(1) {
     font-size: 1.5rem;
     font-weight: 500;
   }
+
   .durationButton > select {
     border: none;
     background: var(--orange-gradient);
@@ -77,4 +79,149 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 8px;
+  }
+
+  @media screen and (max-width: 320px){
+
+    .container{
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .dashboard {
+      width: 35%;
+      margin-left: -1.5rem;
+      padding-top: 1rem;
+      gap: 2rem;
+    }
+
+    .dashboardHead {
+      gap: 3.5rem;
+    }
+
+    .cards {
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1.2rem;
+    }
+
+    .head > :nth-child(1) {
+      padding: 10px;
+      
+    }
+
+    .durationButton{
+      position: relative;
+      top: 3rem;
+      right: 7rem;
+      
+    }
+
+  }
+
+  @media screen and (max-width: 375px) and (min-width: 321px){
+
+    .container{
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .dashboard {
+      width: 45%;
+      margin-left: -2rem;
+      gap: 1rem;
+    }
+
+    .dashboardHead {
+      gap: 3.5rem;
+    }
+
+    .cards {
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1.2rem;
+    }
+
+    .head > :nth-child(1) {
+      padding: 10px;
+      
+    }
+
+    .durationButton{
+      position: relative;
+      top: 3rem;
+      right: 7rem;
+      
+    }
+
+  }
+
+
+  @media screen and (max-width: 425px) and (min-width: 376px){
+
+    .container{
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .dashboard {
+      width: 53%;
+      margin-left: -2rem;
+      gap: 1rem;
+    }
+
+    .dashboardHead {
+      gap: 3.5rem;
+  
+    }
+
+    .cards {
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1.2rem;
+    }
+
+    .head > :nth-child(1) {
+      padding: 10px;
+      
+    }
+
+    .durationButton{
+      position: relative;
+      top: 3rem;
+      right: 7rem;
+      
+    }
+
+    .dashboardHead > .head {
+      padding-left: 3rem;
+    }
+
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 426px){
+
+    .container{
+      height: 100%;
+    }
+
+    .dashboard {
+      width: 60%;
+      margin-left: -2rem;
+      gap: 1rem;
+    }
+
+    .cards {
+      justify-content: center;
+    }
+
+    .dashboardHead > .head {
+      padding-left: 2rem;
+    }
+
+    .cardAmount>:nth-child(2){
+      font-size: 1.5rem;
+      padding-right: 0.5rem;
+    }
+
   }
