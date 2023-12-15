@@ -122,7 +122,6 @@
   color: rgb(251, 247, 247);
   text-decoration: none;
   background-color: var(--darkGrey);
-  border: 2px solid white;
 }
 
 .x1 {
@@ -134,10 +133,9 @@
   position: absolute;
   right: 3rem;
   top: 2rem;
-  color: black;
+  color: white;
   text-decoration: none;
   background: var(--darkGrey);
-  border: 2px solid var(--lightgray);
 }
 
 .heart-rate {
