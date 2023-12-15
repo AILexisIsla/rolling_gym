@@ -81,3 +81,11 @@ code {
   background-color: darkgrey;
   width: 5px;
 }
+
+@media screen and (max-width: 375px){
+
+  .theme-container {
+    padding-top: 1rem;        
+  }
+}
+

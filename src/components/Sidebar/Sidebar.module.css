@@ -26,3 +26,51 @@
       width: 3rem;
   }
 
+  @media screen and (max-width: 320px){
+    .container{
+        width: 12%;
+        height: 260vh;
+    }
+
+    .item>svg{
+        padding-bottom: 5rem;
+    }
+  
+  }
+
+  @media screen and (max-width: 375px) and (min-width: 321px){
+    .container{
+        width: 13%;
+        height: 260vh;
+    }
+
+    .item>svg{
+        padding-bottom: 4.5rem;
+    }
+  
+  }
+
+  @media screen and (max-width: 425px) and (min-width: 376px){
+    .container{
+        width: 13%;
+        height: 269vh;
+    }
+
+    .item>svg{
+        padding-bottom: 4.5rem;
+    }
+  
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 426px){
+    
+    .container{
+        width: 13%;
+        height: 135vh;
+    }
+
+    .item>svg{
+        padding-bottom: 4.5rem;
+    }
+
+  }

@@ -109,18 +109,20 @@
 .right-h > .btn:nth-child(1) {
   position: absolute;
   right: 3rem;
-  top: 4.5rem;
+  top: 5rem;
   color: white;
   text-decoration: none;
 }
+
 .right-h > .btn:nth-child(2) {
   position: absolute;
-  width: 15rem;
+  width: 13rem;
   right: 3rem;
   top: 2rem;
   color: rgb(251, 247, 247);
   text-decoration: none;
-  background-color: #585e62;
+  background-color: var(--darkGrey);
+  border: 2px solid white;
 }
 
 .x1 {
@@ -254,6 +256,17 @@
     position: relative;
     background: none;
   }
+
+  .right-h > .btn:nth-child(1) {
+    right: 2rem;
+    top: 1.5rem;
+  }
+
+  .right-h > .btn:nth-child(2) {
+    right: 2rem;
+    top: -1rem;
+  }
+
   .heart-rate {
     left: 1rem;
     top: 2rem;
@@ -324,6 +337,17 @@
     position: relative;
     background: none;
   }
+
+  .right-h > .btn:nth-child(1) {
+    right: 2rem;
+    top: 1.5rem;
+  }
+
+  .right-h > .btn:nth-child(2) {
+    right: 2rem;
+    top: -1rem;
+  }
+
   .heart-rate {
     left: 1rem;
     top: 2rem;
@@ -394,6 +418,19 @@
     position: relative;
     background: none;
   }
+
+  .right-h > .btn:nth-child(1) {
+    right: 2rem;
+    top: 1.5rem;
+  }
+
+  .right-h > .btn:nth-child(2) {
+    right: 2rem;
+    top: -1rem;
+    background-color: var(--darkGrey);
+    border: 2px solid var(--lightgray);
+  }
+
   .heart-rate {
     left: 1rem;
     top: 2rem;
@@ -475,6 +512,16 @@
     background: none;
   }
 
+  .right-h > .btn:nth-child(1) {
+    right: 2rem;
+    top: 1.5rem;
+  }
+
+  .right-h > .btn:nth-child(2) {
+    right: 2rem;
+    top: -1rem;
+  }
+
   .heart-rate {
     left: 5rem;
     top: 2rem;
@@ -516,9 +563,22 @@
     right: 1.5rem;
   }
 
+  .right-h > .btn:nth-child(2) {
+    width: 8rem;
+    right: 0.5rem;
+    top: 2rem;
+    font-size: 1rem;
+    font-size: 0.9rem;
+}
+
+.right-h > .btn:nth-child(1) {
+  right: 0.5rem;
+  top: 4.4rem;
+}
+
   .heart-rate {
     left: 2rem;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .heart-rate > img {

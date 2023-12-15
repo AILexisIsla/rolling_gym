@@ -121,7 +121,7 @@ const DataGrid = ({ user, getUserApi }) => {
                 <td>{userItem?.emailUser}</td>
                 <td>{userItem?.rol}</td>
                 <td className="w-25">
-                  <div className=" hero-buttons">
+                  <div className=" hero-buttonsDg">
                     <button
                       onClick={() => handleEditRolAdmin(userItem?._id)}
                       className="btn-edit-delete"
