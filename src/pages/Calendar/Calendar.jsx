@@ -34,6 +34,8 @@ const MyCalendar = ({ classes, getClassApi }) => {
   const [value, setValue] = useState(new Date());
   const [errorMessage, setErrorMessage] = useState(null);
   const [show, setShow] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingClassId, setEditingClassId] = useState(null);
   const [formData, SetFormData] = useState({
     nameClass: "",
     Teacher: "",
@@ -44,6 +46,28 @@ const MyCalendar = ({ classes, getClassApi }) => {
   const formRef = useRef(null);
   const URLCLASS = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
   const STATUS_CREATECLASS = 201;
+
+  const handleGetOneClass = async (id) => {
+    setIsEditing(true);
+    setEditingClassId(id);
+
+    try {
+      const response = await classInstance.get(`${URLCLASS}/class/${id}`);
+      const classApi = response.data;
+
+      SetFormData({
+        nameClass: classApi.nameClass,
+        Teacher: classApi.Teacher,
+        detailsClass: classApi.detailsClass,
+        dateClass: classApi.dateClass,
+        timeClass: classApi.timeClass,
+      });
+    } catch (error) {
+      console.log(error);
+      // Puedes manejar el error según tus necesidades, por ejemplo, mostrando un mensaje al usuario.
+    }
+  };
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     SetFormData((prevValues) => ({ ...prevValues, [name]: value }));
@@ -77,21 +101,42 @@ const MyCalendar = ({ classes, getClassApi }) => {
     ) {
     }
     try {
-      const resp = await classInstance.post(URLCLASS, formData, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-token": JSON.parse(localStorage.getItem("user-token")).token,
-        },
-      });
-      if (resp.status === STATUS_CREATECLASS) {
+      let response;
+
+      if (isEditing) {
+        // Modo edición: Actualizar la clase existente
+        response = await classInstance.put(
+          `${URLCLASS}/class/${editingClassId}`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+            },
+          }
+        );
+      } else {
+        // Modo creación: Crear una nueva clase
+        response = await classInstance.post(URLCLASS, formData, {
+          headers: {
+            "Content-Type": "application/json",
+            "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+          },
+        });
+      }
+
+      if (response.status === STATUS_CREATECLASS) {
         Swal.fire({
-          title: "Creado",
-          text: "Su producto se ha creado correctamente",
+          title: isEditing ? "Actualizado" : "Creado",
+          text: `Su ${isEditing ? "clase" : "producto"} se ha ${
+            isEditing ? "actualizado" : "creado"
+          } correctamente`,
           icon: "success",
           customClass: {
             popup: "swal-custom-style",
           },
         });
+
         formRef.current.reset();
         SetFormData({
           nameClass: "",
@@ -101,10 +146,9 @@ const MyCalendar = ({ classes, getClassApi }) => {
           timeClass: "",
         });
         getClassApi();
+        setIsEditing(false);
+        setEditingClassId(null);
       }
-
-      console.log("Clase de gimnasio creada:", resp.data);
-      // Puedes realizar acciones adicionales después de guardar, como mostrar una notificación de éxito.
     } catch (error) {
       if (error.response) {
         // Si la respuesta contiene datos, puedes acceder a ellos
@@ -151,6 +195,8 @@ const MyCalendar = ({ classes, getClassApi }) => {
               },
             });
             getClassApi();
+            setIsEditing(false);
+            setEditingClassId(null);
           }
         } catch (error) {
           console.log(error);
@@ -214,7 +260,7 @@ const MyCalendar = ({ classes, getClassApi }) => {
                       className="btn sign-in"
                       onClick={handleSubmit}
                     >
-                      AGREGAR CLASE
+                      {isEditing ? "ACTUALIZAR CLASE" : "AGREGAR CLASE"}
                     </button>
                   </div>
                 </form>
@@ -241,7 +287,7 @@ const MyCalendar = ({ classes, getClassApi }) => {
         </div>
 
         <div className="calendar">
-        <h1>Administrar Clases</h1>
+          <h1>Administrar Clases</h1>
           {classes.length !== 0 ? (
             <Table bordered hover responsive className="table-calendar">
               <thead>
@@ -266,7 +312,12 @@ const MyCalendar = ({ classes, getClassApi }) => {
                     <td>{clase?.timeClass}</td>
                     <td className="w-25">
                       <div className=" hero-buttonsDg">
-                        <button className="btn-edit-delete">Editar</button>
+                        <button
+                          className="btn-edit-delete"
+                          onClick={() => handleGetOneClass(clase?._id)}
+                        >
+                          Editar
+                        </button>
                         <button
                           className="btn-edit-delete"
                           onClick={() => handleDeleteClick(clase?._id)}
