@@ -120,75 +120,81 @@ const MyCalendar = ({ getClassApi }) => {
   return (
     <div>
       <Container>
-        <div className="class-container">
-          <h1>Crear Clase</h1>
-          <form ref={formRef} className="form-class">
-            <input
-              type="text"
-              name="nameClass"
-              className="input-class"
-              placeholder="Name Class"
-              onChange={handleChange}
-              value={formData.nameClass}
-            ></input>
-            <input
-              type="text"
-              name="Teacher"
-              className="input-class"
-              placeholder="Teacher"
-              onChange={handleChange}
-              value={formData.Teacher}
-            ></input>
-            <input
-              type="text"
-              name="detailsClass"
-              className="input-class"
-              placeholder="Details Class"
-              onChange={handleChange}
-              value={formData.detailsClass}
-            ></input>
-            <input
-              type="text"
-              name="dateClass"
-              className="input-class"
-              placeholder="dateClass"
-              onChange={handleChange}
-              value={formData.dateClass}
-            ></input>
-            <input
-              type="time"
-              name="timeClass"
-              className="input-class"
-              placeholder="Time Class"
-              onChange={handleChange}
-              value={formData.timeClass}
-            ></input>
-            <div className="sign-in-button">
-              <button
-                type="submit"
-                className="btn sign-in"
-                onClick={handleSubmit}
-              >
-                AGREGAR CLASE
-              </button>
+        <div style={{ display: "flex" }}>
+          <div>
+            <div className="class-container">
+              <h1>Crear Clase</h1>
+              <form ref={formRef} className="form-class">
+                <input
+                  type="text"
+                  name="nameClass"
+                  className="input-class"
+                  placeholder="Name Class"
+                  onChange={handleChange}
+                  value={formData.nameClass}
+                ></input>
+                <input
+                  type="text"
+                  name="Teacher"
+                  className="input-class"
+                  placeholder="Teacher"
+                  onChange={handleChange}
+                  value={formData.Teacher}
+                ></input>
+                <input
+                  type="text"
+                  name="detailsClass"
+                  className="input-class"
+                  placeholder="Details Class"
+                  onChange={handleChange}
+                  value={formData.detailsClass}
+                ></input>
+                <input
+                  type="text"
+                  name="dateClass"
+                  className="input-class"
+                  placeholder="dateClass"
+                  onChange={handleChange}
+                  value={formData.dateClass}
+                ></input>
+                <input
+                  type="time"
+                  name="timeClass"
+                  className="input-class"
+                  placeholder="Time Class"
+                  onChange={handleChange}
+                  value={formData.timeClass}
+                ></input>
+                <div className="sign-in-button">
+                  <button
+                    type="submit"
+                    className="btn sign-in"
+                    onClick={handleSubmit}
+                  >
+                    AGREGAR CLASE
+                  </button>
+                </div>
+              </form>
+              {show && (
+                <Alert
+                  key={errorMessage}
+                  variant="danger"
+                  onClose={() => setShow(false)}
+                  dismissible
+                >
+                  {errorMessage}
+                </Alert>
+              )}
             </div>
-          </form>
-          {show && (
-            <Alert
-              key={errorMessage}
-              variant="danger"
-              onClose={() => setShow(false)}
-              dismissible
-            >
-              {errorMessage}
-            </Alert>
-          )}
+          </div>
+          <div>
+            <StyledCalendar
+              onChange={setValue}
+              value={value}
+              onClickDay={handleClickDay}
+            />
+          </div>
         </div>
-        <StyledCalendar
-          onChange={setValue}
-          value={value}
-          onClickDay={handleClickDay}
-        />
       </Container>
     </div>
   );
