@@ -100,6 +100,7 @@ const DataGrid = ({ user, getUserApi }) => {
 
   return (
     <div>
+      <h1>Administrar Usuarios</h1>
       {user?.length !== 0 ? (
         <Table bordered hover responsive className="table-datagrid">
           <thead>

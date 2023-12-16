@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Calendar from "react-calendar";
 import styled from "styled-components";
 import { classInstance } from "../../config/axios";
-import { Alert, Container } from "react-bootstrap";
+import { Alert, Container, Table } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
   validarDetalleClase,
@@ -30,7 +30,7 @@ const StyledCalendar = styled(Calendar)`
   }
 `;
 
-const MyCalendar = ({ getClassApi }) => {
+const MyCalendar = ({ classes, getClassApi }) => {
   const [value, setValue] = useState(new Date());
   const [errorMessage, setErrorMessage] = useState(null);
   const [show, setShow] = useState(false);
@@ -117,83 +117,184 @@ const MyCalendar = ({ getClassApi }) => {
     }
   };
 
+  const handleDeleteClick = (id) => {
+    Swal.fire({
+      title: "Estas seguro de eliminar el usuario?",
+      text: "No podras arrepentirte de esta accion!",
+      icon: "warning",
+      customClass: {
+        popup: "swal-custom-style",
+      },
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Delete",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await classInstance.delete(
+            `${URLCLASS}/class/${id}`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+                "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+              },
+            }
+          );
+          if (response.status === 200) {
+            Swal.fire({
+              title: "Eliminado!",
+              text: "El usuario fue eliminado con exito.",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
+            getClassApi();
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+  };
+
   return (
     <div>
       <Container>
-        <div style={{ display: "flex" }}>
-          <div>
-            <div className="class-container">
-              <h1>Crear Clase</h1>
-              <form ref={formRef} className="form-class">
-                <input
-                  type="text"
-                  name="nameClass"
-                  className="input-class"
-                  placeholder="Name Class"
-                  onChange={handleChange}
-                  value={formData.nameClass}
-                ></input>
-                <input
-                  type="text"
-                  name="Teacher"
-                  className="input-class"
-                  placeholder="Teacher"
-                  onChange={handleChange}
-                  value={formData.Teacher}
-                ></input>
-                <input
-                  type="text"
-                  name="detailsClass"
-                  className="input-class"
-                  placeholder="Details Class"
-                  onChange={handleChange}
-                  value={formData.detailsClass}
-                ></input>
-                <input
-                  type="text"
-                  name="dateClass"
-                  className="input-class"
-                  placeholder="dateClass"
-                  onChange={handleChange}
-                  value={formData.dateClass}
-                ></input>
-                <input
-                  type="time"
-                  name="timeClass"
-                  className="input-class"
-                  placeholder="Time Class"
-                  onChange={handleChange}
-                  value={formData.timeClass}
-                ></input>
-                <div className="sign-in-button">
-                  <button
-                    type="submit"
-                    className="btn sign-in"
-                    onClick={handleSubmit}
+        <div>
+          <div className="calendar">
+            <div>
+              <div className="class-container">
+                <h1>Crear Clase</h1>
+                <form ref={formRef} className="form-class">
+                  <input
+                    type="text"
+                    name="nameClass"
+                    className="input-class"
+                    placeholder="Name Class"
+                    onChange={handleChange}
+                    value={formData.nameClass}
+                  ></input>
+                  <input
+                    type="text"
+                    name="Teacher"
+                    className="input-class"
+                    placeholder="Teacher"
+                    onChange={handleChange}
+                    value={formData.Teacher}
+                  ></input>
+                  <input
+                    type="text"
+                    name="detailsClass"
+                    className="input-class"
+                    placeholder="Details Class"
+                    onChange={handleChange}
+                    value={formData.detailsClass}
+                  ></input>
+                  <input
+                    type="text"
+                    name="dateClass"
+                    className="input-class"
+                    placeholder="dateClass"
+                    onChange={handleChange}
+                    value={formData.dateClass}
+                  ></input>
+                  <input
+                    type="time"
+                    name="timeClass"
+                    className="input-class"
+                    placeholder="Time Class"
+                    onChange={handleChange}
+                    value={formData.timeClass}
+                  ></input>
+                  <div className="sign-in-button">
+                    <button
+                      type="submit"
+                      className="btn sign-in"
+                      onClick={handleSubmit}
+                    >
+                      AGREGAR CLASE
+                    </button>
+                  </div>
+                </form>
+                {show && (
+                  <Alert
+                    key={errorMessage}
+                    variant="danger"
+                    onClose={() => setShow(false)}
+                    dismissible
                   >
-                    AGREGAR CLASE
-                  </button>
-                </div>
-              </form>
-              {show && (
-                <Alert
-                  key={errorMessage}
-                  variant="danger"
-                  onClose={() => setShow(false)}
-                  dismissible
-                >
-                  {errorMessage}
-                </Alert>
-              )}
+                    {errorMessage}
+                  </Alert>
+                )}
+              </div>
+            </div>
+            <div>
+              <StyledCalendar
+                onChange={setValue}
+                value={value}
+                onClickDay={handleClickDay}
+              />
             </div>
           </div>
-          <div>
-            <StyledCalendar
-              onChange={setValue}
-              value={value}
-              onClickDay={handleClickDay}
-            />
-          </div>
+        </div>
+
+        <div className="calendar">
+        <h1>Administrar Clases</h1>
+          {classes.length !== 0 ? (
+            <Table bordered hover responsive className="table-calendar">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre de la Clase</th>
+                  <th>Detalle de la clase</th>
+                  <th>Teacher</th>
+                  <th>Fecha</th>
+                  <th>Horario</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {classes.map((clase, index) => (
+                  <tr key={clase?._id}>
+                    <td>{index + 1}</td>
+                    <td>{clase?.nameClass}</td>
+                    <td>{clase?.detailsClass}</td>
+                    <td>{clase?.Teacher}</td>
+                    <td>{clase?.dateClass}</td>
+                    <td>{clase?.timeClass}</td>
+                    <td className="w-25">
+                      <div className=" hero-buttonsDg">
+                        <button className="btn-edit-delete">Editar</button>
+                        <button
+                          className="btn-edit-delete"
+                          onClick={() => handleDeleteClick(clase?._id)}
+                        >
+                          Eliminar
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          ) : (
+            <div>
+              <h1 className="no-classes-found d-flex align-items-center justify-content-center">
+                No hay clases encontradas
+              </h1>
+            </div>
+          )}
+          {errorMessage && (
+            <Alert
+              variant="danger"
+              onClose={() => setErrorMessage(null)}
+              dismissible
+            >
+              {errorMessage}
+            </Alert>
+          )}
         </div>
       </Container>
     </div>
