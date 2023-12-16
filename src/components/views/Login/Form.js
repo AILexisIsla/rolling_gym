@@ -42,8 +42,17 @@ const Form = ({ SetLoading }) => {
         navigate("/");
       }
     } catch (error) {
-      console.error("Error al registrar el usuario", error.response.data);
-      setError(error.response.data.message);
+      console.error("Error al iniciar sesion del usuario", error.response.data);
+
+      if (
+        error.response.data.message ===
+        "Correo electrónico o contraseña incorrectos"
+      ) {
+        // Contraseña incorrecta
+        setError("Algunos datos son incorrectos. Verifica tus credenciales.");
+      } else {
+        setError(error.response.data.message);
+      }
     }
   };
   return (
@@ -69,7 +78,7 @@ const Form = ({ SetLoading }) => {
 
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-          INGRESAR
+            INGRESAR
           </button>
           <p>
             <Link to="*" className="forget-password">
