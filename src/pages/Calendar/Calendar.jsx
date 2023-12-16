@@ -120,6 +120,8 @@ const MyCalendar = ({ getClassApi }) => {
   return (
     <div>
       <Container>
+      <div style={{ display: 'flex' }}>
+      <div>
         <div className="class-container">
           <h1>Crear Clase</h1>
           <form ref={formRef} className="form-class">
@@ -184,11 +186,15 @@ const MyCalendar = ({ getClassApi }) => {
             </Alert>
           )}
         </div>
+        </div>
+        <div>
         <StyledCalendar
           onChange={setValue}
           value={value}
           onClickDay={handleClickDay}
         />
+        </div>
+        </div>
       </Container>
     </div>
   );
