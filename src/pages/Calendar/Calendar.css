@@ -1,3 +1,8 @@
+.calendar{
+  display: flex;
+  margin: 2rem;
+}
+
 .calendar-container {
   width: 100%;
   max-width: 130rem;
@@ -7,44 +12,69 @@
 }
 
 .class-container {
-    text-align: center;
-    width: 90%;
-  }
-  
-  .form-class {
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .input-class {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    margin-top: 0.3rem;
-    border-radius: 5px;
-  }
-  
-  .input-class::placeholder {
-    color: white;
-  }
-  
-  .input-class:focus {
-    color: #f87c00;
-  }
-  
-  
-  .sign-in {
-    background-color: #f48915;
-    text-align: center;
-    width: 220px;
-    padding: 0.3rem;
-    border: none;
-    color: rgba(255, 255, 255, 0.836);
-    border-radius: 5px;
-    opacity: 90%;
-  }
-  
-  .sign-in:hover {
-    letter-spacing: 0.2rem;
-  }
+  text-align: center;
+  width: 90%;
+}
+
+.form-class {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.input-class {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+}
+
+.input-class::placeholder {
+  color: white;
+}
+
+.input-class:focus {
+  color: #f87c00;
+}
+
+.sign-in {
+  background-color: #f48915;
+  text-align: center;
+  width: 220px;
+  padding: 0.3rem;
+  border: none;
+  color: rgba(255, 255, 255, 0.836);
+  border-radius: 5px;
+  opacity: 90%;
+}
+
+.sign-in:hover {
+  letter-spacing: 0.2rem;
+}
+
+.table-calendar {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  color: #f0f0f0;
+  width: 100%;
+  margin: 20px auto;
+  overflow-y: auto;
+}
+
+.table-calendar th {
+  color: #5a5c69;
+  background-color: #f0f0f0;
+  padding: 10px 1px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table-calendar td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table-calendar tbody tr:hover {
+  background-color: #5a5c69;
+}
