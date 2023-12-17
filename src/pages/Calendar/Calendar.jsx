@@ -212,7 +212,7 @@ const MyCalendar = ({ classes, getClassApi }) => {
           <div className="calendar">
             <div>
               <div className="class-container">
-                <h1>Crear Clase</h1>
+                <h1>hola Clase</h1>
                 <form ref={formRef} className="form-class">
                   <input
                     type="text"
