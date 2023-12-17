@@ -8,6 +8,7 @@ import nb from "../../assets/nb.png";
 import adidas from "../../assets/adidas.png";
 import nike from "../../assets/nike.png";
 import tick from "../../assets/tick.png";
+import { Link } from "react-router-dom";
 const Reasons = () => {
   return (
     <div className="Reasons" id="reasons">
@@ -54,15 +55,15 @@ const Reasons = () => {
         </span>
 
         <div className="partners">
-          <a href="https://www.newbalance.com.ar" target="blank">
+          <Link to="https://www.newbalance.com.ar" target="blank">
             <img src={nb} alt="logo new balance" />
-          </a>
-          <a href="https://www.adidas.com.ar">
+          </Link>
+          <Link to="https://www.adidas.com.ar">
             <img src={adidas} alt="Logo adidas" />
-          </a>
-          <a href="https://www.nike.com.ar">
+          </Link>
+          <Link to="https://www.nike.com.ar">
             <img src={nike} alt="logo nike" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
