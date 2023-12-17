@@ -1,6 +1,6 @@
 import Orders from "../../components/Orders/Orders";
 import Statistics from "../../components/Statistics/Statistics";
-import { cardsData, groupNumber } from "../../data/index";
+import { cardsData, groupNumber } from "../../data/index.js";
 import css from "./Dashboard.module.css";
 const Dashboard = () => {
   return (
