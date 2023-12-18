@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { BsCloudHaze2 } from "react-icons/bs";
 import { AiOutlinePercentage } from "react-icons/ai";
 import { BsCloudsFill } from "react-icons/bs";
 import { BsCloudSun } from "react-icons/bs";
 import { BsBrightnessHighFill } from "react-icons/bs";
+import { climaApi } from "../../config/axios";
 
 function Weatherapi() {
   const [datos, setDatos] = useState(false);
   const kelvin = 273.15;
   const URL_CLIMA = process.env.REACT_APP_CLIMA;
   useEffect(() => {
-    axios.get(URL_CLIMA).then((response) => {
+    climaApi.get(URL_CLIMA).then((response) => {
       const temp = Math.floor(response.data.main.temp);
       const temperatura = Math.floor(temp - kelvin);
       const humedad = response.data.main.humidity;
