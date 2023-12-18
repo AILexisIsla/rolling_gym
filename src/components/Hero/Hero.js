@@ -13,7 +13,6 @@ import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 
 const Hero = ({ loading, SetLoading }) => {
-  console.log("loading:", loading);
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
   const navigate = useNavigate();
