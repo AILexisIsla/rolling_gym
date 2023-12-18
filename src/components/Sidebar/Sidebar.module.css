@@ -29,7 +29,9 @@
   @media screen and (max-width: 320px){
     .container{
         width: 12%;
-        height: 260vh;
+        height: 50.6rem;
+        position: absolute;
+        z-index: 80;
     }
 
     .item>svg{
@@ -42,6 +44,7 @@
     .container{
         width: 13%;
         height: 260vh;
+        
     }
 
     .item>svg{

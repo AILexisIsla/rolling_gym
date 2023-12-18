@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../Details/Details.css";
+import "../Calendar/Calendar.css"
 import { Link } from "react-router-dom";
 import wbanner from "../../assets/w-banner.png";
 import Footer from "../../components/Footer/Footer";
@@ -36,7 +37,7 @@ const Contact = () => {
         <div className="left-h">
           <Header />
           <div className="center">
-            <div className="container">
+            <div className="containerD containerCalendar">
               <Link to="/">
                 <button>volver</button>
               </Link>
