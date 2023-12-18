@@ -1,7 +1,6 @@
 
 .env
 /node_modules
-src/data
 src/utils
 src/App.test.js
 src/reportWebVitals.js

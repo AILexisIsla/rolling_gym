@@ -2,7 +2,7 @@ import React from "react";
 import "./Programs.css";
 import rightArrow from "../../assets/rightArrow.png";
 import { Link } from "react-router-dom";
-import { programsData } from "../../data/programData.js";
+import { programsData } from "../../Info/programData.js";
 
 const Programs = () => {
   return (

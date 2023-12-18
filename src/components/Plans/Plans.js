@@ -1,5 +1,5 @@
 import React from "react";
-import { plansData } from "../../data/plansData.js";
+import { plansData } from "../../Info/plansData.js";
 import "./Plans.css";
 import whiteTick from "../../assets/whiteTick.png";
 import { Link } from "react-router-dom";
