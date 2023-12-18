@@ -44,7 +44,7 @@ const Header = () => {
               to="programs"
               smooth={true}
             >
-              Programas
+              Programa
             </Link>
           </li>
           <li>

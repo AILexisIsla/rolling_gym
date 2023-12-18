@@ -54,15 +54,14 @@ const Reasons = () => {
         >
           NUESTROS PATROCINADORES
         </span>
-
         <div className="partners">
           <Link to="https://www.newbalance.com.ar" target="blank">
             <img src={nb} alt="logo new balance" />
           </Link>
-          <Link to="https://www.adidas.com.ar">
+          <Link to="https://www.adidas.com.ar" target="blank">
             <img src={adidas} alt="Logo adidas" />
           </Link>
-          <Link to="https://www.nike.com.ar">
+          <Link to="https://www.nike.com.ar" target="blank">
             <img src={nike} alt="logo nike" />
           </Link>
         </div>
