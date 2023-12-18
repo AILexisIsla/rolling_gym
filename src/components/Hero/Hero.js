@@ -1,7 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import Header from "../Header/Header";
-import "./Hero.css";
+import Header from "../Header/Header.js";
 import hero_image from "../../assets/hero_image.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
@@ -9,7 +8,7 @@ import Calories from "../../assets/calories.png";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
-import Weatherapi from "../Weather/Weather";
+import Weatherapi from "../Weather/Weather.js";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 
@@ -124,10 +123,11 @@ const Hero = ({ loading, SetLoading }) => {
               Cerrar Sesion
             </Button>
             <Link to="/Admin" className="btn">
-              <span className="x1">Bienvenido </span>{loading?.NameUser}{" "}
+              <span className="x1">Bienvenido </span>
+              {loading?.NameUser}{" "}
             </Link>
           </>
-        ) : ( 
+        ) : (
           <Link to="/Login" className="btn">
             Unete ahora
           </Link>

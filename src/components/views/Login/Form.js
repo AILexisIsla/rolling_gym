@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { userInstance } from "../../../config/axios";
+import { userInstance } from "../../../config/axios.js";
 
 const Form = ({ SetLoading }) => {
   const [user, SetUser] = useState({

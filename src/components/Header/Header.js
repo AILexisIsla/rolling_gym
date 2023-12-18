@@ -11,7 +11,7 @@ const Header = () => {
     <div className="header" id="home">
       <img src={Logo} alt="" className="logo" />
 
-      {(menuOpened === false && mobile === true) ? (
+      {menuOpened === false && mobile === true ? (
         <div
           style={{
             backgroundColor: "var(--appColor)",
@@ -33,7 +33,6 @@ const Header = () => {
               onClick={() => setMenuOpened(false)}
               activeClass="active"
               to="home"
-              span={true}
               smooth={true}
             >
               Home
@@ -43,7 +42,6 @@ const Header = () => {
             <Link
               onClick={() => setMenuOpened(false)}
               to="programs"
-              span={true}
               smooth={true}
             >
               Programas
@@ -53,19 +51,13 @@ const Header = () => {
             <Link
               onClick={() => setMenuOpened(false)}
               to="reasons"
-              span={true}
               smooth={true}
             >
               ¿Por qué nosotros?
             </Link>
           </li>
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              to="Plans"
-              span={true}
-              smooth={true}
-            >
+            <Link onClick={() => setMenuOpened(false)} to="Plans" smooth={true}>
               Planes
             </Link>
           </li>
@@ -73,7 +65,6 @@ const Header = () => {
             <Link
               onClick={() => setMenuOpened(false)}
               to="testimonials"
-              span={true}
               smooth={true}
             >
               Testimonios
@@ -83,7 +74,6 @@ const Header = () => {
             <Link
               onClick={() => setMenuOpened(false)}
               to="contact"
-              span={true}
               smooth={true}
             >
               Contáctenos

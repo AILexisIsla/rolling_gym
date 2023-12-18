@@ -6,8 +6,8 @@ import {
   validateNameuser,
   validatePassworduser,
   validateTelefono,
-} from "../../helpers/ValidateFormRegister";
-import { userInstance } from "../../../config/axios";
+} from "../../helpers/ValidateFormRegister.js";
+import { userInstance } from "../../../config/axios.js";
 
 const RegisterForm = ({ SetLoading }) => {
   const [user, SetUser] = useState({

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../../assets/logo.png";
-import RegisterForm from "./RegisterForm";
+import RegisterForm from "./RegisterForm.js";
 import "../Register/Register.css";
 
 const Register = ({ SetLoading }) => {
