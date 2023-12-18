@@ -332,7 +332,7 @@ const MyCalendar = ({ classes, getClassApi }) => {
             </Table>
           ) : (
             <div>
-              <h1 className="no-classes-found d-flex align-items-center justify-content-center">
+              <h1 className="no-classes-found-Calendar">
                 No hay clases encontradas
               </h1>
             </div>
