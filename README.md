@@ -1,74 +1,82 @@
-# Getting Started with Create React App
+# Rolling Gym
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto esta creado con create React App
 
-## Available Scripts
+## Funcionalidad
 
-In the project directory, you can run:
+El mismo tiene pensado que el Admin pueda administrar clases y usuarios de un Gymnasio, cuenta con un panel de control para dichas tareas.
+El usuario pueda registrasrse
+...
 
-### `npm start`
+## Tabla de Contenidos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Tecnologías](#tecnologías)
+- [Dependencias](#dependencias)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Contribución](#contribución)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tecnologías
 
-### `npm test`
+<div style="display: flex; justify-content: space-around; gap 1rem">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCRKguaNZrVn6-NK9Ir6VdZf7PoRwLStgLLgsoSMq9ZA&s" alt="React" style="width: 3rem;">
+    <img src="https://github.com/npm/logos/raw/master/npm%20logo/npm-logo-red.png?raw=true" alt="npm" style="width: 3rem;">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS" style="width: 3rem;">
+    <img src="https://camo.githubusercontent.com/47a840b7c77ea89c6ca53ccea057d6190136374e062e3823346449f61bb088af/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f392f39392f556e6f6666696369616c5f4a6176615363726970745f6c6f676f5f322e7376672f35313270782d556e6f6666696369616c5f4a6176615363726970745f6c6f676f5f322e7376672e706e673f3230313431313037313130393032" alt="Scrum" style="width: 3rem;">
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dependencias
 
-### `npm run build`
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <div style="flex: 1;">
+    <ul>
+      <li>@emailjs</li>
+      <li>@emotion/react</li>
+      <li>@emotion/styled</li>
+    <li>@react-bootstrap</li>
+      <li>@react-calendar</li>
+    </ul>
+  </div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <div style="flex: 1;">
+    <ul>
+      <li>@react-dom</li>
+      <li>@react-icons</li>
+      <li>@react-dom</li>
+      <li>@emotion/react</li>
+      <li>@number-counter</li>
+    </ul>
+  </div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <div style="flex: 1;">
+    <ul>
+      <li>"@echarts</li>
+      <li>"@sweetalert2</li>
+      <li>"@web-vitals</li>
+      <li>"@echarts-for-react</li>
+      <li>"@-motion</li>
+      <li>"@zustand</li>
+    </ul>
+  </div>
 
-### `npm run eject`
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Instalación
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clona el repositorio:
+   Git Clone https://github.com/RollingTeam3/rolling_gym.git
+2. instalar las dependencias necesarias : npm install
+3. ...
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Uso
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+...
+Demo
+...
 
-## Learn More
+### Contribución
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-/* global loading */ 
-Al inicio de Hero.js se agrego /* global loading */ para eveitar el error de loading noesta declarado.
+- Alexis Isla
+- Julieta Ferreyra
+- Lucas Corbalan
