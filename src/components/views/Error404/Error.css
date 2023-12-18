@@ -2,7 +2,7 @@
 img{
     width: 50%;
 }
-.container{
+.containerE{
     height: 100vh;
     display: flex;
     flex-direction: column;
