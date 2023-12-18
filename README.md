@@ -28,7 +28,6 @@ El usuario pueda registrasrse
 ### Dependencias
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-
   <div style="flex: 1;">
     <ul>
       <li>@emailjs</li>
@@ -38,7 +37,6 @@ El usuario pueda registrasrse
       <li>@react-calendar</li>
     </ul>
   </div>
-
   <div style="flex: 1;">
     <ul>
       <li>@react-dom</li>
@@ -48,7 +46,6 @@ El usuario pueda registrasrse
       <li>@number-counter</li>
     </ul>
   </div>
-
   <div style="flex: 1;">
     <ul>
       <li>"@echarts</li>
@@ -59,7 +56,6 @@ El usuario pueda registrasrse
       <li>"@zustand</li>
     </ul>
   </div>
-
 </div>
 
 ### Instalación
@@ -67,16 +63,14 @@ El usuario pueda registrasrse
 1. Clona el repositorio:
    Git Clone https://github.com/RollingTeam3/rolling_gym.git
 2. instalar las dependencias necesarias : npm install
-3. ...
+3. En su terminal Bash o Powershell corra el comando : npm start
 
 ### Uso
 
-...
-Demo
-...
+[ DEMO ](https://rollingwebtesting.netlify.app/)
 
 ### Contribución
 
-- Alexis Isla
-- Julieta Ferreyra
-- Lucas Corbalan
+- [Alexis Isla](https://github.com/AILexisIsla)
+- [Lucas Corbalan](https://github.com/LucasCorbalan3)
+- [Julieta Ferreyra](https://github.com/LokTedd4000)
