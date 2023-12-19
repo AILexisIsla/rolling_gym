@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import wbanner from "../../assets/w-banner.png";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import Swal from 'sweetalert2';
 
 const Contact = () => {
   useEffect(()=>{
