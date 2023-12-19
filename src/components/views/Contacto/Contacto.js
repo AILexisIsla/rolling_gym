@@ -48,7 +48,7 @@ const mostrarAlerta=()=>{
       <div className="center11">
       <div className="container11">
       
-      <img src={calculate} alt="" className="calculate" />
+      <img src={calculate} alt="" className="calculateC" />
 </div>
         
         <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>

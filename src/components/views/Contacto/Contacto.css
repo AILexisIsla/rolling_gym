@@ -63,3 +63,25 @@
     cursor: pointer;
     width: 300px;
 }
+
+@media screen and (max-width: 768px){
+
+  .center11 {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+  .calculateC {
+    width: 15rem;  
+}
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px){  
+
+  .calculateC{
+    width: 25rem;
+    padding-left: 8rem;
+    padding-top: 3rem;
+  }
+
+}
