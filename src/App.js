@@ -5,7 +5,7 @@ import Login from "./components/views/Login/Login";
 import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { classInstance, userInstance } from "./config/axios";
 import CreateClass from "./components/views/CreateClass/CreateClass";
 import EditClass from "./components/views/EditClass/EditClass";
@@ -16,6 +16,8 @@ import Calendar from "./pages/Calendar/Calendar";
 import DataGrid from "./pages/DataGrid/DataGrid";
 import Contacto from "./components/views/Contacto/Contacto";
 import Details from "./pages/Details/Details";
+import { AuthContext } from "../src/auth/authContext";
+import { authReducer } from "../src/auth/authReducer";
 
 const userInfoLs = JSON.parse(localStorage.getItem("user-token"));
 
@@ -48,7 +50,19 @@ function App() {
     }
   };
 
+  const init = () => {
+    return {
+      logged : true,
+      name : 'Alexis temporal', //de aca lee del local o el backend y al lado || {logged o llegIn: false}//
+    }
+  }
+  const [ anotherUser, dispatch ] = useReducer( authReducer, {}, init );
+
   return (
+    <AuthContext.Provider value={{
+      anotherUser, //esto es porque user ya fue declarado//
+      dispatch,
+    }}>
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -111,6 +125,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </AuthContext.Provider>
   );
 }
 
