@@ -53,7 +53,7 @@ function App() {
   const init = () => {
     return {
       logged : true,
-      name : 'Alexis temporal', //de aca lee del local o el backend y al lado || {logged o llegIn: false}//
+      name : 'Alexis temporal', //de aca lee del local o el backend y al lado || {logged o loggedIn: false}//
     }
   }
   const [ anotherUser, dispatch ] = useReducer( authReducer, {}, init );

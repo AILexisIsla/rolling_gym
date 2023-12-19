@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../Login/Login.css";
 import logo from "../../../assets/logo.png";
 import Form from "./Form";
+import { AuthContext } from "../../../auth/authContext";
 
 const Login = ({ SetLoading }) => {
   return (

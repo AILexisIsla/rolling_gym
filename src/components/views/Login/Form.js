@@ -4,7 +4,15 @@ import Swal from "sweetalert2";
 import { userInstance } from "../../../config/axios";
 
 const Form = ({ SetLoading }) => {
+  const {dispatch} = useContext(AuthContext);
+
   const [user, SetUser] = useState({
+    /* const handleLogin = () =>{
+      const action = {
+        type: types.login,
+        payload: { name: 'user'}
+      dipatch(action);      }
+    }*/
     emailUser: "",
     passwordUser: "",
   });
