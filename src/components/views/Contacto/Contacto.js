@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "../Contacto/Contacto.css";
 import { Link } from "react-router-dom";
-import wbanner from "../../../assets/w-banner.png";
+import calculate from "../../../assets/calculate-img.png";
 import Swal from "sweetalert2";
 
 
@@ -48,7 +48,7 @@ const mostrarAlerta=()=>{
       <div className="center">
       <div className="container">
       <Link to='/'><button>volver</button></Link>
-      <img src={wbanner} alt="" className="w-banner" />
+      <img src={calculate} alt="" className="w-banner" />
 </div>
         
         <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>
