@@ -5,8 +5,7 @@ Este proyecto esta creado con create React App
 ## Funcionalidad
 
 El mismo tiene pensado que el Admin pueda administrar clases y usuarios de un Gymnasio, cuenta con un panel de control para dichas tareas.
-El usuario pueda registrasrse
-...
+Acepta Registro de usuarios con una encriptacion de password y token.
 
 ## Tabla de Contenidos
 
@@ -33,7 +32,7 @@ El usuario pueda registrasrse
       <li>@emailjs</li>
       <li>@emotion/react</li>
       <li>@emotion/styled</li>
-    <li>@react-bootstrap</li>
+      <li>@react-bootstrap</li>
       <li>@react-calendar</li>
     </ul>
   </div>
