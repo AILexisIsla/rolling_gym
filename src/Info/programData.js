@@ -1,5 +1,6 @@
 export const programsData = [
   {
+    id: 1,
     image: (
       <svg
         width="16"
@@ -15,6 +16,7 @@ export const programsData = [
       "En este programa, te entrenas para mejorar tu fuerza a través de muchos ejercicios.",
   },
   {
+    id: 2,
     image: (
       <svg
         width="16"
@@ -35,6 +37,7 @@ export const programsData = [
       "En este programa, te entrenas para hacer movimientos secuenciales en un rango de 20 a 30 minutos.",
   },
   {
+    id: 3,
     image: (
       <svg
         width="12"
@@ -50,6 +53,7 @@ export const programsData = [
       "Este programa es adecuado para ti si quieres deshacerte de tu grasa y perder peso.",
   },
   {
+    id: 4,
     image: (
       <svg
         width="20"

@@ -1,8 +1,8 @@
 import React from "react";
-import { plansData } from "../../data/plansData";
+import { plansData } from "../../Info/plansData.js";
 import "./Plans.css";
 import whiteTick from "../../assets/whiteTick.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const Plans = () => {
   return (
@@ -23,9 +23,9 @@ export const Plans = () => {
             <span>$ {plan.price}</span>
             <div className="features">
               {plan.features.map((feature, i) => (
-                <div className="feature">
+                <div className="feature" key={i}>
                   <img src={whiteTick} alt="" />
-                  <span key={i}>{feature}</span>
+                  <span>{feature}</span>
                 </div>
               ))}
             </div>
@@ -33,7 +33,9 @@ export const Plans = () => {
             <div>
               <span>Ver más beneficios -{">"}</span>
             </div>
-            <Link to="/pages/Details" id="btnP"><button className="btn">Únete ahora</button></Link>
+            <Link to="/pages/Details" id="btnP">
+              <button className="btn">Únete ahora</button>
+            </Link>
           </div>
         ))}
       </div>

@@ -6,10 +6,12 @@ import Linkedin from "../../assets/linkedin.png";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
+import "../../pages/Calendar/Calendar.css"
+
 const Footer = () => {
   return (
-    <div className="Footer-container">
-      <hr />
+    <div className="Footer-container footerCalendar">
+      <hr className="footer-hr" />
       <div className="footer">
         <div className="column">
           <div className="logo-f">

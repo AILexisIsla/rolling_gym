@@ -1,3 +1,8 @@
+.calendar{
+  display: flex;
+  margin: 2rem;
+}
+
 .calendar-container {
   width: 100%;
   max-width: 130rem;
@@ -7,44 +12,368 @@
 }
 
 .class-container {
+  text-align: center;
+  width: 90%;
+}
+
+.form-class {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.input-class {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+}
+
+.input-class::placeholder {
+  color: white;
+}
+
+.input-class:focus {
+  color: #f87c00;
+}
+
+.sign-in {
+  background-color: #f48915;
+  text-align: center;
+  width: 220px;
+  padding: 0.3rem;
+  border: none;
+  color: rgba(255, 255, 255, 0.836);
+  border-radius: 5px;
+  opacity: 90%;
+}
+
+.sign-in:hover {
+  letter-spacing: 0.2rem;
+}
+
+.table-calendar {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  color: #f0f0f0;
+  width: 100%;
+  margin: 20px auto;
+  overflow-y: auto;
+}
+
+.table-calendar th {
+  color: #5a5c69;
+  background-color: #f0f0f0;
+  padding: 10px 1px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table-calendar td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table-calendar tbody tr:hover {
+  background-color: #5a5c69;
+}
+
+.no-classes-found-Calendar {
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 320px){
+
+  .calendar{
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+
+  }
+
+  .calendar > h1 {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 3rem;
+  }
+
+  .no-classes-found-Calendar{
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 2rem;
     text-align: center;
+  }
+
+  .class-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  .form-class {
+    padding-left: 3rem;
+    width: 150%;
+  }
+
+  .sign-in {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .react-calendar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200%;
+  }
+
+  .react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 5rem;
+  }  
+
+  .react-calendar__navigation > button{
+    padding: 0.4rem;
+  }  
+
+  .react-calendar__viewContainer{
+    width: 50%;
+    padding: 1rem;
+  }
+
+  .react-calendar__tile{
+    padding: 0.9rem;
+  }
+
+  .react-calendar__month-view__days__day{
+    padding: 0.9rem;
+  }
+  
+  .footerCalendar{
+    padding-top: 2rem;    
+  }
+  
+}
+
+@media screen and (max-width: 375px) and (min-width: 321px){
+
+  .calendar{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+
+  .calendar > h1 {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2.5rem;
+  }
+
+  .no-classes-found-Calendar{
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 2rem;
+    text-align: center;
+  }
+
+  .class-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  .form-class {
+    padding-left: -1rem;
+    width: 85%;
+  }
+
+  .sign-in {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .react-calendar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200%;
+  }
+
+  .react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 4rem;
+  }  
+
+  .react-calendar__navigation > button{
+    padding: 0.4rem;
+  }  
+
+  .react-calendar__viewContainer{
+    width: 50%;
+    padding: 1rem -2rem;
+  }
+
+  .react-calendar__tile{
+    padding: 0.9rem;
+  }
+
+  .react-calendar__month-view__days__day{
+    padding: 0.9rem;
+  }
+  
+  .footerCalendar{
+    padding-top: 2rem;    
+    padding-right: 3rem;
+  }
+  
+}
+
+
+@media screen and (max-width: 425px) and (min-width: 376px){
+
+  .calendar{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .calendar > h1 {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 4.5rem;
+  }
+
+  .no-classes-found-Calendar{
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 2rem;
+    text-align: center;
+  }
+
+  .class-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-class {
+    padding-left: -1rem;
     width: 90%;
   }
-  
-  .form-class {
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .input-class {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    margin-top: 0.3rem;
-    border-radius: 5px;
-  }
-  
-  .input-class::placeholder {
-    color: white;
-  }
-  
-  .input-class:focus {
-    color: #f87c00;
-  }
-  
-  
+
   .sign-in {
-    background-color: #f48915;
-    text-align: center;
-    width: 220px;
-    padding: 0.3rem;
-    border: none;
-    color: rgba(255, 255, 255, 0.836);
-    border-radius: 5px;
-    opacity: 90%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .react-calendar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200%;
+  }
+
+  .react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 5.5rem;
+  }  
+
+  .react-calendar__navigation > button{
+    padding: 0.4rem;
+  }  
+
+  .react-calendar__viewContainer{
+    width: 50%;
+    padding: 1rem -2rem;
+  }
+
+  .react-calendar__tile{
+    padding: 0.9rem;
+  }
+
+  .react-calendar__month-view__days__day{
+    padding: 0.9rem;
   }
   
-  .sign-in:hover {
-    letter-spacing: 0.2rem;
+  .footerCalendar{
+    padding-top: 2rem;    
+    padding-right: 6rem;
   }
+  
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px){
+
+  .react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 7rem;
+    width: 10rem;
+  }  
+
+  .react-calendar__navigation > button{
+    padding: 0.5rem 1rem;
+  } 
+
+  .footerCalendar{
+    padding-top: 2rem;    
+    padding-right: 7rem;
+  }
+
+  .form-class {
+    padding-top: 2.5rem;
+    width: 90%;
+  }
+
+  .no-classes-found-Calendar{
+    align-items: center;
+    text-align: center;
+  }
+  
+  .calendar > h1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px){
+
+  .react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 17rem;
+    width: 8rem;
+  }
+
+  .react-calendar__navigation > button{
+    padding: 0.5rem 2rem;
+  } 
+
+  .calendar > h1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+  }
+}

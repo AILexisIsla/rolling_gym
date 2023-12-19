@@ -3,7 +3,7 @@ import image1 from "../../assets/levantamiento-de-pesas.png";
 import image2 from "../../assets/apreton-de-manos.png";
 import image3 from "../../assets/cinta.png";
 import "./AboutUs.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -30,7 +30,9 @@ const AboutUs = () => {
             <tr>
               <th className="encabezadoA thAbout">Nuestra Pasión</th>
               <th className="encabezadoA thAbout">Experiencia del Usuario</th>
-              <th className="encabezadoA thAbout">Compromiso con la Excelencia</th>
+              <th className="encabezadoA thAbout">
+                Compromiso con la Excelencia
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -72,7 +74,9 @@ const AboutUs = () => {
           </tbody>
         </table>
         <div id="idA">
-        <Link id="btnAu" to="/">Volver al inicio</Link>
+          <Link id="btnAu" to="/">
+            Volver al inicio
+          </Link>
         </div>
       </section>
     </div>

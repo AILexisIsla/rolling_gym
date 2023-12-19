@@ -1,5 +1,9 @@
-.min-h-screen {
-    max-height: screen;
+
+img{
+    width: 50%;
+}
+.containerE{
+    height: 100vh;
     display: flex;
     flex-direction: column; /* Añade esta línea */
     align-items: center; /* Cambia esta línea */

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { userInstance } from "../../../config/axios";
+import { userInstance } from "../../../config/axios.js";
 
 const Form = ({ SetLoading }) => {
   const [user, SetUser] = useState({
@@ -42,8 +42,17 @@ const Form = ({ SetLoading }) => {
         navigate("/");
       }
     } catch (error) {
-      console.error("Error al registrar el usuario", error.response.data);
-      setError(error.response.data.message);
+      console.error("Error al iniciar sesion del usuario", error.response.data);
+
+      if (
+        error.response.data.message ===
+        "Correo electrónico o contraseña incorrectos"
+      ) {
+        // Contraseña incorrecta
+        setError("Algunos datos son incorrectos. Verifica tus credenciales.");
+      } else {
+        setError(error.response.data.message);
+      }
     }
   };
   return (
@@ -53,7 +62,7 @@ const Form = ({ SetLoading }) => {
           type="email"
           name="emailUser"
           className="input-login"
-          placeholder="UserName"
+          placeholder="Email"
           value={user.emailUser || ""}
           onChange={(e) => handleChange(e)}
         ></input>
@@ -61,7 +70,7 @@ const Form = ({ SetLoading }) => {
           type="password"
           name="passwordUser"
           className="input-login"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={user.passwordUser || ""}
           onChange={(e) => handleChange(e)}
         ></input>
@@ -69,18 +78,21 @@ const Form = ({ SetLoading }) => {
 
         <div className="sign-in-button">
           <button type="submit" className="btn sign-in">
-            SIGN IN
+            INGRESAR
           </button>
           <p>
             <Link to="*" className="forget-password">
-              Forget Password |
+              Olvidaste tu contraseña ? |
             </Link>
             <span>
               <Link to="/Register" className="sign-up">
-                Sign UP |
+                Registrate
               </Link>
             </span>
           </p>
+              <Link to="/" className="sign-up">
+              | Home |
+              </Link>
         </div>
       </form>
     </div>

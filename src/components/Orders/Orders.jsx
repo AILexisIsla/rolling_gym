@@ -1,46 +1,43 @@
-import React from 'react'
-import { groupNumber, ordersData } from '../../data'
-import css from './Orders.module.css'
-import logo from '../../assets/logoD.png'
-import OrdersPieChart from '../OrdersPieChart/OrdersPieChart'
+import React from "react";
+import { groupNumber, ordersData } from "../../Info";
+import css from "./Orders.module.css";
+import logo from "../../assets/logoD.png";
+import OrdersPieChart from "../OrdersPieChart/OrdersPieChart";
 
 const Orders = () => {
-    return (
-        <div className={`${css.container} theme-container`}>
-            <div className={css.head}>
-                <img src={logo} alt="logo" />
-                <span>Clases de hoy</span>
+  return (
+    <div className={`${css.container} theme-container`}>
+      <div className={css.head}>
+        <img src={logo} alt="logo" />
+        <span>Clases de hoy</span>
+      </div>
+
+      <div className={`grey-container ${css.stat}`}>
+        <span>Ganancias</span>
+        <span>$ {groupNumber(4560)}</span>
+      </div>
+
+      <div className={css.orders}>
+        {ordersData.map((order, index) => (
+          <div key={index} className={css.order}>
+            <div>
+              <span>{order.name}</span>
+              <span>$ {order.change}</span>
             </div>
-
-            <div className={`grey-container ${css.stat}`}>
-                <span>Ganancias</span>
-                <span>$ {groupNumber(4560)}</span>
+            <div>
+              <span>{order.type}</span>
+              <span>Items: {order.items}</span>
             </div>
+          </div>
+        ))}
+      </div>
 
-            <div className={css.orders}>
-                {
-                    ordersData.map((order, index) => (
-                        <div key={index} className={css.order}>
-                            <div>
-                                <span>{order.name}</span>
-                                <span>$ {order.change}</span>
-                            </div>
-                            <div>
-                                <span>{order.type}</span>
-                                <span>Items: {order.items}</span>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
+      <div className={css.orderChart}>
+        <span>Divididos por clases</span>
+        <OrdersPieChart />
+      </div>
+    </div>
+  );
+};
 
-
-            <div className={css.orderChart}>
-                <span>Divididos por clases</span>
-                <OrdersPieChart/>
-            </div>
-        </div>
-    )
-}
-
-export default Orders
+export default Orders;

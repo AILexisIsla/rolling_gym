@@ -86,8 +86,15 @@
   color: #ff8400;
 }
 
-.datos-temp{
+.datos-temp {
   display: flex;
   color: white;
   padding: 0.1rem;
+}
+
+.error-message {
+  color: rgb(250, 1, 1);
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: bold;
 }

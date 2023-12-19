@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Calendar from "react-calendar";
 import styled from "styled-components";
 import { classInstance } from "../../config/axios";
-import { Alert, Container } from "react-bootstrap";
+import { Alert, Container, Table } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
   validarDetalleClase,
@@ -30,10 +30,12 @@ const StyledCalendar = styled(Calendar)`
   }
 `;
 
-const MyCalendar = ({ getClassApi }) => {
+const MyCalendar = ({ classes, getClassApi }) => {
   const [value, setValue] = useState(new Date());
   const [errorMessage, setErrorMessage] = useState(null);
   const [show, setShow] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingClassId, setEditingClassId] = useState(null);
   const [formData, SetFormData] = useState({
     nameClass: "",
     Teacher: "",
@@ -44,6 +46,28 @@ const MyCalendar = ({ getClassApi }) => {
   const formRef = useRef(null);
   const URLCLASS = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
   const STATUS_CREATECLASS = 201;
+
+  const handleGetOneClass = async (id) => {
+    setIsEditing(true);
+    setEditingClassId(id);
+
+    try {
+      const response = await classInstance.get(`${URLCLASS}/class/${id}`);
+      const classApi = response.data;
+
+      SetFormData({
+        nameClass: classApi.nameClass,
+        Teacher: classApi.Teacher,
+        detailsClass: classApi.detailsClass,
+        dateClass: classApi.dateClass,
+        timeClass: classApi.timeClass,
+      });
+    } catch (error) {
+      console.log(error);
+      // Puedes manejar el error según tus necesidades, por ejemplo, mostrando un mensaje al usuario.
+    }
+  };
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     SetFormData((prevValues) => ({ ...prevValues, [name]: value }));
@@ -77,21 +101,42 @@ const MyCalendar = ({ getClassApi }) => {
     ) {
     }
     try {
-      const resp = await classInstance.post(URLCLASS, formData, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-token": JSON.parse(localStorage.getItem("user-token")).token,
-        },
-      });
-      if (resp.status === STATUS_CREATECLASS) {
+      let response;
+
+      if (isEditing) {
+        // Modo edición: Actualizar la clase existente
+        response = await classInstance.put(
+          `${URLCLASS}/class/${editingClassId}`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+            },
+          }
+        );
+      } else {
+        // Modo creación: Crear una nueva clase
+        response = await classInstance.post(URLCLASS, formData, {
+          headers: {
+            "Content-Type": "application/json",
+            "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+          },
+        });
+      }
+
+      if (response.status === STATUS_CREATECLASS) {
         Swal.fire({
-          title: "Creado",
-          text: "Su producto se ha creado correctamente",
+          title: isEditing ? "Actualizado" : "Creado",
+          text: `Su ${isEditing ? "clase" : "producto"} se ha ${
+            isEditing ? "actualizado" : "creado"
+          } correctamente`,
           icon: "success",
           customClass: {
             popup: "swal-custom-style",
           },
         });
+
         formRef.current.reset();
         SetFormData({
           nameClass: "",
@@ -101,10 +146,9 @@ const MyCalendar = ({ getClassApi }) => {
           timeClass: "",
         });
         getClassApi();
+        setIsEditing(false);
+        setEditingClassId(null);
       }
-
-      console.log("Clase de gimnasio creada:", resp.data);
-      // Puedes realizar acciones adicionales después de guardar, como mostrar una notificación de éxito.
     } catch (error) {
       if (error.response) {
         // Si la respuesta contiene datos, puedes acceder a ellos
@@ -117,11 +161,53 @@ const MyCalendar = ({ getClassApi }) => {
     }
   };
 
+  const handleDeleteClick = (id) => {
+    Swal.fire({
+      title: "Estas seguro de eliminar el usuario?",
+      text: "No podras arrepentirte de esta accion!",
+      icon: "warning",
+      customClass: {
+        popup: "swal-custom-style",
+      },
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Delete",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await classInstance.delete(
+            `${URLCLASS}/class/${id}`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+                "x-token": JSON.parse(localStorage.getItem("user-token")).token,
+              },
+            }
+          );
+          if (response.status === 200) {
+            Swal.fire({
+              title: "Eliminado!",
+              text: "El usuario fue eliminado con exito.",
+              icon: "success",
+              customClass: {
+                popup: "swal-custom-style",
+              },
+            });
+            getClassApi();
+            setIsEditing(false);
+            setEditingClassId(null);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+  };
+
   return (
     <div>
       <Container>
-      <div style={{ display: 'flex' }}>
-      <div>
         <div className="class-container">
           <h1>Crear Clase</h1>
           <form ref={formRef} className="form-class">
@@ -186,15 +272,11 @@ const MyCalendar = ({ getClassApi }) => {
             </Alert>
           )}
         </div>
-        </div>
-        <div>
         <StyledCalendar
           onChange={setValue}
           value={value}
           onClickDay={handleClickDay}
         />
-        </div>
-        </div>
       </Container>
     </div>
   );

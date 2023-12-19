@@ -1,7 +1,7 @@
 import React from "react";
 import "../Login/Login.css";
 import logo from "../../../assets/logo.png";
-import Form from "./Form";
+import Form from "./Form.js";
 
 const Login = ({ SetLoading }) => {
   return (
