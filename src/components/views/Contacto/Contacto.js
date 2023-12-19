@@ -45,10 +45,10 @@ const mostrarAlerta=()=>{
 
   return (
     <html>
-      <div className="center">
-      <div className="container">
-      <Link to='/'><button>volver</button></Link>
-      <img src={calculate} alt="" className="w-banner" />
+      <div className="center11">
+      <div className="container11">
+      
+      <img src={calculate} alt="" className="calculate" />
 </div>
         
         <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>
@@ -59,6 +59,7 @@ const mostrarAlerta=()=>{
           <label>Mensaje</label>
           <textarea name="message" />
           <input type="submit" value="Send" />
+          <Link to='/'><button className="quemado">volver</button></Link>
         </form>
       </div>
       </html>

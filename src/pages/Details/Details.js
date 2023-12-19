@@ -6,7 +6,19 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 
 const Contact = () => {
-  const form = useRef();
+  useEffect(()=>{
+    mostrarAlerta();
+  },[]);
+  
+  const mostrarAlerta=()=>{
+    Swal.fire(
+      'Good job!',
+    'Mensaje enviado!',
+    'success'
+    )
+  }
+  
+    const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -42,15 +54,16 @@ const Contact = () => {
               <img src={wbanner} alt="" className="w-banner" />
             </div>
 
-            <form ref={form} onSubmit={sendEmail}>
-              <label>Nombre</label>
-              <input type="text" name="user_name" />
-              <label>Email</label>
-              <input type="email" name="user_email" />
-              <label>Mensaje</label>
-              <textarea name="message" />
-              <input type="submit" value="Send" />
-            </form>
+            <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>
+          <label>Nombre</label>
+          <input type="text" name="user_name" />
+          <label>Email</label>
+          <input type="email" name="user_email" />
+          <label>Mensaje</label>
+          <textarea name="message" />
+          <input type="submit" value="Send" />
+        </form>
+      
           </div>
           <Footer />
         </div>
