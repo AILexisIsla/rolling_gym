@@ -87,6 +87,11 @@
   color: orange;  
 }
 
+.btn {
+  background-color: var(--orange);  /* Cambiar el fondo a naranja */
+  color: white;  /* Cambiar el color del texto a negro */
+}
+
 #btnP {
   text-decoration: none;
   box-shadow: 1px 1px 13px white;

@@ -93,7 +93,7 @@
 
 .hero-buttons > :nth-child(1) {
   color: white;
-  background-color: var(--orange);
+  background-color: #f48915;
   width: 8rem;
   text-decoration: none;
 }
@@ -109,9 +109,11 @@
 .right-h > .btn:nth-child(1) {
   position: absolute;
   right: 3rem;
-  top: 5rem;
-  color: white;
+  top: 5rem;  
+  color: var(--darkGrey);
   text-decoration: none;
+  background-color: #f48915;
+  border: 2px solid var(--darkGrey);
 }
 
 .right-h > .btn:nth-child(2) {
