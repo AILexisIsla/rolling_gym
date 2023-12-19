@@ -145,6 +145,9 @@ const RegisterForm = ({ SetLoading }) => {
               </Link>
             </span>
           </p>
+              <Link to="/" className="sign-up">
+                | Home |
+              </Link>
         </div>
       </form>
     </div>

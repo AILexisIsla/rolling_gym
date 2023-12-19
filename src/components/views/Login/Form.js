@@ -86,10 +86,13 @@ const Form = ({ SetLoading }) => {
             </Link>
             <span>
               <Link to="/Register" className="sign-up">
-                Registrate |
+                Registrate
               </Link>
             </span>
           </p>
+              <Link to="/" className="sign-up">
+              | Home |
+              </Link>
         </div>
       </form>
     </div>
