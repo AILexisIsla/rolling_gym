@@ -5,6 +5,7 @@ import wbanner from "../../assets/w-banner.png";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Swal from 'sweetalert2';
+import "./Details.css";
 
 const Contact = () => {
   useEffect(()=>{
@@ -43,15 +44,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="hero" id="home">
+    <div>
       <div>
-        <div className="left-h">
-          <Header />
-          <div className="center">
-            <div className="containerD containerCalendar">
-              <Link to="/">
-                <button>volver</button>
-              </Link>
+        <div>
+          <Header/>
+          <div className="center12 navD">
+            <div className="container12">
+              
               <img src={wbanner} alt="" className="w-banner" />
             </div>
 
@@ -63,6 +62,7 @@ const Contact = () => {
           <label>Mensaje</label>
           <textarea name="message" />
           <input type="submit" value="Send" />
+          <Link to='/'><button className="quemado">volver</button></Link>
         </form>
       
           </div>
