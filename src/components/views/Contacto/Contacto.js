@@ -5,26 +5,17 @@ import { Link } from "react-router-dom";
 import calculate from "../../../assets/calculate-img.png";
 import Swal from "sweetalert2";
 
-
 const Contact = () => {
- 
-useEffect(()=>{
-  mostrarAlerta();
-},[]);
+  useEffect(() => {
+    mostrarAlerta();
+  }, []);
 
-const mostrarAlerta=()=>{
-  Swal.fire(
-    'Good job!',
-  'Mensaje enviado!',
-  'success'
-  )
-}
-
+  const mostrarAlerta = () => {
+    Swal.fire("Good job!", "Mensaje enviado!", "success");
+  };
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_h8244bk",
@@ -46,11 +37,9 @@ const mostrarAlerta=()=>{
   return (
     <html>
       <div className="center11">
-      <div className="container11">
-      
-      <img src={calculate} alt="" className="calculateC" />
-</div>
-        
+        <div className="container11">
+          <img src={calculate} alt="" className="calculateC" />
+        </div>
         <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>
           <label>Nombre</label>
           <input type="text" name="user_name" />
@@ -59,10 +48,12 @@ const mostrarAlerta=()=>{
           <label>Mensaje</label>
           <textarea name="message" />
           <input type="submit" value="Send" />
-          <Link to='/'><button className="quemado">volver</button></Link>
+          <Link to="/">
+            <button className="quemado">volver</button>
+          </Link>
         </form>
       </div>
-      </html>
+    </html>
   );
 };
 

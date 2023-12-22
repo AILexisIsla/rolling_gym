@@ -29,7 +29,6 @@ export const Plans = () => {
                 </div>
               ))}
             </div>
-
             <div>
               <span>Ver más beneficios -{">"}</span>
             </div>

@@ -10,7 +10,6 @@ const Dashboard = () => {
         <div className={`${css.dashboardHead} theme-container`}>
           <div className={css.head}>
             <span>Dashboard</span>
-
             <div className={css.durationButton}>
               <select>
                 <option value="">1 week</option>
@@ -35,10 +34,8 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
-
         <Statistics />
       </div>
-
       <Orders />
     </div>
   );

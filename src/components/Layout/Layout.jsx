@@ -15,23 +15,18 @@ const Layout = ({
   loading,
 }) => {
   const { pathname } = useLocation();
-
   return (
     <div className={`${css.container} ${css.dashboardApp} ${classes}`}>
       <Sidebar />
-
       {pathname === "/" && <Navigate to="/Dashboard" />}
-
       <div className={css.dashboard}>
         <div className={css.topBaseGradients}>
           <div className="gradient-red"></div>
           <div className="gradient-orange"></div>
           <div className="gradient-blue"></div>
         </div>
-
         <div className={css.header}>
           <span>{moment().format("dddd, Do MMM YYYY")}</span>
-
           <Link to="/">
             <div className="x2">
               <div className={css.profile}>

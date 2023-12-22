@@ -51,20 +51,20 @@
 
 .form-login-contactanos {
   display: flex;
-  flex-direction: row; /* Para colocar los elementos uno al lado del otro */
-  align-items: center; /* Para centrar verticalmente los elementos */
+  flex-direction: row; 
+  align-items: center; 
 }
 
 .form-group-contactanos {
-  margin-right: 10px; /* Espacio entre los elementos */
+  margin-right: 10px; 
 }
 
 .input-login-contactanos {
-  width: 200px; /* Ancho del textarea */
-  height: 20px; /* Altura del textarea */
-  border: 3px solid #ccc; /* Borde del textarea */
-  padding: 10px; /* Espaciado interno del textarea */
-  border-radius: 5px; /* Bordes redondeados */
+  width: 200px; 
+  height: 20px; 
+  border: 3px solid #ccc; 
+  padding: 10px; 
+  border-radius: 5px; 
   background-color: var(--darkGrey);
   color: var(--orange);
 }
