@@ -1,12 +1,10 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import "./index.css";
+import { classInstance, userInstance } from "./config/axios";
 import Login from "./components/views/Login/Login";
 import Register from "./components/views/Register/Register";
 import Home from "./components/views/Home/Home";
 import Error404 from "./components/views/Error404/Error404";
-import { useEffect, useState } from "react";
-import { classInstance, userInstance } from "./config/axios";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
@@ -14,6 +12,8 @@ import Calendar from "./pages/Calendar/Calendar";
 import DataGrid from "./pages/DataGrid/DataGrid";
 import Contacto from "./components/views/Contacto/Contacto";
 import Details from "./pages/Details/Details";
+import "./App.css";
+import "./index.css";
 
 const userInfoLs = JSON.parse(localStorage.getItem("user-token"));
 

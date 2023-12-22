@@ -8,5 +8,5 @@ export const userInstance = axios.create({
 });
 
 export const climaApi = axios.create({
-  baseURL: process.env.REACT_APP_CLIMA,
+  baseURL: process.env.REACT_APP_CLIMA || '',
 });
