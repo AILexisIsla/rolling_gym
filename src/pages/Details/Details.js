@@ -58,11 +58,11 @@ const Contact = () => {
 
             <form ref={form} onSubmit={sendEmail}>
               <label>Nombre</label>
-              <input type="text" name="user_name" />
+              <input type="text" name="user_name" placeholder="Nombre" />
               <label>Email</label>
-              <input type="email" name="user_email" />
+              <input type="email" name="user_email" placeholder="Email" />
               <label>Mensaje</label>
-              <textarea name="message" />
+              <textarea name="message" placeholder="Envianos tu consulta" />
               <input type="submit" value="Send" />
               <Link to="/">
                 <button className="quemado">volver</button>
