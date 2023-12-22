@@ -25,7 +25,21 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const userName = form.current["user_name"].value;
+    const userEmail = form.current["user_email"].value;
+    const userMessage = form.current["message"].value;
 
+    if (!userName || !userEmail || !userMessage) {
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, completa todos los campos.",
+        icon: "error",
+        customClass: {
+          popup: "swal-custom-style",
+        },
+      });
+      return;
+    }
     emailjs
       .sendForm(
         "service_h8244bk",
@@ -63,9 +77,9 @@ const Contact = () => {
               <input type="email" name="user_email" placeholder="Email" />
               <label>Mensaje</label>
               <textarea name="message" placeholder="Envianos tu consulta" />
-              <input type="submit" value="Send" />
+              <input type="submit" value="Enviar" />
               <Link to="/">
-                <button className="quemado">volver</button>
+                <button className="btn-Home">Home</button>
               </Link>
             </form>
           </div>
