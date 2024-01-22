@@ -1,0 +1,87 @@
+.center11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: white;
+    text-overflow: inherit;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #dd781a;
+    cursor: pointer;
+  }
+  
+  .container11 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #d86315de;
+  }
+
+  .calculate {
+    width: 500px;  
+    height: 800px; 
+}
+
+.quemado {
+  margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #dd781a;
+    cursor: pointer;
+    width: 300px;
+}
+
+@media screen and (max-width: 768px){
+
+  .center11 {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+  .calculateC {
+    width: 15rem;  
+}
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px){  
+
+  .calculateC{
+    width: 25rem;
+    padding-left: 8rem;
+    padding-top: 3rem;
+  }
+
+}

@@ -1,0 +1,191 @@
+ 
+  .AboutUs{
+    background-image: url('../../assets/womanDoingExercise.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 15vh 1rem;
+  }
+
+  .AboutUs > section >span{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 25vh;
+  }
+
+  .boxAbout {
+    width: 60%;
+    margin-top: 2rem;
+    padding: 2%;
+    border-radius: 5px;
+    background: #3c3f45c9;
+    box-shadow: 0 0 1rem rgba(253,128,43,0.69);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tittleAbout {
+    font-size: 1.5rem;
+    text-align: center;
+    
+  }
+
+#stAbout{
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+}
+
+.tableA{
+    padding-top: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.imgAbout{
+    width: 4rem;
+    box-shadow: 1px 2px 10px rgba(253,128,43,0.69);
+    border-radius: 50%;
+ }
+
+ .imgAbout:hover{
+    width: 4rem;
+    box-shadow: 1px 2px 15px rgba(255, 255, 255, 0.69);
+    border-radius: 50%;
+    transition: 0.4s;
+ }
+
+.encabezadoA{
+   padding: 1rem 0;
+}
+
+.thAbout, .tdAbout {
+    border: 0.2rem solid rgba(0, 0, 0, 0.514)!important;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(253,128,43,0.69)
+  }
+
+#btnAu{
+    
+    text-decoration: none;
+    color: #f48915;
+}
+
+#idA{
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutUs {
+    padding: 20rem 1rem;
+    
+  }
+
+  .AboutUs > section{
+    text-align: center;
+  }
+
+  .boxAbout {
+    width: 80%; 
+  } 
+
+  .tableA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    th, td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    th {
+      text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+  .AboutUs {
+    padding: 30rem 1rem;
+    
+  }
+
+  .AboutUs > section{
+    text-align: center;
+  }
+
+  .boxAbout {
+    width: 80%; 
+  } 
+
+  .tableA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    th, td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    th {
+      text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+  .AboutUs {
+    padding: 40rem 1rem;
+    
+  }
+
+  .AboutUs > section{
+    text-align: center;
+  }
+
+  .boxAbout {
+    width: 80%; 
+  } 
+
+  .tableA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    th, td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    th {
+      text-align: center;
+    }
+
+
+}

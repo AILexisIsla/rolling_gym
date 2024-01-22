@@ -1,0 +1,233 @@
+.container {
+    display: flex;
+    height: 100%;
+  }
+  
+  .dashboard {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+  }
+
+  .dashboardApp {
+    height: 100%;
+    width: 100%;
+    background-color: var(--black);
+    color: white;
+    font-family: "Public Sans", sans-serif;
+    overflow: hidden;
+  }
+  
+  .topBaseGradients {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20rem;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .topBaseGradients>:nth-child(2)
+  {
+      left: 40%;
+  }
+  .topBaseGradients>:nth-child(3)
+  {
+      right: 0;
+  }
+  .header{
+      display: flex;
+      padding: 2rem 4rem;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .header>:nth-child(1)
+  {
+      font-size: 1.2rem;
+  }
+
+  .header>:nth-child(2)
+  {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .profile{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .profile>img{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+  }
+
+  .details{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+  
+  .details>:nth-child(1)
+  {
+      font-size: 1rem;
+      font-weight: bold;
+  }
+  .content{
+      margin: auto;
+      display: flex;
+      height: 100%;
+      margin-top: 4rem;
+  }
+  .content>div{
+      width: 100%;
+      min-width: 75vh
+  }
+
+  .layoutOps{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+
+  .imgOps{
+    width: 1.5rem; 
+    padding-right: 0.5rem;
+  }
+
+  .x2 {
+    text-decoration: none;}
+
+    @media screen and (max-width: 320px){
+    
+      .header{
+          display: flex;
+          padding: 3rem 4rem;
+          flex-direction: column;
+          justify-content: center;
+          line-height: 2.5rem;
+      }
+      
+      .header>:nth-child(1)
+      {
+          font-size: 1rem;
+      }
+  
+      .header>:nth-child(2)
+      {
+          padding-top: 1rem;
+          font-size: 0.8rem;
+          padding-right: 2rem;
+      }
+      
+      .topBaseGradients{
+          background: black;
+      }
+      
+      .topBaseGradients>:nth-child(1)
+    {
+      top: 5rem;
+    }
+      .topBaseGradients>:nth-child(2)
+    {
+      background: black;
+    }
+    .topBaseGradients>:nth-child(3)
+    {
+      top: -1rem;
+    }
+      
+    
+    }
+  
+    @media screen and (max-width: 375px) and (min-width: 321px){
+      
+      .header{
+          display: flex;
+          padding-top: 3rem;
+          flex-direction: column;
+          justify-content: center;
+          line-height: 3rem;
+      }
+      
+      .header>:nth-child(1)
+      {
+          font-size: 1.4rem;
+      }
+  
+      .header>:nth-child(2)
+      {
+          padding-top: 1rem;
+          font-size: 1rem;
+          padding-right: 2rem;
+      }
+      
+      .topBaseGradients{
+          background: black;
+      }
+      
+      .topBaseGradients>:nth-child(1)
+    {
+      top: 5rem;
+    }
+      .topBaseGradients>:nth-child(2)
+    {
+      background: black;
+    }
+    .topBaseGradients>:nth-child(3)
+    {
+      top: -1rem;
+    }
+      
+    }
+  
+    @media screen and (max-width: 425px) and (min-width: 376px){
+      
+      .header{
+          display: flex;
+          padding-top: 3rem;
+          flex-direction: column;
+          justify-content: center;
+          line-height: 3rem;
+      }
+      
+      .header>:nth-child(1)
+      {
+          font-size: 1.4rem;
+      }
+  
+      .header>:nth-child(2)
+      {
+          padding-top: 1rem;
+          font-size: 1rem;
+          padding-right: 2rem;
+      }
+      
+      .topBaseGradients{
+          background: black;
+      }
+      
+      .topBaseGradients>:nth-child(1)
+    {
+      top: 5rem;
+    }
+      .topBaseGradients>:nth-child(2)
+    {
+      background: black;
+    }
+    .topBaseGradients>:nth-child(3)
+    {
+      top: -1rem;
+    }
+        
+    }
+  
+ 
