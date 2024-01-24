@@ -1,6 +1,6 @@
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const telefonoRegex = /^\d{10,13}$/;
-const nameUserRegex = /^[a-zA-Z0-9]{4,25}$/;
+const nameUserRegex = /^[a-zA-Z\s]*$/;
 const passwordRegex = /^.{6,}$/;
 
 export const validateNameuser = (user) => {

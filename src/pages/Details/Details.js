@@ -6,6 +6,10 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Swal from "sweetalert2";
 import "./Details.css";
+import {
+  validateEmailuser,
+  validateNameuser,
+} from "../../components/helpers/ValidateFormRegister.js";
 
 const Contact = () => {
   useEffect(() => {}, []);
@@ -27,9 +31,8 @@ const Contact = () => {
     e.preventDefault();
     const userName = form.current["user_name"].value;
     const userEmail = form.current["user_email"].value;
-    const userMessage = form.current["message"].value;
 
-    if (!userName || !userEmail || !userMessage) {
+    if (!validateNameuser(userName)) {
       Swal.fire({
         title: "Error",
         text: "Por favor, completa todos los campos.",
@@ -40,6 +43,18 @@ const Contact = () => {
       });
       return;
     }
+    if (!validateEmailuser(userEmail)) {
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, coloca un email valido",
+        icon: "error",
+        customClass: {
+          popup: "swal-custom-style",
+        },
+      });
+      return;
+    }
+
     emailjs
       .sendForm(
         "service_h8244bk",
@@ -49,8 +64,6 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          console.log("mensaje enviado");
           mostrarAlerta();
           form.current.reset();
         },
@@ -72,11 +85,28 @@ const Contact = () => {
 
             <form ref={form} onSubmit={sendEmail}>
               <label>Nombre</label>
-              <input type="text" name="user_name" placeholder="Nombre" />
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Nombre"
+                required
+              />
               <label>Email</label>
-              <input type="email" name="user_email" placeholder="Email" />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Email"
+                required
+              />
               <label>Mensaje</label>
-              <textarea name="message" placeholder="Envianos tu consulta" />
+              <textarea
+                name="message"
+                placeholder="Envianos tu consulta"
+                rows="3"
+                minLength="20"
+                maxLength="100"
+                required
+              />
               <input type="submit" value="Enviar" />
               <Link to="/">
                 <button className="btn-Home">Home</button>
