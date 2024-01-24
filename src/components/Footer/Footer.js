@@ -44,7 +44,7 @@ const Footer = () => {
             <li className="f-izq">¿NECESITAS AYUDA?</li>
             <div className="f-qf">
               <li>
-                <Link to="/contacto">Contactanos</Link>
+                <Link to="/*">Contactanos</Link>
               </li>
               <li>
                 <Link to="/*">Terminos y condiciones</Link>

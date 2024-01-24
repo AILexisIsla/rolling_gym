@@ -1,107 +1,139 @@
-.ContactUs{
-   display: flex;
-   padding: 0 2rem; 
-   gap: 10rem;
-   padding-top: 5rem;
-   justify-content: center;
+.ContactUs {
+  display: flex;
+  padding: 0 2rem;
+  gap: 10rem;
+  padding-top: 5rem;
+  justify-content: center;
 }
 
-.left-j{
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
+.left-j {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
 }
 
-.left-j>hr{
-    position: absolute;
-    width: 10.5rem;
-    border: 2px solid var(--orange);
-    border-radius: 20%;
-    margin: -10px 0;
+.left-j > hr {
+  position: absolute;
+  width: 10.5rem;
+  border: 2px solid var(--orange);
+  border-radius: 20%;
+  margin: -10px 0;
 }
 
-.left-j>div{
-    display: flex;
-    gap: 1rem;
+.left-j > div {
+  display: flex;
+  gap: 1rem;
 }
 
-.right-j{
-    display: flex;
+.right-j {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-j {
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+  background: var(--darkGrey);
+  border: 2px solid var(--orange);
+}
+
+#btn-j:hover {
+  text-decoration: none;
+  color: var(--darkGrey);
+  text-decoration: none;
+  background: var(--orange);
+  border: 2px solid white;
+}
+
+.form-login-contactanos {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+}
+
+.form-group-contactanos {
+  margin-right: 10px; 
+}
+
+.input-login-contactanos {
+  width: 200px; 
+  height: 20px; 
+  border: 3px solid #ccc; 
+  padding: 10px; 
+  border-radius: 5px; 
+  background-color: var(--darkGrey);
+  color: var(--orange);
+}
+
+.input-login-contactanos::placeholder {
+  color: var(--orange);
+  font: medium;
+}
+
+.submit-button-contactanos {
+  border: 3px solid #ff8c00;
+  background-color: #ffcc80;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 50px;
+}
+
+.submit-button-contactanos:hover {
+  background-color: #ffa726;
+}
+
+@media screen and (max-width: 768px) {
+  .ContactUs {
     justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .left-j {
+    font-size: x-large;
+    flex-direction: column;
+  }
+  .right-j {
+    padding: 2rem;
+  }
+  .left-j > div {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-#btn-j{
-    text-decoration: none;
-    color: white;
-    text-decoration: none;
-    background: var(--darkGrey);
-    border: 2px solid var(--orange);
-}
-
-#btn-j:hover{
-    text-decoration: none;
-    color: var(--darkGrey);
-    text-decoration: none;
-    background: var(--orange);
-    border: 2px solid white;
-}
-
-@media screen and (max-width: 768px){
-    .ContactUs{
-        justify-content: center;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .left-j{
-        font-size: x-large;
-        flex-direction: column;
-    }
-    .right-j{
-        padding: 2rem;
-    }
-    .left-j>div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .left-j>hr{
-        left: 2.6rem;
-    }
-
+  }
+  .left-j > hr {
+    left: 2.6rem;
+  }
 }
 
 @media screen and (max-width: 375px) and (min-width: 321px) {
-
-    .left-j>hr{
-        width: 10.5rem;
-        margin: -1.5rem 2rem;
-    }
-
+  .left-j > hr {
+    width: 10.5rem;
+    margin: -1.5rem 2rem;
+  }
 }
 
 @media screen and (max-width: 425px) and (min-width: 376px) {
-
-    .left-j>hr{
-        width: 10.5rem;
-        margin: -1.5rem 3.5rem;
-    }
-
+  .left-j > hr {
+    width: 10.5rem;
+    margin: -1.5rem 3.5rem;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 426px) {
-
-    .left-j>hr{
-        width: 10.5rem;
-        margin: -1.5rem 14rem;
-    }
+  .left-j > hr {
+    width: 10.5rem;
+    margin: -1.5rem 14rem;
+  }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px){
-
-    .right-j{
-        padding-right: 6rem;
-    }
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .right-j {
+    padding-right: 6rem;
+  }
 }

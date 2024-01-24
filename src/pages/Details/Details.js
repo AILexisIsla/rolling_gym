@@ -4,26 +4,42 @@ import { Link } from "react-router-dom";
 import wbanner from "../../assets/w-banner.png";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import "./Details.css";
 
 const Contact = () => {
-  useEffect(()=>{
-    mostrarAlerta();
-  },[]);
-  
-  const mostrarAlerta=()=>{
-    Swal.fire(
-      'Good job!',
-    'Mensaje enviado!',
-    'success'
-    )
-  }
-  
-    const form = useRef();
+  useEffect(() => {}, []);
+
+  const mostrarAlerta = () => {
+    Swal.fire({
+      title: "Good job!",
+      text: "Mensaje enviado!",
+      icon: "success",
+      customClass: {
+        popup: "swal-custom-style",
+      },
+    });
+  };
+
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const userName = form.current["user_name"].value;
+    const userEmail = form.current["user_email"].value;
+    const userMessage = form.current["message"].value;
 
+    if (!userName || !userEmail || !userMessage) {
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, completa todos los campos.",
+        icon: "error",
+        customClass: {
+          popup: "swal-custom-style",
+        },
+      });
+      return;
+    }
     emailjs
       .sendForm(
         "service_h8244bk",
@@ -35,6 +51,8 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           console.log("mensaje enviado");
+          mostrarAlerta();
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -43,28 +61,27 @@ const Contact = () => {
   };
 
   return (
-    <div className="hero" id="home">
+    <div>
       <div>
-        <div className="left-h">
+        <div>
           <Header />
-          <div className="center">
-            <div className="containerD containerCalendar">
-              <Link to="/">
-                <button>volver</button>
-              </Link>
+          <div className="center12 navD">
+            <div className="container12">
               <img src={wbanner} alt="" className="w-banner" />
             </div>
 
-            <form ref={form} onSubmit={sendEmail} onClick={mostrarAlerta}>
-          <label>Nombre</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Mensaje</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form>
-      
+            <form ref={form} onSubmit={sendEmail}>
+              <label>Nombre</label>
+              <input type="text" name="user_name" placeholder="Nombre" />
+              <label>Email</label>
+              <input type="email" name="user_email" placeholder="Email" />
+              <label>Mensaje</label>
+              <textarea name="message" placeholder="Envianos tu consulta" />
+              <input type="submit" value="Enviar" />
+              <Link to="/">
+                <button className="btn-Home">Home</button>
+              </Link>
+            </form>
           </div>
           <Footer />
         </div>

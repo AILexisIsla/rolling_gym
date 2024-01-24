@@ -1,4 +1,4 @@
-/* Estilos base */
+
 .table-datagrid {
   border-collapse: separate;
   border-spacing: 0;
@@ -6,7 +6,7 @@
   color: #f0f0f0;
   width: 90%;
   margin: 20px auto;
-  overflow-y: auto; /* Agregado para el desplazamiento vertical */
+  overflow-y: auto; 
 }
 
 .table-datagrid th {

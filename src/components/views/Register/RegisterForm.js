@@ -55,7 +55,6 @@ const RegisterForm = ({ SetLoading }) => {
 
     try {
       const res = await userInstance.post(`${URL}/Register`, newUser);
-
       if (res && res.data) {
         if (res.status === 201) {
           Swal.fire({

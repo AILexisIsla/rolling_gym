@@ -10,15 +10,23 @@ function Weatherapi() {
   const [datos, setDatos] = useState(false);
   const kelvin = 273.15;
   const URL_CLIMA = process.env.REACT_APP_CLIMA;
+  console.log(URL_CLIMA);
   useEffect(() => {
-    climaApi.get(URL_CLIMA).then((response) => {
-      const temp = Math.floor(response.data.main.temp);
-      const temperatura = Math.floor(temp - kelvin);
-      const humedad = response.data.main.humidity;
-      setDatos({ temperatura, humedad });
-    });
+    const fetchData = async () => {
+      try {
+        const response = await climaApi.get(URL_CLIMA);
+        const temp = Math.floor(response.data.main.temp);
+        const temperatura = Math.floor(temp - kelvin);
+        const humedad = response.data.main.humidity;
+        setDatos({ temperatura, humedad });
+      } catch (error) {
+        console.error("Error al obtener datos del clima:", error);
+      }
+    };
+
+    fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [URL_CLIMA]);
 
   const getIconoPorClima = (temperatura) => {
     if (temperatura < 20) {

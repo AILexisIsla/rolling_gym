@@ -53,9 +53,6 @@ const Hero = ({ loading, SetLoading }) => {
       <div className="blur hero-blur"></div>
       <div className="left-h">
         <Header />
-
-        {/*El mejor gym de la ciudad */}
-
         <div className="thebestadd">
           <motion.div
             initial={{ left: mobile ? "165px" : "238px" }}
@@ -64,9 +61,6 @@ const Hero = ({ loading, SetLoading }) => {
           ></motion.div>
           <span>El mejor Gym en la ciudad</span>
         </div>
-
-        {/*Hero Heading-Nabvar para editar */}
-
         <div className="hero-text">
           <div>
             <span className="stroke-text">Activa </span>
@@ -82,8 +76,6 @@ const Hero = ({ loading, SetLoading }) => {
             </span>
           </div>
         </div>
-
-        {/* figures */}
         <div className="figures">
           <div>
             <span>
@@ -104,8 +96,6 @@ const Hero = ({ loading, SetLoading }) => {
             <span>Programas fitness</span>
           </div>
         </div>
-
-        {/* botones hero */}
         <div className="hero-buttons">
           <Link to="/Login" className="btn">
             Comienza
@@ -131,7 +121,6 @@ const Hero = ({ loading, SetLoading }) => {
             Unete ahora
           </Link>
         )}
-
         <motion.div
           initial={{ right: "-1rem" }}
           whileInView={{ right: "4rem" }}
@@ -142,8 +131,6 @@ const Hero = ({ loading, SetLoading }) => {
           <span>Cardio</span>
           <span>116 bpn</span>
         </motion.div>
-
-        {/* imagenes hero */}
         <img src={hero_image} alt="" className="hero-image" />
         <motion.img
           initial={{ right: "11rem" }}
@@ -153,9 +140,6 @@ const Hero = ({ loading, SetLoading }) => {
           alt=""
           className="hero-image-back"
         />
-
-        {/* Clima*/}
-
         <motion.div
           initial={{ right: "37rem" }}
           whileInView={{ right: "28.4rem" }}

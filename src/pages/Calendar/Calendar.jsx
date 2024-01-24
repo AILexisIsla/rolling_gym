@@ -10,7 +10,7 @@ import {
   validarHorario,
   validarNombreClase,
   validarNombreTeacher,
-} from "../../helpers/ValidateForm";
+} from "../../components/helpers/ValidateForm";
 import "./Calendar.css";
 
 const StyledCalendar = styled(Calendar)`
@@ -46,15 +46,12 @@ const MyCalendar = ({ classes, getClassApi }) => {
   const formRef = useRef(null);
   const URLCLASS = process.env.REACT_APP_GYMNASIO_ROLLING_CLASS;
   const STATUS_CREATECLASS = 201;
-
   const handleGetOneClass = async (id) => {
     setIsEditing(true);
     setEditingClassId(id);
-
     try {
       const response = await classInstance.get(`${URLCLASS}/class/${id}`);
       const classApi = response.data;
-
       SetFormData({
         nameClass: classApi.nameClass,
         Teacher: classApi.Teacher,
@@ -64,20 +61,16 @@ const MyCalendar = ({ classes, getClassApi }) => {
       });
     } catch (error) {
       console.log(error);
-      // Puedes manejar el error según tus necesidades, por ejemplo, mostrando un mensaje al usuario.
     }
   };
-
   const handleChange = (event) => {
     const { value, name } = event.target;
     SetFormData((prevValues) => ({ ...prevValues, [name]: value }));
   };
-
   const handleClickDay = async (date) => {
     const formattedDate = date.toISOString().slice(0, 10);
     SetFormData((prevValues) => ({ ...prevValues, dateClass: formattedDate }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.values(formData).some((value) => value.trim() === "")) {
@@ -91,7 +84,6 @@ const MyCalendar = ({ classes, getClassApi }) => {
       });
       return;
     }
-
     if (
       !validarNombreClase(formData.nameClass) ||
       !validarNombreTeacher(formData.Teacher) ||
@@ -102,7 +94,6 @@ const MyCalendar = ({ classes, getClassApi }) => {
     }
     try {
       let response;
-
       if (isEditing) {
         // Modo edición: Actualizar la clase existente
         response = await classInstance.put(
@@ -124,7 +115,6 @@ const MyCalendar = ({ classes, getClassApi }) => {
           },
         });
       }
-
       if (response.status === STATUS_CREATECLASS) {
         Swal.fire({
           title: isEditing ? "Actualizado" : "Creado",
@@ -136,7 +126,6 @@ const MyCalendar = ({ classes, getClassApi }) => {
             popup: "swal-custom-style",
           },
         });
-
         formRef.current.reset();
         SetFormData({
           nameClass: "",
@@ -151,16 +140,13 @@ const MyCalendar = ({ classes, getClassApi }) => {
       }
     } catch (error) {
       if (error.response) {
-        // Si la respuesta contiene datos, puedes acceder a ellos
         console.error("Error al crear la clase:", error.response.data);
       } else {
-        // Si la respuesta no contiene datos, muestra un mensaje genérico
         console.error("Error al crear la clase:", error.message);
       }
       setErrorMessage("Error en la creación de la clase");
     }
   };
-
   const handleDeleteClick = (id) => {
     Swal.fire({
       title: "Estas seguro de eliminar el usuario?",
@@ -285,7 +271,6 @@ const MyCalendar = ({ classes, getClassApi }) => {
             </div>
           </div>
         </div>
-
         <div className="calendar">
           <h1>Administrar Clases</h1>
           {classes.length !== 0 ? (

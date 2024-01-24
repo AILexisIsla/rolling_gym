@@ -88,8 +88,8 @@
 }
 
 .btn {
-  background-color: var(--orange);  /* Cambiar el fondo a naranja */
-  color: white;  /* Cambiar el color del texto a negro */
+  background-color: var(--orange);  
+  color: white;
 }
 
 #btnP {

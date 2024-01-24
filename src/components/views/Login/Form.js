@@ -10,14 +10,12 @@ const Form = ({ SetLoading }) => {
   });
   const [error, setError] = useState(false);
   const URL = process.env.REACT_APP_GYMNASIO_ROLLING_USER;
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     SetUser((values) => ({ ...values, [name]: value }));
   };
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -48,7 +46,6 @@ const Form = ({ SetLoading }) => {
         error.response.data.message ===
         "Correo electrónico o contraseña incorrectos"
       ) {
-        // Contraseña incorrecta
         setError("Algunos datos son incorrectos. Verifica tus credenciales.");
       } else {
         setError(error.response.data.message);
@@ -90,9 +87,9 @@ const Form = ({ SetLoading }) => {
               </Link>
             </span>
           </p>
-              <Link to="/" className="sign-up">
-              | Home |
-              </Link>
+          <Link to="/" className="sign-up">
+            | Home |
+          </Link>
         </div>
       </form>
     </div>
