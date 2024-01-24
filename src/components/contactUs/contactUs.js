@@ -75,6 +75,9 @@ const ContactUs = () => {
               name="message"
               className="input-login-contactanos"
               placeholder="Contactanos"
+              minLength={20}
+              maxLength={200}
+              required
               value={userMessage}
               onChange={(e) => setUserMessage(e.target.value)}
             ></textarea>
