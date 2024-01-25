@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import wbanner from "../../assets/w-banner.png";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import HeaderP from "../../components/HeaderP/HeaderP";
 import Swal from "sweetalert2";
 import "./Details.css";
 
@@ -64,7 +64,7 @@ const Contact = () => {
     <div>
       <div>
         <div>
-          <Header />
+          <HeaderP />
           <div className="center12 navD">
             <div className="container12">
               <img src={wbanner} alt="" className="w-banner" />
