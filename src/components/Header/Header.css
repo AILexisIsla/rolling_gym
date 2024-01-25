@@ -1,39 +1,45 @@
-.header{
-    display: flex;
-    justify-content: space-between;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
-    width: 10rem;
-    height: 3rem;
+  width: 10rem;
+  height: 3rem;
 }
 
-.headermenu {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    color: white;
+.headermenu,
+.headermenu > li > a {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  color: white;
+  text-decoration: none;
 }
 
-.headermenu>li {
-    cursor: pointer;
+.headermenu > li {
+  cursor: pointer;
 }
 
-.headermenu>li:hover {
-    color: var(--orange);
-    cursor: pointer;
+.headermenu > li:hover,
+.headermenu > li > a:hover {
+  color: var(--orange);
+  cursor: pointer;
 }
 
-@media screen and (max-width: 768px){
-    .header>:nth-child(2){
-        position: fixed;
-        right: 2rem;
-        z-index: 99;
-    }
+@media screen and (max-width: 768px) {
+  .header > :nth-child(2) {
+    position: fixed;
+    right: 2rem;
+    z-index: 99;
+  }
 
-    .headermenu{
-        flex-direction: column;
-        background-color: var(--appColor);
-        padding: 2rem;
-    }
+  .headermenu {
+    flex-direction: column;
+    background-color: var(--appColor);
+    padding: 2rem;
+  }
+  .headermenu > li {
+    margin-bottom: 1rem;
+  }
 }
