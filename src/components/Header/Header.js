@@ -64,7 +64,7 @@ const Header = () => {
               </Link>
             ) : (
               <Homelink to="/" onClick={handleLinkClick}>
-                Programas
+                Programa
               </Homelink>
             )}
           </li>
