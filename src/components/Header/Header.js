@@ -3,10 +3,24 @@ import "./Header.css";
 import Logo from "../../assets/logo.png";
 import Bars from "../../assets/bars.png";
 import { Link } from "react-scroll";
+import { Link as Homelink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   const mobile = window.innerWidth <= 768 ? true : false;
   const [menuOpened, setMenuOpened] = useState(false);
+
+  const handleMenu = () => {
+    if (mobile) {
+      setMenuOpened(!menuOpened);
+    }
+  };
+  const handleLinkClick = () => {
+    setMenuOpened(false);
+  };
+
   return (
     <div className="header" id="home">
       <img src={Logo} alt="" className="logo" />
@@ -18,7 +32,7 @@ const Header = () => {
             padding: "0.5rem",
             borderRadius: "5px",
           }}
-          onClick={() => setMenuOpened(true)}
+          onClick={() => handleMenu(true)}
         >
           <img
             src={Bars}
@@ -29,55 +43,100 @@ const Header = () => {
       ) : (
         <ul className="headermenu">
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              activeClass="active"
-              to="home"
-              smooth={true}
-            >
-              Home
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="home"
+                smooth={true}
+              >
+                Home
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                Home
+              </Homelink>
+            )}
           </li>
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              to="programs"
-              smooth={true}
-            >
-              Programa
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="programs"
+                smooth={true}
+              >
+                Programas
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                Programas
+              </Homelink>
+            )}
           </li>
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              to="reasons"
-              smooth={true}
-            >
-              ¿Por qué nosotros?
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="reasons"
+                smooth={true}
+              >
+                ¿Por qué nosotros?
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                ¿Por qué nosotros?
+              </Homelink>
+            )}
           </li>
           <li>
-            <Link onClick={() => setMenuOpened(false)} to="Plans" smooth={true}>
-              Planes
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="Plans"
+                smooth={true}
+              >
+                Planes
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                Planes
+              </Homelink>
+            )}
           </li>
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              to="testimonials"
-              smooth={true}
-            >
-              Testimonios
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="testimonials"
+                smooth={true}
+              >
+                Testimonios
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                Testimonios
+              </Homelink>
+            )}
           </li>
           <li>
-            <Link
-              onClick={() => setMenuOpened(false)}
-              to="contact"
-              smooth={true}
-            >
-              Contáctenos
-            </Link>
+            {isHomePage ? (
+              <Link
+                onClick={handleLinkClick}
+                activeClass="active"
+                to="contact"
+                smooth={true}
+              >
+                Contáctenos
+              </Link>
+            ) : (
+              <Homelink to="/" onClick={handleLinkClick}>
+                Contáctenos
+              </Homelink>
+            )}
           </li>
         </ul>
       )}

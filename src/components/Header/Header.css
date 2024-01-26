@@ -8,18 +8,20 @@
     height: 3rem;
 }
 
-.headermenu {
+.headermenu, .headermenu>li>a{
     list-style: none;
     display: flex;
     gap: 2rem;
     color: white;
+    text-decoration: none;
+    
 }
 
-.headermenu>li {
-    cursor: pointer;
+.headermenu>li, .headermenu>li>a {
+    cursor:pointer;
 }
 
-.headermenu>li:hover {
+.headermenu>li:hover, .headermenu>li>a:hover {
     color: var(--orange);
     cursor: pointer;
 }

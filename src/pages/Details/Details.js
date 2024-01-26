@@ -109,7 +109,7 @@ const Contact = () => {
               />
               <input type="submit" value="Enviar" />
               <Link to="/">
-                <button className="btn-Home">Home</button>
+                <button className="btn-Home" >Home</button>
               </Link>
             </form>
           </div>
