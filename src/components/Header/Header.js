@@ -43,20 +43,14 @@ const Header = () => {
       ) : (
         <ul className="headermenu">
           <li>
-            {isHomePage ? (
-              <Link
-                onClick={handleLinkClick}
-                activeClass="active"
-                to="home"
-                smooth={true}
-              >
-                Home
-              </Link>
-            ) : (
-              <Homelink to="/" onClick={handleLinkClick}>
-                Home
-              </Homelink>
-            )}
+            <Link
+              onClick={() => setMenuOpened(false)}
+              activeClass="active"
+              to="home"
+              smooth={true}
+            >
+              Home
+            </Link>
           </li>
           <li>
             {isHomePage ? (

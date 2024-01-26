@@ -77,7 +77,7 @@ const Contact = () => {
     <div>
       <div>
         <div>
-          <Header />
+          <Header/>
           <div className="center12 navD">
             <div className="container12">
               <img src={wbanner} alt="" className="w-banner" />
